@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { Support21 } from ".";
 
 function AfterMovie() {
   return (
@@ -14,7 +15,7 @@ function AfterMovie() {
           mozallowfullscreen
           allowFullScreen
         />
-        <div className="absolute flex justify-center items-center w-full h-full rounded-md bg-black bg-opacity-40 lg:p-10 px-4 py-6">
+        <div className="absolute flex flex-col justify-center items-center w-full h-full rounded-md bg-black bg-opacity-40 lg:p-10 px-4 py-6">
           <div className="flex flex-col items-center">
             <span className="-rotate-1 rounded-lg bg-sky-100 py-px px-2 text-sm text-sky-800">
               270 studenata je učestvovalo na konferenciji 2021. godine
@@ -38,6 +39,7 @@ function AfterMovie() {
               </a>
             </Link>
           </div>
+          <Support21 />
         </div>
       </div>
     </div>
