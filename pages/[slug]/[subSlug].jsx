@@ -12,6 +12,7 @@ import {
   Loader,
   AfterMovieAndVideos,
   Support,
+  Meta,
 } from "../../components";
 
 function CategoryPost({ posts, subDetails }) {
@@ -28,6 +29,11 @@ function CategoryPost({ posts, subDetails }) {
 
   return (
     <>
+      <Meta
+        title={subDetails?.name ?? "Codeference"}
+        description={subDetails?.name}
+        keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Novi Sad, Zlatibor, Codeference 2021, Codefair 2021"
+      />
       <AfterMovieAndVideos
         videoUrl={subDetails?.videoUrl}
         subDetails={subDetails}

@@ -61,6 +61,7 @@ function LandingComponent() {
                   </h3>
                   <button
                     type="button"
+                    disabled
                     onClick={() => setShowModal(!showModal)}
                     className="font-bold mt-8 transition duration-500 ease hover:bg-sky-700 inline-block bg-sky-500 lg:text-lg md:text-md text-sm font-medium rounded-full text-white px-8 py-3 cursor-pointer"
                   >

@@ -9,6 +9,7 @@ import {
   Comments,
   CommentsForm,
   Loader,
+  Meta,
 } from "../../components";
 import { getPosts, getPostDetails } from "../../services";
 import { AdjacentPosts } from "../../sections";
@@ -22,6 +23,11 @@ function PostDetails({ post }) {
 
   return (
     <motion.div exit={{ opacitiy: 0 }}>
+      <Meta
+        title={post?.title}
+        description={post?.exce ?? ""}
+        keywords={`Codeference, Codefair, ${post?.title ?? ""}`}
+      />
       <div className="container mx-auto lg:px-10 px-6 my-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="col-span-1 lg:col-span-8">
