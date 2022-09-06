@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 import imgLogo from "../public/logo-crni.png";
 import { getCategories } from "../services";
 import HamburgerMenu from "./HamburgerMenu";
 
 function Header() {
+  const router = useRouter();
+
   const [categories, setCategories] = useState([]);
   const [open, setOpen] = useState(false);
 
@@ -14,6 +18,7 @@ function Header() {
     });
   }, []);
 
+  const onClick = (path) => router.push(path);
   return (
     <nav className="sticky top-0 z-50 bg-blue-50 shadow-sm">
       <div className="md:flex items-center justify-between py-2 px-8 md:px-12">
@@ -50,9 +55,11 @@ function Header() {
 
               <ul className="absolute hidden text-gray-900 pt-1 group-hover:block">
                 {cat?.subcategories.map((sub) => (
+                  // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
                   <li
                     key={`${cat.slug}/${sub.slug}`}
                     className="rounded-b bg-blue-100 hover:bg-blue-200 py-2 px-4 block whitespace-no-wrap"
+                    onClick={() => onClick(`/${cat?.slug}/${sub?.slug}`)}
                   >
                     <Link href={`/${cat?.slug}/${sub?.slug}`}>{sub?.name}</Link>
                   </li>
