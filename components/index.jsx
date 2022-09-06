@@ -19,3 +19,4 @@ export { default as ApplicationForm } from "./ApplicationForm";
 export { default as HamburgerMenu } from "./HamburgerMenu";
 export { default as AfterMovieAndVideos } from "./AfterMovieAndVideos";
 export { default as Support } from "./Support";
+export { default as Meta } from "./Meta";

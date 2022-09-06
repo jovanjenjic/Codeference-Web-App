@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { FeaturedPosts } from "../../sections/index";
-import { PostCard, PostWidget } from "../../components";
+import { PostCard, PostWidget, Meta } from "../../components";
 import { getFeaturedPosts, getPosts } from "../../services";
 
 function Home({ posts, featuredPosts }) {
@@ -12,6 +12,11 @@ function Home({ posts, featuredPosts }) {
 
   return (
     <div className="container mx-auto lg:px-10 px-6 mb-8">
+      <Meta
+        description="Konferencija studenata elektrotehnike i računarstva."
+        keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
+        title="Vesti"
+      />
       <FeaturedPosts featuredPosts={featuredPosts} />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
