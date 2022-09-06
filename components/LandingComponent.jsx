@@ -95,7 +95,9 @@ function LandingComponent() {
                         <img alt="landing" src={imgDate.src} />
                       </div>
                       <h6 className="text-xl font-semibold">Datum</h6>
-                      <p className="mt-2 mb-4 text-blueGray-500">24.10.2022.</p>
+                      <p className="mt-2 mb-4 text-blueGray-500">
+                        24.10.2022 - 27.10.2022.
+                      </p>
                     </div>
                   </div>
                 </motion.div>
@@ -109,7 +111,7 @@ function LandingComponent() {
                       </div>
                       <h6 className="text-xl font-semibold">Lokacija</h6>
                       <p className="mt-2 mb-4 text-blueGray-500">
-                        Zlatibor - Studentsko odmaralište Ratko Mitrović
+                        Zlatibor - Studentsko odmaralište <q>Ratko Mitrović</q>
                       </p>
                     </div>
                   </div>
