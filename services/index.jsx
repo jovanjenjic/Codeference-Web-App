@@ -243,6 +243,7 @@ export const getSubcategoryPost = async (subSlug, hide = false) => {
       postsConnection(
         where: { subcategory: { slug: $subSlug }, hide: $hide }
         orderBy: date_DESC
+        first: 100
       ) {
         edges {
           cursor
