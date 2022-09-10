@@ -71,18 +71,23 @@ function Header({ categories }) {
                 <Link href="/post">Vesti</Link>
               </div>
               {categories.map((cat) =>
-                cat.subcategories.map((sub) => (
-                  <div
-                    key={`${cat.slug}/${sub.slug}`}
-                    role="button"
-                    onClick={handleOnClick}
-                    onKeyPress={handleOnClick}
-                    tabIndex={0}
-                    className="font-bold border-b border-gray-900 my-8 uppercase"
-                  >
-                    <Link href={`/${cat?.slug}/${sub?.slug}`}>{sub?.name}</Link>
-                  </div>
-                ))
+                cat.subcategories.map(
+                  (sub) =>
+                    !sub.hide && (
+                      <div
+                        key={`${cat.slug}/${sub.slug}`}
+                        role="button"
+                        onClick={handleOnClick}
+                        onKeyPress={handleOnClick}
+                        tabIndex={0}
+                        className="font-bold border-b border-gray-900 my-8 uppercase"
+                      >
+                        <Link href={`/${cat?.slug}/${sub?.slug}`}>
+                          {sub?.name}
+                        </Link>
+                      </div>
+                    )
+                )
               )}
             </ul>
           </div>
