@@ -44,7 +44,8 @@ export const getCategories = async () => {
         slug
         subcategories {
           name
-          slug
+          slug,
+          hide,
         }
       }
     }

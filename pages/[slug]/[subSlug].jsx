@@ -99,7 +99,8 @@ export async function getStaticPaths() {
   const paths = [];
   categories?.forEach((cat) => {
     cat?.subcategories?.forEach((sub) => {
-      paths.push({ params: { slug: cat.slug, subSlug: sub?.slug } });
+      if (!sub.hide)
+        paths.push({ params: { slug: cat.slug, subSlug: sub?.slug } });
     });
   });
 

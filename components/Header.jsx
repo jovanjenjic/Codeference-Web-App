@@ -54,16 +54,21 @@ function Header() {
               </button>
 
               <ul className="absolute hidden text-gray-900 pt-1 group-hover:block">
-                {cat?.subcategories.map((sub) => (
-                  // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-                  <li
-                    key={`${cat.slug}/${sub.slug}`}
-                    className="rounded-b bg-blue-100 hover:bg-blue-200 py-2 px-4 block whitespace-no-wrap"
-                    onClick={() => onClick(`/${cat?.slug}/${sub?.slug}`)}
-                  >
-                    <Link href={`/${cat?.slug}/${sub?.slug}`}>{sub?.name}</Link>
-                  </li>
-                ))}
+                {cat?.subcategories.map(
+                  (sub) =>
+                    !sub.hide && (
+                      // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+                      <li
+                        key={`${cat.slug}/${sub.slug}`}
+                        className="rounded-b bg-blue-100 hover:bg-blue-200 py-2 px-4 block whitespace-no-wrap"
+                        onClick={() => onClick(`/${cat?.slug}/${sub?.slug}`)}
+                      >
+                        <Link href={`/${cat?.slug}/${sub?.slug}`}>
+                          {sub?.name}
+                        </Link>
+                      </li>
+                    )
+                )}
               </ul>
             </div>
           ))}
