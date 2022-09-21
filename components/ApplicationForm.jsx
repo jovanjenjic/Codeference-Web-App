@@ -107,35 +107,35 @@ function ApplicationForm({
               formDataError?.pol && "border-red-500"
             } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex`}
           >
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="horizontal-list-radio-license"
                   type="radio"
                   name="list-radio"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("pol", "m")}
                 />
                 <label
                   htmlFor="horizontal-list-radio-license"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   Muški
                 </label>
               </div>
             </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="horizontal-list-radio-id"
                   type="radio"
                   name="list-radio"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("pol", "z")}
                 />
                 <label
                   htmlFor="horizontal-list-radio-id"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   Ženski
                 </label>
@@ -150,37 +150,37 @@ function ApplicationForm({
               formDataError?.finansiranje && "border-red-500"
             } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex`}
           >
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="budzet"
                   type="radio"
                   name="radio-budget"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("finansiranje", "budzet")}
                 />
                 <label
                   htmlFor="budzet"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   Budžet
                 </label>
               </div>
             </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="samofinansiranje"
                   type="radio"
                   name="radio-budget"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() =>
                     onInputChange("finansiranje", "samofinansiranje")
                   }
                 />
                 <label
                   htmlFor="samofinansiranje"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   Samofinansiranje
                 </label>
@@ -195,103 +195,103 @@ function ApplicationForm({
               formDataError?.majica && "border-red-500"
             } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex`}
           >
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="xs"
                   type="radio"
                   name="radio-size"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("majica", "xs")}
                 />
                 <label
                   htmlFor="xs"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   XS
                 </label>
               </div>
             </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="s"
                   type="radio"
                   name="radio-size"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("majica", "s")}
                 />
                 <label
                   htmlFor="s"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   S
                 </label>
               </div>
             </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="m"
                   type="radio"
                   name="radio-size"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("majica", "m")}
                 />
                 <label
                   htmlFor="m"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   M
                 </label>
               </div>
             </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="l"
                   type="radio"
                   name="radio-size"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("majica", "l")}
                 />
                 <label
                   htmlFor="l"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   L
                 </label>
               </div>
             </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="xl"
                   type="radio"
                   name="radio-size"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("majica", "xl")}
                 />
                 <label
                   htmlFor="xl"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   XL
                 </label>
               </div>
             </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
                 <input
                   id="xxl"
                   type="radio"
                   name="radio-size"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() => onInputChange("majica", "xxl")}
                 />
                 <label
                   htmlFor="xxl"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
                 >
                   XXL
                 </label>
