@@ -88,9 +88,7 @@ function AskForm({ slug }) {
             setShowSuccessMessage(false);
           }, 3000);
         },
-        (err) => {
-          console.log("FAILED...", err);
-        }
+        () => {}
       );
   };
 

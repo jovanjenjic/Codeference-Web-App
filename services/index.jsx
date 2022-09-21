@@ -44,8 +44,8 @@ export const getCategories = async () => {
         slug
         subcategories {
           name
-          slug,
-          hide,
+          slug
+          hide
         }
       }
     }
@@ -279,7 +279,11 @@ export const getSubcategoryPost = async (subSlug, hide = false) => {
 export const getFeaturedPosts = async (hide = false) => {
   const query = gql`
     query GetCategoryPost($hide: Boolean!) {
-      posts(where: { featuredPost: true, hide: $hide }) {
+      posts(
+        where: { featuredPost: true, hide: $hide }
+        first: 100
+        orderBy: date_DESC
+      ) {
         author {
           name
           photo {

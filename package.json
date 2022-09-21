@@ -9,6 +9,7 @@
     "pre-commit": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "dayjs": "^1.11.4",
     "emailjs-com": "^2.6.4",
     "framer-motion": "^6.5.1",
