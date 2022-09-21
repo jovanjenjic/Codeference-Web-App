@@ -114,7 +114,7 @@ function ApplicationForm({
                   type="radio"
                   name="list-radio"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("pol", "m")}
+                  onChange={() => onInputChange("pol", "Muški")}
                 />
                 <label
                   htmlFor="horizontal-list-radio-license"
@@ -131,7 +131,7 @@ function ApplicationForm({
                   type="radio"
                   name="list-radio"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("pol", "z")}
+                  onChange={() => onInputChange("pol", "Ženski")}
                 />
                 <label
                   htmlFor="horizontal-list-radio-id"
@@ -157,7 +157,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-budget"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("finansiranje", "budzet")}
+                  onChange={() => onInputChange("finansiranje", "Budžet")}
                 />
                 <label
                   htmlFor="budzet"
@@ -175,7 +175,7 @@ function ApplicationForm({
                   name="radio-budget"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() =>
-                    onInputChange("finansiranje", "samofinansiranje")
+                    onInputChange("finansiranje", "Samofinansiranje")
                   }
                 />
                 <label
@@ -202,7 +202,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "xs")}
+                  onChange={() => onInputChange("majica", "XS")}
                 />
                 <label
                   htmlFor="xs"
@@ -219,7 +219,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "s")}
+                  onChange={() => onInputChange("majica", "S")}
                 />
                 <label
                   htmlFor="s"
@@ -236,7 +236,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "m")}
+                  onChange={() => onInputChange("majica", "M")}
                 />
                 <label
                   htmlFor="m"
@@ -253,7 +253,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "l")}
+                  onChange={() => onInputChange("majica", "L")}
                 />
                 <label
                   htmlFor="l"
@@ -270,7 +270,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "xl")}
+                  onChange={() => onInputChange("majica", "XL")}
                 />
                 <label
                   htmlFor="xl"
@@ -287,7 +287,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "xxl")}
+                  onChange={() => onInputChange("majica", "XXL")}
                 />
                 <label
                   htmlFor="xxl"
