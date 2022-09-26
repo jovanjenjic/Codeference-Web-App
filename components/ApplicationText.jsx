@@ -36,10 +36,24 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
         </div>
         {showSuccessMessage && <AlertMessageSuccess />}
         {showErrorMessage && <AlertMessageError />}
+        <br />
       </div>
       <div>
-        Pre nego što pošaljete prijavu, proverite da li ste ispravno uneli sve
-        informacije. Sva polja u formi su obavezna.
+        <br />
+        <b>
+          Prijava za Studentsko odmaralište{" "}
+          <a
+            target="_blank"
+            href="http://usob.rs/odmaralista/ratko-mitrovic-zlatibor/?script=lat"
+            rel="noreferrer"
+          >
+            <q>Ratko Mitrović</q>.
+          </a>
+        </b>
+        <br />
+        <br />
+        Proverite da li ste ispravno uneli sve informacije. Sva polja u formi su
+        obavezna.
         <div>
           <br />
           Cena koja uključuje prevoz, smeštaj (pun pansion), kotizacije i poklon
@@ -48,15 +62,14 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
             <li>
               Odmaralište
               <ol className="pl-5 mt-2 space-y-1 list-decimal list-inside">
-                <li>Budžet: xxxx</li>
-                <li>Samofinansiranje: xxxx</li>
+                <li>Budžet: 5990</li>
+                <li>Samofinansiranje: 7990</li>
               </ol>
             </li>
             <li>
               Privatan smeštaj
               <ul className="pl-5 mt-2 space-y-1 list-decimal list-inside">
-                <li>Budžet: xxxx</li>
-                <li>Samofinansiranje: xxxx</li>
+                <i>(Uskoro više informacija)</i>
               </ul>
             </li>
           </ul>

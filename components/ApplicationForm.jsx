@@ -105,7 +105,7 @@ function ApplicationForm({
           <ul
             className={`${
               formDataError?.pol && "border-red-500"
-            } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex`}
+            } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border sm:flex`}
           >
             <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
@@ -114,7 +114,7 @@ function ApplicationForm({
                   type="radio"
                   name="list-radio"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("pol", "Muški")}
+                  onChange={() => onInputChange("pol", "m")}
                 />
                 <label
                   htmlFor="horizontal-list-radio-license"
@@ -131,7 +131,7 @@ function ApplicationForm({
                   type="radio"
                   name="list-radio"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("pol", "Ženski")}
+                  onChange={() => onInputChange("pol", "z")}
                 />
                 <label
                   htmlFor="horizontal-list-radio-id"
@@ -148,7 +148,7 @@ function ApplicationForm({
           <ul
             className={`${
               formDataError?.finansiranje && "border-red-500"
-            } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex`}
+            } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border sm:flex`}
           >
             <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
@@ -157,7 +157,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-budget"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("finansiranje", "Budžet")}
+                  onChange={() => onInputChange("finansiranje", "budzet")}
                 />
                 <label
                   htmlFor="budzet"
@@ -175,7 +175,7 @@ function ApplicationForm({
                   name="radio-budget"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
                   onChange={() =>
-                    onInputChange("finansiranje", "Samofinansiranje")
+                    onInputChange("finansiranje", "samofinansiranje")
                   }
                 />
                 <label
@@ -193,7 +193,7 @@ function ApplicationForm({
           <ul
             className={`${
               formDataError?.majica && "border-red-500"
-            } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 sm:flex`}
+            } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border sm:flex`}
           >
             <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
               <div className="flex items-center pl-3">
@@ -202,7 +202,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "XS")}
+                  onChange={() => onInputChange("majica", "xs")}
                 />
                 <label
                   htmlFor="xs"
@@ -219,7 +219,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "S")}
+                  onChange={() => onInputChange("majica", "s")}
                 />
                 <label
                   htmlFor="s"
@@ -236,7 +236,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "M")}
+                  onChange={() => onInputChange("majica", "m")}
                 />
                 <label
                   htmlFor="m"
@@ -253,7 +253,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "L")}
+                  onChange={() => onInputChange("majica", "l")}
                 />
                 <label
                   htmlFor="l"
@@ -270,7 +270,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "XL")}
+                  onChange={() => onInputChange("majica", "xl")}
                 />
                 <label
                   htmlFor="xl"
@@ -287,7 +287,7 @@ function ApplicationForm({
                   type="radio"
                   name="radio-size"
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("majica", "XXL")}
+                  onChange={() => onInputChange("majica", "xxl")}
                 />
                 <label
                   htmlFor="xxl"

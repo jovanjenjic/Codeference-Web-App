@@ -3,22 +3,6 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { ApplicationText, ApplicationForm } from "../../components";
 
-const FORM_SUBMIT_URL =
-  "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfNAAjqerS4SdhMM2q7ocO89beWCbnvlmxpIK6xABltSxV1Qg/formResponse";
-
-/** `used` to map correct google fields sent with post method */
-const googleFormFieldsDict = {
-  imePrezime: "entry.1922333295",
-  brIndeksa: "entry.867849038",
-  email: "entry.462794157",
-  brTelefona: "entry.1019504152",
-  uSobi: "entry.96343575",
-  prosek: "entry.141427180",
-  pol: "entry.2035568917",
-  finansiranje: "entry.1679438134",
-  majica: "entry.1379059867",
-};
-
 const initData = {
   imePrezime: "",
   brTelefona: "",
@@ -47,18 +31,8 @@ const initDataError = {
 const validateEmail = (emailAddress = "") => {
   return emailAddress?.match(
     // eslint-disable-next-line
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
-};
-
-const parseData = (formData = {}) => {
-  const retObj = {};
-  Object.keys(formData).forEach((key) => {
-    // eslint-disable-next-line no-unused-expressions
-    googleFormFieldsDict[key] &&
-      (retObj[googleFormFieldsDict[key]] = formData[key]);
-  });
-  return retObj;
 };
 
 function PrijaviSePage() {
@@ -98,24 +72,24 @@ function PrijaviSePage() {
         finansiranje: !formData.finansiranje,
         pol: !formData.pol,
       });
-      return;
-    }
-    setLoading(true);
-    axios
-      .post(FORM_SUBMIT_URL, parseData(formData))
-      .then(() => {
-        setLoading(false);
-        setShowSuccessMessage(true);
-        setFormData(initData);
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
+    } else {
+      setLoading(true);
+      axios
+        .post("https://sheetdb.io/api/v1/jpil7f51reydf", formData)
+        .then(() => {
+          setLoading(false);
+          setShowSuccessMessage(true);
+          setFormData(initData);
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        })
+        .catch(() => {
+          setLoading(false);
+          setShowErrorMessage(false);
         });
-      })
-      .catch(() => {
-        setLoading(false);
-        setShowErrorMessage(false);
-      });
+    }
   };
 
   return (
