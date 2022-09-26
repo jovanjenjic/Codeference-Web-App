@@ -18,9 +18,9 @@ function Footer() {
           </a>
         </div>
       </div>
-      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
-        <span className="text-sm text-white sm:text-center dark:text-gray-700">
+        <span className="text-sm text-white sm:text-center">
           © 2022{" "}
           <a href="https://flowbite.com/" className="hover:underline">
             Codeference™
@@ -31,7 +31,7 @@ function Footer() {
           <a
             target="_blank"
             href="https://www.facebook.com/codeferenceftn"
-            className="text-white transition duration-300 hover:text-gray-300 dark:hover:text-white"
+            className="text-white transition duration-300 hover:text-gray-300"
             rel="noreferrer"
           >
             <svg
@@ -47,7 +47,7 @@ function Footer() {
           <a
             target="_blank"
             href="https://www.instagram.com/codeference/"
-            className="text-white transition duration-300 hover:text-gray-300 dark:hover:text-white"
+            className="text-white transition duration-300 hover:text-gray-300"
             rel="noreferrer"
           >
             <svg
@@ -63,7 +63,7 @@ function Footer() {
           <a
             target="_blank"
             href="https://www.linkedin.com/company/studentska-unija-fakulteta-tehni%C4%8Dkih-nauka/about/"
-            className="text-white transition duration-300 hover:text-gray-300 dark:hover:text-white"
+            className="text-white transition duration-300 hover:text-gray-300"
             rel="noreferrer"
           >
             <svg

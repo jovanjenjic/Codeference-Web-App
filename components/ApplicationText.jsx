@@ -58,7 +58,7 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
           <br />
           Cena koja uključuje prevoz, smeštaj (pun pansion), kotizacije i poklon
           materijale:
-          <ul className="space-y-4 list-disc list-inside text-gray-500 dark:text-gray-400">
+          <ul className="space-y-4 list-disc list-inside text-gray-500">
             <li>
               Odmaralište
               <ol className="pl-5 mt-2 space-y-1 list-decimal list-inside">
