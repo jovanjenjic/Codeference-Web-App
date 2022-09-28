@@ -55,13 +55,14 @@ function LandingComponent() {
                   Da li želiš da učestvuješ na konferenciji na Zlatiboru? Popuni
                   formu i prijavi se
                 </h3>
-                <button
-                  type="button"
-                  disabled
-                  className="font-bold mt-8 transition duration-500 ease hover:bg-sky-700 inline-block bg-sky-500 lg:text-lg md:text-md text-sm font-medium rounded-full text-white px-8 py-3 cursor-pointer"
-                >
-                  <Link href="/prijavi-se">Prijavi se za učešće</Link>
-                </button>
+                <Link href="/prijavi-se">
+                  <button
+                    type="button"
+                    className="font-bold mt-8 transition duration-500 ease hover:bg-sky-700 inline-block bg-sky-500 lg:text-lg md:text-md text-sm font-medium rounded-full text-white px-8 py-3 cursor-pointer"
+                  >
+                    Prijavi se za učešće
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
