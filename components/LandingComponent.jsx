@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import Link from "next/link";
+import Link from "next/link";
 import img from "../public/land.png";
 import imgDate from "../public/date.png";
 import imgLocation from "../public/location.png";
@@ -60,8 +60,7 @@ function LandingComponent() {
                   disabled
                   className="font-bold mt-8 transition duration-500 ease hover:bg-sky-700 inline-block bg-sky-500 lg:text-lg md:text-md text-sm font-medium rounded-full text-white px-8 py-3 cursor-pointer"
                 >
-                  {/* <Link href="/prijavi-se">Prijavi se za učešće</Link> */}
-                  Prijavi se za učešće
+                  <Link href="/prijavi-se">Prijavi se za učešće</Link>
                 </button>
               </div>
             </div>
