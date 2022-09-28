@@ -20,6 +20,7 @@ export { default as AfterMovieAndVideos } from "./AfterMovieAndVideos";
 export { default as Support } from "./Support";
 export { default as Meta } from "./Meta";
 export { default as AlertMessageSuccess } from "./AlertMessageSuccess";
+export { default as AlertMessageInfo } from "./AlertMessageInfo";
 export { default as AlertMessageError } from "./AlertMessageError";
 export { default as ApplicationText } from "./ApplicationText";
 export { default as ApplicationForm } from "./ApplicationForm";

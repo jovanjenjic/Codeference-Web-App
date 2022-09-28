@@ -92,6 +92,10 @@ export const getSubcategoryDetails = async (slug) => {
           url
         }
         sponsorsText
+        lockComponent {
+          name
+          disabled
+        }
       }
     }
   `;

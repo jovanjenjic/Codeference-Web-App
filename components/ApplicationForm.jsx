@@ -1,6 +1,8 @@
 /* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
+import { getSubcategoryDetails } from "../services";
+import AlertMessageInfo from "./AlertMessageInfo";
 
 function ApplicationForm({
   formData,
@@ -9,6 +11,16 @@ function ApplicationForm({
   loading,
   onInputChange,
 }) {
+  const [disabledForm, setDisabledForm] = React.useState(false);
+
+  React.useEffect(() => {
+    const fetchSubDetails = async () => {
+      const res = await getSubcategoryDetails('codeference02');
+      setDisabledForm(res?.subcategory?.lockComponent?.disabled)
+    }
+    fetchSubDetails();
+  }, [loading]);
+
   return (
     <div className="lg:col-span-2">
       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
@@ -301,12 +313,13 @@ function ApplicationForm({
         </div>
 
         <div className="md:col-span-5 text-right">
+          {disabledForm && <AlertMessageInfo />}
           <div className="inline-flex items-end">
             <button
               type="button"
               onClick={onSubmitHandler}
               className="flex mt-4 bg-blue-500 bg-opacity-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-25 disabled:cursor-not-allowed"
-              disabled={loading}
+              disabled={loading || disabledForm}
             >
               {loading && (
                 <div role="status" className="flex justify-center">
