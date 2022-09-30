@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
-import axios from "axios";
 import { getSubcategoryDetails } from "../services";
 import AlertMessageInfo from "./AlertMessageInfo";
 
@@ -20,14 +19,6 @@ function ApplicationForm({
       setDisabledForm(res?.subcategory?.lockComponent?.disabled)
     }
     fetchSubDetails();
-  }, [loading]);
-
-  React.useEffect(() => {
-    axios
-      .get("https://sheetdb.io/api/v1/jpil7f51reydf")
-      .then(response => {
-          if (response?.data?.length > 155) setDisabledForm(true);
-      })
   }, [loading]);
 
   return (
