@@ -2,12 +2,16 @@ import React from "react";
 import Head from "next/head";
 import PropTypes from "prop-types";
 import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
+import * as ga from "../lib";
 import { Layout } from "../components";
 import "../styles/globals.scss";
 import "../styles/card.css";
 import "../styles/afterMovie.css";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
   React.useEffect(() => {
     const use = async () => {
       // eslint-disable-next-line
@@ -15,9 +19,41 @@ function MyApp({ Component, pageProps }) {
     };
     use();
   }, []);
+
+  React.useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url);
+    };
+    // When the component is mounted, subscribe to router changes
+    // and log those page views
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <AnimatePresence exitBeforeEnter>
       <Head>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

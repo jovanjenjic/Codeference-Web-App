@@ -4,9 +4,15 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import * as ga from "../lib";
 
 import { grpahCMSImageLoader } from "../util";
 
+const onOpenPost = () => {
+  ga.event({
+    action: "search",
+  });
+};
 function PostCard({ post }) {
   return (
     <motion.div
@@ -65,7 +71,7 @@ function PostCard({ post }) {
           {post.exce}
         </p>
         <div className="text-center">
-          <Link href={`/post/${post.slug}`}>
+          <Link href={`/post/${post.slug}`} onClick={onOpenPost}>
             <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-sky-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
               Nastavi čitanje
             </span>
