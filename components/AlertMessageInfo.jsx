@@ -21,7 +21,7 @@ function AlertMessageInfo() {
       </svg>
       <span className="sr-only">Info</span>
       <div className="text-start">
-        Sva mesta u odmaralištu su popunjena. U nedelju više informacija o
+        Sva mesta u odmaralištu su popunjena. Uskoro više informacija o
         privatnom smeštaju. Pratite vesti i Instagram stranicu @codeference.
       </div>
     </div>
