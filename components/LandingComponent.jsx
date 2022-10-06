@@ -49,18 +49,18 @@ function LandingComponent() {
             <div className="w-full max-w-4xl rounded-md border-2 border-gray-100 bg-white bg-opacity-40 lg:p-10 px-4 py-6">
               <div className="flex flex-col items-center">
                 <span className="-rotate-1 rounded-lg bg-yellow-100 py-px px-2 text-sm text-yellow-800">
-                  prijavi se i rezerviši svoje mesto na konferenciji
+                  250+ prijavljenih za učešće CODEFERENCE 2022 do sada!
                 </span>
                 <h3 className="mt-2 max-w-2xl text-center font-bold leading-tight text:xl lg:text-2xl xl:text-3xl md:leading-tight">
                   Da li želiš da učestvuješ na konferenciji na Zlatiboru? Popuni
                   formu i prijavi se
                 </h3>
-                <Link href="/prijavi-se">
+                <Link href="/prijavi-se-privatan-smestaj">
                   <button
                     type="button"
                     className="font-bold mt-8 transition duration-500 ease hover:bg-sky-700 inline-block bg-sky-500 lg:text-lg md:text-md text-sm font-medium rounded-full text-white px-8 py-3 cursor-pointer"
                   >
-                    Prijavi se za učešće
+                    Prijavi se za učešće - privatan smeštaj
                   </button>
                 </Link>
               </div>
