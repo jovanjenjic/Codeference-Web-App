@@ -40,7 +40,7 @@ function ApplicationTextZFWorkshop({ showSuccessMessage, showErrorMessage }) {
         <br />
         <b>
           Prijavi se za radionicu koja te očekuje 25.10. u 16h ispred kompanije
-          ZF - ZF Workshop: The Source of eDrive Intelligence - What You Need to
+          ZF - The Source of eDrive Intelligence - What You Need to
           Know
         </b>
         <br />
