@@ -30,7 +30,7 @@ function ApplicationTextZFWorkshop({ showSuccessMessage, showErrorMessage }) {
               />
             </g>
           </svg>
-          <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">ZF</p>
+          <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">Radionica ZF</p>
         </div>
         {showSuccessMessage && <AlertMessageSuccess />}
         {showErrorMessage && <AlertMessageError />}
