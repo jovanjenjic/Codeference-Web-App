@@ -2,7 +2,7 @@ import React from "react";
 
 function AlertMessageSuccess() {
   return (
-    <div className="lg:absolute lg:-left-3 bg-green-100 rounded-md py-3 px-1 flex mb-4 lg:mb-0">
+    <div className="lg:absolute top-8 lg:-left-1 bg-green-100 rounded-md py-3 px-1 flex mb-4 lg:mb-0">
       <svg
         className="stroke-2 stroke-current text-green-600 h-6 w-6  mr-1 flex-shrink-0"
         viewBox="0 0 24 24"
