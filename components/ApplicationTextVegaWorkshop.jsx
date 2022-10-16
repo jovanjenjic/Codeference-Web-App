@@ -31,7 +31,7 @@ function ApplicationTextVegaWorkshop({ showSuccessMessage, showErrorMessage }) {
             </g>
           </svg>
           <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">
-            Informacije o prijavi
+            Radionica Vega IT
           </p>
         </div>
         {showSuccessMessage && <AlertMessageSuccess />}

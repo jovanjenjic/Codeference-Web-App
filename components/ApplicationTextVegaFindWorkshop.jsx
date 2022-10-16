@@ -34,7 +34,7 @@ function ApplicationTextVegaFindWorkshop({
             </g>
           </svg>
           <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">
-            Informacije o prijavi
+            Istraži Zlatibor sa Vega IT
           </p>
         </div>
         {showSuccessMessage && <AlertMessageSuccess />}

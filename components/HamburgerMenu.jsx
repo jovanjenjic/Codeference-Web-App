@@ -77,7 +77,7 @@ function Header({ categories }) {
                 tabIndex={0}
                 className="font-bold border-b border-gray-900 my-5 uppercase"
               >
-                <Link href="/radionice-2022/vega">Radionica Vega</Link>
+                <Link href="/radionice-2022/vega">Radionica - Vega IT</Link>
               </div>
               <div
                 role="button"
@@ -87,7 +87,7 @@ function Header({ categories }) {
                 className="font-bold border-b border-gray-900 my-5 uppercase"
               >
                 <Link href="/radionice-2022/istrazi-zlatibor-vega">
-                  Radionica Vega Istrazi Zlatibor
+                  Radionica - Istraži Zlatibor sa Vega IT
                 </Link>
               </div>
               <div
@@ -97,7 +97,7 @@ function Header({ categories }) {
                 tabIndex={0}
                 className="font-bold border-b border-gray-900 my-5 uppercase"
               >
-                <Link href="/radionice-2022/zf">Radionica ZF</Link>
+                <Link href="/radionice-2022/zf">Radionica - ZF</Link>
               </div>
               <div
                 role="button"

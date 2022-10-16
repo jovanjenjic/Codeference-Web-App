@@ -59,7 +59,7 @@ function Header() {
                 onClick={() => onClick(`/radionice-2022/vega`)}
                 onKeyPress={() => onClick(`/radionice-2022/vega`)}
               >
-                <Link href="/radionice-2022/vega">Vega</Link>
+                <Link href="/radionice-2022/vega">Vega IT</Link>
               </button>
               <button
                 type="button"
@@ -70,7 +70,7 @@ function Header() {
                 }
               >
                 <Link href="/radionice-2022/istrazi-zlatibor-vega">
-                  Vega Istrazi Zlatibor
+                  Istraži Zlatibor sa Vega IT
                 </Link>
               </button>
               <button

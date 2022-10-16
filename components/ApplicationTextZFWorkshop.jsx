@@ -30,9 +30,7 @@ function ApplicationTextZFWorkshop({ showSuccessMessage, showErrorMessage }) {
               />
             </g>
           </svg>
-          <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">
-            Informacije o prijavi
-          </p>
+          <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">ZF</p>
         </div>
         {showSuccessMessage && <AlertMessageSuccess />}
         {showErrorMessage && <AlertMessageError />}
@@ -42,7 +40,8 @@ function ApplicationTextZFWorkshop({ showSuccessMessage, showErrorMessage }) {
         <br />
         <b>
           Prijavi se za radionicu koja te očekuje 25.10. u 16h ispred kompanije
-          ZF - eDrive Mobility State of the Art Concept!
+          ZF - ZF Workshop: The Source of eDrive Intelligence - What You Need to
+          Know
         </b>
         <br />
         <br />
