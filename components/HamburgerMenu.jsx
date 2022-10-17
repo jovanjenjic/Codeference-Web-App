@@ -68,15 +68,6 @@ function Header({ categories }) {
                 tabIndex={0}
                 className="font-bold border-b border-gray-900 my-5 uppercase"
               >
-                <Link href="/post">Vesti</Link>
-              </div>
-              <div
-                role="button"
-                onClick={handleOnClick}
-                onKeyPress={handleOnClick}
-                tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase"
-              >
                 <Link href="/radionice-2022/vega">Radionica - Vega IT</Link>
               </div>
               <div
