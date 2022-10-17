@@ -82,7 +82,7 @@ function VegaRadionicaPage() {
       <Meta
         description="Konferencija studenata elektrotehnike i računarstva."
         keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
-        title="Prijava za studentsko odmaraliste - Codeference 2022"
+        title="Radionica Vega IT - Codeference 2022"
       />
       <div className="container max-w-screen-lg mx-auto">
         <div>
