@@ -57,7 +57,7 @@ function Header({ categories }) {
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase"
+                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
               >
                 <Link href="/">Početna stranica</Link>
               </div>
@@ -66,7 +66,7 @@ function Header({ categories }) {
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase"
+                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
               >
                 <Link href="/radionice-2022/vega">Radionica - Vega IT</Link>
               </div>
@@ -75,10 +75,10 @@ function Header({ categories }) {
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase"
+                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
               >
                 <Link href="/radionice-2022/istrazi-zlatibor-vega">
-                  Radionica - Istraži Zlatibor sa Vega IT
+                  Aktivnost - Istraži Zlatibor sa Vega IT
                 </Link>
               </div>
               <div
@@ -86,7 +86,7 @@ function Header({ categories }) {
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase"
+                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
               >
                 <Link href="/radionice-2022/zf">Radionica - ZF</Link>
               </div>
@@ -95,7 +95,7 @@ function Header({ categories }) {
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase"
+                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
               >
                 <Link href="/post">Vesti</Link>
               </div>
@@ -109,7 +109,7 @@ function Header({ categories }) {
                         onClick={handleOnClick}
                         onKeyPress={handleOnClick}
                         tabIndex={0}
-                        className="font-bold border-b border-gray-900 my-5 uppercase"
+                        className="font-bold border-b border-gray-900 my-5 uppercase text-center"
                       >
                         <Link href={`/${cat?.slug}/${sub?.slug}`}>
                           {sub?.name}
