@@ -8,7 +8,7 @@ function ApplicationTextVegaFindWorkshop({
   showErrorMessage,
 }) {
   return (
-    <div className="col-span-2 text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
+    <div className="lg:col-span-3 text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <div>
         <div className="flex">
           <svg

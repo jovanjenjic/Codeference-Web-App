@@ -92,7 +92,7 @@ function ZFRadionicaPage() {
             transition={{ delay: 0.3 }}
             className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6"
           >
-            <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-4">
+            <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-5">
               <ApplicationTextZFWorkshop
                 showSuccessMessage={showSuccessMessage}
                 showErrorMessage={showErrorMessage}
@@ -103,6 +103,7 @@ function ZFRadionicaPage() {
                 formData={formData}
                 formDataError={formDataError}
                 onSubmitHandler={onSubmitHandler}
+                showMemberField={false}
               />
             </div>
           </motion.div>

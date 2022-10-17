@@ -17,7 +17,7 @@ function AlertMessageSuccess() {
 
       <div className="text-green-700 m-auto">
         <div className="font-bold text-l px-2">
-          Čestitamo, uspešno ste se prijavili!
+          Čestitamo, uspešno ste se prijavili. Uskoro će vas neko kontaktirati.
         </div>
       </div>
     </div>

@@ -12,12 +12,14 @@ const initData = {
   prezime: "",
   brTelefona: "",
   email: "",
+  tim: "",
 };
 const initDataError = {
   ime: false,
   prezime: false,
   brTelefona: false,
   email: false,
+  tim: false,
 };
 
 const validateEmail = (emailAddress = "") => {
@@ -43,6 +45,7 @@ function IstraziZlatiborPage() {
     !formData.ime ||
     !formData.prezime ||
     !formData.brTelefona ||
+    !formData.tim ||
     !formData.email ||
     !validateEmail(formData.email);
 
@@ -52,6 +55,7 @@ function IstraziZlatiborPage() {
         ime: !formData.ime,
         prezime: !formData.prezime,
         brTelefona: !formData.brTelefona,
+        tim: !formData.tim,
         email: !formData.email || !validateEmail(formData.email),
       });
     } else {
@@ -92,7 +96,7 @@ function IstraziZlatiborPage() {
             transition={{ delay: 0.3 }}
             className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6"
           >
-            <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-4">
+            <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-5">
               <ApplicationTextVegaFindWorkshop
                 showSuccessMessage={showSuccessMessage}
                 showErrorMessage={showErrorMessage}
@@ -103,6 +107,7 @@ function IstraziZlatiborPage() {
                 formData={formData}
                 formDataError={formDataError}
                 onSubmitHandler={onSubmitHandler}
+                showMemberField
               />
             </div>
           </motion.div>

@@ -8,6 +8,7 @@ function ApplicationFormWorkshop({
   onSubmitHandler,
   loading,
   onInputChange,
+  showMemberField,
 }) {
   return (
     <div className="lg:col-span-2">
@@ -70,6 +71,20 @@ function ApplicationFormWorkshop({
               value={formData?.brTelefona}
             />
           </div>
+          {showMemberField && (<div className="md:col-span-5">
+            <label htmlFor="tim">Članovi tima</label>
+            <input
+              type="text"
+              className={`${
+                formDataError?.tim
+                  ? "border-red-500 outline-red-400"
+                  : "outline-blue-400"
+              } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+              placeholder="Pera Perić, Nikola Nikolić..."
+              onChange={(e) => onInputChange("tim", e.target.value)}
+              value={formData?.tim}
+            />
+          </div>)}
         </>
         <div className="md:col-span-5 text-right">
           <div className="inline-flex items-end">
@@ -114,6 +129,7 @@ ApplicationFormWorkshop.propTypes = {
   onSubmitHandler: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
+  showMemberField: PropTypes.bool.isRequired,
 };
 
 export default ApplicationFormWorkshop;
