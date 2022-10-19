@@ -81,7 +81,7 @@ function ZFRadionicaPage() {
     <div className="p-6 flex items-center justify-center">
       <Meta
         description="Konferencija studenata elektrotehnike i računarstva."
-        keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
+        keywords="Codeference, Codefair, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
         title="Radionica ZF - Codeference 2022"
       />
       <div className="container max-w-screen-lg mx-auto">
