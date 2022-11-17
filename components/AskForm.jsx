@@ -50,7 +50,8 @@ function AskForm({ slug }) {
     const { isEmpty, isEmail } = validator;
     const { name, email, question, storeData } = formData;
 
-    const isValid = isEmail(email) && !isEmpty(name) && !isEmpty(question);
+    const isValid =
+      isEmail(email) && !isEmpty(name) && !isEmpty(question || "");
 
     setError(!isValid);
     if (!isValid) {

@@ -37,7 +37,7 @@ function Header() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row hidden md:block -mx-2 my-auto">
-          <div className="group inline-block relative">
+          {/* <div className="group inline-block relative">
             <button
               type="button"
               className="text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center"
@@ -82,7 +82,7 @@ function Header() {
                 <Link href="/radionice-2022/zf">ZF</Link>
               </button>
             </ul>
-          </div>
+          </div> */}
           {categories.map((cat) => (
             <div className="group inline-block relative" key={cat.slug}>
               <button

@@ -61,7 +61,7 @@ function Header({ categories }) {
               >
                 <Link href="/">Početna stranica</Link>
               </div>
-              <div
+              {/* <div
                 role="button"
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
@@ -89,7 +89,7 @@ function Header({ categories }) {
                 className="font-bold border-b border-gray-900 my-5 uppercase text-center"
               >
                 <Link href="/radionice-2022/zf">Radionica - ZF</Link>
-              </div>
+              </div> */}
               <div
                 role="button"
                 onClick={handleOnClick}
