@@ -4,6 +4,7 @@ import img from "../public/land.png";
 import imgDate from "../public/date.png";
 import imgLocation from "../public/location.png";
 import imgMembers from "../public/members.png";
+import LandingImg from "../public/LandingImg.jpg";
 import Timer from "./TImer";
 
 // Our custom easing
@@ -82,7 +83,7 @@ function LandingComponent() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
             className="h-full"
-            src="https://setplan2021.eu/wp-content/uploads/2021/09/SET-PLAN_750-x-500_web-foto_20212-800x600.jpg"
+            src={LandingImg?.src}
           />
           <div className="h-full bg-black opacity-25" />
         </div>
