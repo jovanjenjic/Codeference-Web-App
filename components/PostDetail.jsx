@@ -3,6 +3,8 @@ import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
+import Carousel from "./Carousel";
+
 function PostDetail({ post }) {
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text;
@@ -64,15 +66,20 @@ function PostDetail({ post }) {
   return (
     <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
-        <motion.img
-          key={post.slug}
-          initial={{ x: 160, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          src={post.featuredImage.url}
-          alt=""
-          className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
-        />
+        {post?.postImages?.length ? (
+          // eslint-disable-next-line no-unsafe-optional-chaining
+          <Carousel images={[post.featuredImage, ...post?.postImages]} dark />
+        ) : (
+          <motion.img
+            key={post.slug}
+            initial={{ x: 160, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            src={post.featuredImage.url}
+            alt=""
+            className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
+          />
+        )}
       </div>
       <div className="px-4 lg:px-0">
         <div className="flex items-center mb-8 w-full">

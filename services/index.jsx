@@ -130,6 +130,9 @@ export const getPostDetails = async (slug) => {
         subcategory {
           name
         }
+        postImages {
+          url
+        }
       }
     }
   `;
