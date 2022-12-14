@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import headerImg from "../public/header.jpg";
 
-function Carousel({ images, dark = false }) {
+function Carousel({ images, dark = false, hideNavigation = false }) {
   const imagesArr = images || [{ url: headerImg?.src }];
   return (
     <div
@@ -12,18 +12,20 @@ function Carousel({ images, dark = false }) {
       }`}
       data-bs-ride="carousel"
     >
-      <div className="z-20 mb-32 carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-        {imagesArr.map((_, index) => (
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to={index.toString()}
-            className={index === 0 && "active"}
-            aria-current={index === 0 && "true"}
-            aria-label="Slide 1"
-          />
-        ))}
-      </div>
+      {!hideNavigation && (
+        <div className="hidden lg:flex z-20 mb-32 carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+          {imagesArr.map((_, index) => (
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to={index.toString()}
+              className={index === 0 && "active"}
+              aria-current={index === 0 && "true"}
+              aria-label="Slide 1"
+            />
+          ))}
+        </div>
+      )}
 
       <div className="carousel-inner relative w-full overflow-hidden h-full">
         {imagesArr.map((img, index) => (
@@ -42,7 +44,7 @@ function Carousel({ images, dark = false }) {
       </div>
 
       <button
-        className="lg:flex hidden z-20 carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+        className="z-20 carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
         type="button"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev"
@@ -54,7 +56,7 @@ function Carousel({ images, dark = false }) {
         <span className="visually-hidden">Previous</span>
       </button>
       <button
-        className="lg:flex hidden z-20 carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+        className="z-20 carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
         type="button"
         data-bs-target="#carouselExampleCaptions"
         data-bs-slide="next"
@@ -72,6 +74,7 @@ function Carousel({ images, dark = false }) {
 Carousel.propTypes = {
   images: PropTypes.arrayOf.isRequired,
   dark: PropTypes.bool,
+  hideNavigation: PropTypes.bool.isRequired,
 };
 
 Carousel.defaultProps = {

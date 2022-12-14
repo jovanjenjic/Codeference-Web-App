@@ -68,7 +68,7 @@ function PostDetail({ post }) {
       <div className="relative overflow-hidden shadow-md mb-6">
         {post?.postImages?.length ? (
           // eslint-disable-next-line no-unsafe-optional-chaining
-          <Carousel images={[post.featuredImage, ...post?.postImages]} dark />
+          <Carousel images={[post.featuredImage, ...post?.postImages]} dark hideNavigation />
         ) : (
           <motion.img
             key={post.slug}
