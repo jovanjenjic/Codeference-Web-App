@@ -30,3 +30,8 @@ export { default as ApplicationTextVegaWorkshop } from "./ApplicationTextVegaWor
 export { default as ApplicationTextVegaFindWorkshop } from "./ApplicationTextVegaFindWorkshop";
 export { default as ApplicationTextZFWorkshop } from "./ApplicationTextZFWorkshop";
 export { default as ApplicationFormWorkshop } from "./ApplicationFormWorkshop";
+export { default as UploadCvForm } from "./UploadCvForm";
+export { default as BaseFieldFormCv } from "./BaseFormFieldCv";
+export { default as AdvancedFormFieldCv } from "./AdvancedFormFieldCv";
+export { default as CvText } from "./CvText";
+export { default as CvUpload } from "./CvUpload";

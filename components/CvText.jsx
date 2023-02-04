@@ -30,9 +30,7 @@ function CvText({ showSuccessMessage, showErrorMessage }) {
               />
             </g>
           </svg>
-          <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">
-            Upload CV
-          </p>
+          <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">Upload CV</p>
         </div>
         {showSuccessMessage && <AlertMessageSuccess />}
         {showErrorMessage && <AlertMessageError />}
@@ -41,14 +39,15 @@ function CvText({ showSuccessMessage, showErrorMessage }) {
       <div>
         <br />
         <b>
-          Popuni osnovne podatke i otpremi svoj CV i ostvari komunikaciju sa nekom od IT firmi.
+          Popuni osnovne podatke i otpremi svoj CV i ostvari komunikaciju sa
+          nekom od IT firmi.
         </b>
         <br />
         <br />
-          Neophodno je popuniti osnovne podatke koji se nalaze u sekciji 'Osnovni podaci'. Zatim, 
-          treba ili popuniti napredne podatke o sebi ili samo otpremiti svoj CV.
-          Tvoj CV ce biti dostupan vodecim kompanijama sa naseih prostora, nakon cega ce te kontaktirati
-          neka od kompanija.
+        Neophodno je popuniti osnovne podatke koji se nalaze u sekciji 'Osnovni
+        podaci'. Zatim, treba ili popuniti napredne podatke o sebi ili samo
+        otpremiti svoj CV. Tvoj CV ce biti dostupan vodecim kompanijama sa
+        naseih prostora, nakon cega ce te kontaktirati neka od kompanija.
         <br />
         <br />
       </div>

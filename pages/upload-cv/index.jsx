@@ -29,7 +29,7 @@ const validateEmail = (emailAddress = "") => {
   );
 };
 
-const UploadCvPage = () => {
+function UploadCvPage() {
   return (
     <div className="p-6 flex items-center justify-center">
       <Meta
@@ -47,8 +47,8 @@ const UploadCvPage = () => {
           >
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-6 h-[660px]">
               <CvText
-                // showSuccessMessage={showSuccessMessage}
-                // showErrorMessage={showErrorMessage}
+              // showSuccessMessage={showSuccessMessage}
+              // showErrorMessage={showErrorMessage}
               />
               <UploadCvForm />
             </div>

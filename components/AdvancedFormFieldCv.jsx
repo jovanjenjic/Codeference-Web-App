@@ -98,15 +98,15 @@ function AdvancedFormFieldCv({
         </div>
 
         <div className="md:col-span-6">
-          <label htmlFor="email">Email adresa</label>
-          <input
-            type="email"
+          <label htmlFor="email">Motivaciono pismo</label>
+          <textarea
+            rows="4"
             className={`${
               formDataError?.email
                 ? "border-red-500 outline-red-400"
                 : "outline-blue-400"
-            } h-8 text-sm border-stone-300 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
-            placeholder="email@domain.com"
+            } text-sm border-stone-300 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+            placeholder="Tekst..."
             onChange={(e) => onInputChange("email", e.target.value)}
             value={formData?.email}
           />
