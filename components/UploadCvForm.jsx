@@ -5,7 +5,27 @@ import BaseFormFieldCv from "./BaseFormFieldCv";
 import AdvancedFormFieldCv from "./AdvancedFormFieldCv";
 import CvUpload from "./CvUpload";
 
-function UploadCvForm({}) {
+function UploadCvForm({ }) {
+
+  // TODO: This is used just for example of upload cv file to drive
+  const onCvInputChange = async (_, file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const response = await fetch("/api/cv", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      const { webViewLink, webContentLink: downloadLink } =
+        await response.json();
+
+      // download link can be used for direct download from table (when is clicked on link automatically is downloaded)
+      // view link is can be used to view document from drive in preview mode
+    }
+  };
+
   return (
     <div className="lg:col-span-3 text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <div
@@ -73,7 +93,7 @@ function UploadCvForm({}) {
           className="hidden"
           aria-labelledby="accordion-color-heading-2"
         >
-          <CvUpload />
+          <CvUpload onInputChange={onCvInputChange} />
         </div>
         <h2 id="accordion-color-heading-3">
           <button

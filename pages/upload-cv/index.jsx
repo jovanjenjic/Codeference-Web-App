@@ -34,8 +34,8 @@ function UploadCvPage() {
     <div className="p-6 flex items-center justify-center">
       <Meta
         description="Konferencija studenata elektrotehnike i računarstva."
-        keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
-        title="Radionica Vega IT - Codeference 2022"
+        keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021, CV, Posao"
+        title="Ostavi CV"
       />
       <div className="container max-w-screen-lg mx-auto">
         <div>

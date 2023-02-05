@@ -4,12 +4,14 @@ import ApplicationForm from "./ApplicationForm";
 import BaseFormFieldCv from "./BaseFormFieldCv";
 import AdvancedFormFieldCv from "./AdvancedFormFieldCv";
 
-function CvUpload({}) {
-  const ACCEPT_MIME_TYPES = [
-    "application/pdf",
-    "application/msword",
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  ];
+const ACCEPT_MIME_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+];
+
+function CvUpload({ onInputChange = () => { } }) {
+
 
   return (
     <div className="m-4">
