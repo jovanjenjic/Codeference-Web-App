@@ -35,7 +35,7 @@ function ApplicationForm({
             } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="Pera Perić"
             onChange={(e) => onInputChange("imePrezime", e.target.value)}
-            value={formData.imePrezime}
+            value={formData?.imePrezime}
           />
         </div>
         <div className="md:col-span-2">
@@ -49,7 +49,7 @@ function ApplicationForm({
             } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="E2 xxx/yyyy"
             onChange={(e) => onInputChange("brIndeksa", e.target.value)}
-            value={formData.brIndeksa}
+            value={formData?.brIndeksa}
           />
         </div>
 
@@ -64,7 +64,7 @@ function ApplicationForm({
             } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="email@domain.com"
             onChange={(e) => onInputChange("email", e.target.value)}
-            value={formData.email}
+            value={formData?.email}
           />
         </div>
         <div className="md:col-span-2">
@@ -78,7 +78,7 @@ function ApplicationForm({
             } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="06x xxx xxx"
             onChange={(e) => onInputChange("brTelefona", e.target.value)}
-            value={formData.brTelefona}
+            value={formData?.brTelefona}
           />
         </div>
 
@@ -93,7 +93,7 @@ function ApplicationForm({
             } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="Pera Peric, Milan Milanovic, ..."
             onChange={(e) => onInputChange("uSobi", e.target.value)}
-            value={formData.uSobi}
+            value={formData?.uSobi}
           />
         </div>
 
@@ -108,7 +108,7 @@ function ApplicationForm({
             } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="7.72"
             onChange={(e) => onInputChange("prosek", e.target.value)}
-            value={formData.prosek}
+            value={formData?.prosek}
           />
         </div>
 
