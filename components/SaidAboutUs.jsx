@@ -1,6 +1,6 @@
 import React from "react";
 import kiljaImg from "../public/kilje.jpg";
-import mandaImg from "../public/manda.jpg";
+import starovicImg from "../public/starovic.jpg";
 import poparaImg from "../public/popara.png";
 import commentImg from "../public/comments.png";
 
@@ -127,16 +127,16 @@ function SaidAboutUs() {
                     <img
                       alt="Mandic N."
                       className="rounded-full shadow-2xl object-cover"
-                      src={mandaImg?.src}
+                      src={starovicImg?.src}
                     />
                   </div>
                   <div className="mb-5 border-t border-gray-50">
                     <div className="w-full h-full bottom-0 flex flex-col items-center justify-center text-center">
                       <p className="text-2xl font-bold px-14 text-gray-900 ">
-                        Nikola Mandić
+                        Marko Starović
                       </p>
                       <p className="text-base px-14 text-gray-700 mt-3">
-                        Dev at goUrban
+                        Student Vice-Dean
                       </p>
                     </div>
                   </div>
@@ -160,14 +160,14 @@ function SaidAboutUs() {
                     <img
                       alt="Small"
                       width="58"
-                      src={mandaImg?.src}
+                      src={starovicImg?.src}
                       className="rounded-full border-2 mt-8"
                     />
                     <p className="text-base font-bold px-14 text-gray-900 mt-3">
-                      Dev at goUrban
+                      Student Vice-Dean
                     </p>
                     <p className="text-sm px-14 text-gray-900 ">
-                      Nikola Mandić
+                      Marko Starović
                     </p>
                   </div>
                 </card>

@@ -1,8 +1,7 @@
+/* eslint-disable */
+
 import React from "react";
 import PropTypes from "prop-types";
-import ApplicationForm from "./ApplicationForm";
-import BaseFormFieldCv from "./BaseFormFieldCv";
-import AdvancedFormFieldCv from "./AdvancedFormFieldCv";
 
 const ACCEPT_MIME_TYPES = [
   "application/pdf",
@@ -10,9 +9,7 @@ const ACCEPT_MIME_TYPES = [
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
-function CvUpload({ onInputChange = () => { } }) {
-
-
+function CvUpload({ viewCvLinkError, onInputChange = () => {} }) {
   return (
     <div className="m-4">
       <label
@@ -22,7 +19,10 @@ function CvUpload({ onInputChange = () => { } }) {
         Dodaj CV
       </label>
       <input
-        className="form-control
+        className={`${viewCvLinkError?.cv_url && "focus:ring-0 border-red-400"} 
+                    focus:ring-0
+                    focus:border-blue-300
+                    form-control
                     block
                     w-full
                     px-2
@@ -30,13 +30,21 @@ function CvUpload({ onInputChange = () => { } }) {
                     text-sm
                     font-normal
                     text-gray-700
-                    bg-white bg-clip-padding
-                    border border-solid border-gray-300
+                    bg-white
+                    bg-clip-padding
+                    border
+                    border-solid
+                    border-gray-300
                     rounded
                     transition
                     ease-in-out 
                     m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    file:bg-blue-50
+                    hover:file:bg-amber-50
+                    focus:text-gray-700 
+                    focus:bg-white
+                    focus:border-blue-600
+                    focus:outline-none`}
         id="formFileSm"
         type="file"
         accept={ACCEPT_MIME_TYPES.join(",")}
@@ -49,13 +57,8 @@ function CvUpload({ onInputChange = () => { } }) {
 }
 
 CvUpload.propTypes = {
-  images: PropTypes.arrayOf.isRequired,
-  dark: PropTypes.bool,
-  hideNavigation: PropTypes.bool.isRequired,
-};
-
-CvUpload.defaultProps = {
-  dark: false,
+  viewCvLinkError: PropTypes.arrayOf.isRequired,
+  onInputChange: PropTypes.func.isRequired,
 };
 
 export default CvUpload;

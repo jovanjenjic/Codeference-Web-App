@@ -61,6 +61,15 @@ function Header({ categories }) {
               >
                 <Link href="/">Početna stranica</Link>
               </div>
+              <div
+                role="button"
+                onClick={handleOnClick}
+                onKeyPress={handleOnClick}
+                tabIndex={0}
+                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
+              >
+                <Link href="/upload-cv">Otpremi CV</Link>
+              </div>
               {/* <div
                 role="button"
                 onClick={handleOnClick}
