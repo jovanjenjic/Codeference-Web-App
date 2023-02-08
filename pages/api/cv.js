@@ -96,8 +96,8 @@ const handler = nc({
       const result = await generatePublicUrlForFile(fileId);
 
       return res.status(200).send(result);
-    } catch {
-      return res.status(500).send({ message: "Failed to upload CV" });
+    } catch (err) {
+      return res.status(500).send({ message: err.message });
     }
   });
 // disable body parser
