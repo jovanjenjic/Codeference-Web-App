@@ -111,7 +111,6 @@ function UploadCvForm({ showAlertHandler }) {
         });
       }
     } else {
-      
       axios
         .post("https://sheetdb.io/api/v1/q34tp75e5230l", {
           ...baseInfo,
@@ -125,9 +124,6 @@ function UploadCvForm({ showAlertHandler }) {
           setAdvancedInfo(advancedInfoInit);
           // restart input file field
           document.getElementById("formFileSm").value = "";
-        })
-        .catch((error) => {
-          console.error(error);
         });
     }
   };
