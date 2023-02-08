@@ -25,8 +25,8 @@ function AdvancedFormFieldCv({
             className={`${
               advancedInfoError?.smer_i_fakultet
                 ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } h-8 text-sm border-stone-300 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+                : "focus:ring-0 border-stone-300 focus:border-blue-300"
+            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="FTN, E2"
             onChange={(e) => onInputChange("smer_i_fakultet", e.target.value)}
             value={advancedInfo?.smer_i_fakultet}
@@ -40,8 +40,8 @@ function AdvancedFormFieldCv({
             className={`${
               advancedInfoError?.godina_studija
                 ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } h-8 text-sm border-stone-300 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+                : "focus:ring-0 border-stone-300 focus:border-blue-300"
+            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="4."
             onChange={(e) => onInputChange("godina_studija", e.target.value)}
             value={advancedInfo?.godina_studija}
@@ -55,8 +55,8 @@ function AdvancedFormFieldCv({
             className={`${
               advancedInfoError?.lista_projekata_iskustvo
                 ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } h-8 text-sm border-stone-300 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+                : "focus:ring-0 border-stone-300 focus:border-blue-300"
+            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="Završio sam letnju praksu..."
             onChange={(e) => onInputChange("lista_projekata_iskustvo", e.target.value)}
             value={advancedInfo?.lista_projekata_iskustvo}
@@ -70,8 +70,8 @@ function AdvancedFormFieldCv({
             className={`${
               advancedInfoError?.jezik
                 ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } h-8 text-sm border-stone-300 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+                : "focus:ring-0 border-stone-300 focus:border-blue-300"
+            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="Napredni engleski, osnovni nemački..."
             onChange={(e) => onInputChange("jezik", e.target.value)}
             value={advancedInfo?.jezik}
@@ -85,8 +85,8 @@ function AdvancedFormFieldCv({
             className={`${
               advancedInfoError?.stipendije_i_nagrade
                 ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } h-8 text-sm border-stone-300 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+                : "focus:ring-0 border-stone-300 focus:border-blue-300"
+            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="Dositejeva stipendija..."
             onChange={(e) => onInputChange("stipendije_i_nagrade", e.target.value)}
             value={advancedInfo?.stipendije_i_nagrade}
@@ -101,8 +101,8 @@ function AdvancedFormFieldCv({
             className={`${
               advancedInfoError?.kratak_opis
                 ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } max-h-20 text-sm border-stone-300 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+                : "focus:ring-0 border-stone-300 focus:border-blue-300"
+            } max-h-20 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="Motivaciono pismo, hobi, zanimljivosti..."
             onChange={(e) => onInputChange("kratak_opis", e.target.value)}
             value={advancedInfo?.kratak_opis}

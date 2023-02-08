@@ -24,9 +24,9 @@ function BaseFormFieldCv({
             type="text"
             className={`${
               baseInfoError?.ime
-                ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40 border-stone-300`}
+                ? "focus:ring-0 border border-red-400"
+                : "focus:ring-0 focus:border-blue-300 border-stone-300"
+            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
             placeholder="Pera Perić"
             onChange={(e) => onInputChange("ime", e.target.value)}
             value={baseInfo?.ime}
@@ -40,8 +40,8 @@ function BaseFormFieldCv({
             className={`${
               baseInfoError?.broj_telefona
                 ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40 border-stone-300	`}
+                : "focus:ring-0 focus:border-blue-300 border-stone-300"
+            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40	`}
             placeholder="06xxxxxxx"
             onChange={(e) => onInputChange("broj_telefona", e.target.value)}
             value={baseInfo?.broj_telefona}
@@ -55,8 +55,8 @@ function BaseFormFieldCv({
             className={`${
               baseInfoError?.email
                 ? "focus:ring-0 border-red-400"
-                : "focus:ring-0 focus:border-blue-300"
-            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40 border-stone-300	`}
+                : "focus:ring-0 focus:border-blue-300 border-stone-300"
+            } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40	`}
             placeholder="email@domain.com"
             onChange={(e) => onInputChange("email", e.target.value)}
             value={baseInfo?.email}

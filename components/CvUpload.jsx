@@ -19,7 +19,7 @@ function CvUpload({ viewCvLinkError, onInputChange = () => {} }) {
         Dodaj CV
       </label>
       <input
-        className={`${viewCvLinkError?.cv_url && "focus:ring-0 border-red-400"} 
+        className={`${viewCvLinkError?.cv_url ? "focus:ring-0 border-red-400" : "border-stone-300"} 
                     focus:ring-0
                     focus:border-blue-300
                     form-control
@@ -34,7 +34,6 @@ function CvUpload({ viewCvLinkError, onInputChange = () => {} }) {
                     bg-clip-padding
                     border
                     border-solid
-                    border-gray-300
                     rounded
                     transition
                     ease-in-out 

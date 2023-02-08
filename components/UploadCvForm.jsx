@@ -57,6 +57,13 @@ function UploadCvForm({ showAlertHandler }) {
     advancedInfoInitError
   );
 
+  console.log(
+    "UsaoUsaoUsao",
+    baseInfoError,
+    viewCvLinkError,
+    advancedInfoError
+  );
+
   const onCvInputChange = async (_, file) => {
     const formData = new FormData();
     formData.append("file", file);
