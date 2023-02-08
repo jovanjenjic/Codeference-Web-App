@@ -1,55 +1,50 @@
 /* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
-import { getSubcategoryDetails } from "../services";
-import AlertMessageInfo from "./AlertMessageInfo";
 
 function BaseFormFieldCv({
-  formData,
-  formDataError,
-  onSubmitHandler,
-  loading,
-  onInputChange,
+  baseInfo,
+  setBaseInfo,
+  baseInfoError,
+  setBaseInfoError,
 }) {
-  const [disabledForm, setDisabledForm] = React.useState(false);
 
-  React.useEffect(() => {
-    const fetchSubDetails = async () => {
-      const res = await getSubcategoryDetails('codeference02');
-      setDisabledForm(res?.subcategory?.lockComponent?.disabled)
-    }
-    fetchSubDetails();
-  }, [loading]);
+  const onInputChange = (key, value) => {
+    setBaseInfoError(prevState => ({...prevState, [key]: !value}));
+    setBaseInfo(prevState => ({...prevState, [key]: value}));
+  }
 
   return (
     <div className="lg:col-span-2 mx-4 my-4">
       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
         <div className="md:col-span-3">
-          <label htmlFor="full_name">Ime i prezime</label>
+          <label htmlFor="name">Ime i prezime</label>
           <input
+            id="name"
             type="text"
             className={`${
-              formDataError?.imePrezime
-                ? "border-red-500 outline-red-400"
-                : "outline-blue-400"
+              baseInfoError?.ime
+                ? "focus:ring-0 border-red-400"
+                : "focus:ring-0 focus:border-blue-300"
             } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40 border-stone-300`}
             placeholder="Pera Perić"
-            onChange={(e) => onInputChange("imePrezime", e.target.value)}
-            value={formData?.imePrezime}
+            onChange={(e) => onInputChange("ime", e.target.value)}
+            value={baseInfo?.ime}
           />
         </div>
         <div className="md:col-span-3">
-          <label htmlFor="full_name">Broj telefona</label>
+          <label htmlFor="broj_telefona">Broj telefona</label>
           <input
-            type="text"
+            id="broj_telefona"
+            type="number"
             className={`${
-              formDataError?.brIndeksa
-                ? "border-red-500 outline-red-400"
-                : "outline-blue-400"
+              baseInfoError?.broj_telefona
+                ? "focus:ring-0 border-red-400"
+                : "focus:ring-0 focus:border-blue-300"
             } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40 border-stone-300	`}
-            placeholder="E2 xxx/yyyy"
-            onChange={(e) => onInputChange("brIndeksa", e.target.value)}
-            value={formData?.brIndeksa}
+            placeholder="06xxxxxxx"
+            onChange={(e) => onInputChange("broj_telefona", e.target.value)}
+            value={baseInfo?.broj_telefona}
           />
         </div>
 
@@ -58,13 +53,13 @@ function BaseFormFieldCv({
           <input
             type="email"
             className={`${
-              formDataError?.email
-                ? "border-red-500 outline-red-400"
-                : "outline-blue-400"
+              baseInfoError?.email
+                ? "focus:ring-0 border-red-400"
+                : "focus:ring-0 focus:border-blue-300"
             } h-8 text-sm border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40 border-stone-300	`}
             placeholder="email@domain.com"
             onChange={(e) => onInputChange("email", e.target.value)}
-            value={formData?.email}
+            value={baseInfo?.email}
           />
         </div>
       </div>
@@ -73,8 +68,8 @@ function BaseFormFieldCv({
 }
 
 BaseFormFieldCv.propTypes = {
-  formData: PropTypes.objectOf(PropTypes.object).isRequired,
-  formDataError: PropTypes.objectOf(PropTypes.object).isRequired,
+  baseInfo: PropTypes.objectOf(PropTypes.object).isRequired,
+  baseInfoError: PropTypes.objectOf(PropTypes.object).isRequired,
   onSubmitHandler: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,

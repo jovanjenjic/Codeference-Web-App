@@ -44,8 +44,8 @@ function CvText({ showSuccessMessage, showErrorMessage }) {
         </b>
         <br />
         <br />
-        Neophodno je popuniti osnovne podatke koji se nalaze u sekciji 'Osnovni
-        podaci'. Zatim, treba ili popuniti napredne podatke o sebi ili samo
+        Neophodno je popuniti osnovne podatke koji se nalaze u sekciji Osnovni
+        podaci. Zatim, treba ili popuniti napredne podatke o sebi ili samo
         otpremiti svoj CV. Tvoj CV ce biti dostupan vodecim kompanijama sa
         naseih prostora, nakon cega ce te kontaktirati neka od kompanija.
         <br />
