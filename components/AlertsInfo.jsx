@@ -4,7 +4,7 @@ function AlertsInfo() {
   return (
     <div
       id="alert-1"
-      className="absolute top-20 flex p-4 mb-4 text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+      className="fixed top-20 flex p-4 mb-4 text-blue-800 rounded-lg bg-blue-300"
       role="alert"
     >
       <svg
@@ -22,11 +22,11 @@ function AlertsInfo() {
       </svg>
       <span className="sr-only">Info</span>
       <div className="ml-3 text-sm font-medium">
-        Uspesno ste poslali CV. Neko će vas kontaktirati.
+        Uspesno ste poslali CV i podatke.
       </div>
       <button
         type="button"
-        className="ml-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-500 rounded-lg focus:ring-2 focus:ring-blue-400 p-1.5 hover:bg-blue-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-blue-400 dark:hover:bg-gray-700"
+        className="ml-auto -mx-1.5 -my-1.5 bg-blue-300 text-blue-500 rounded-lg focus:ring-2 focus:ring-blue-400 p-1.5 hover:bg-blue-200 inline-flex h-8 w-8 dark:bg-gray-800 dark:text-blue-400 dark:hover:bg-gray-700"
         data-dismiss-target="#alert-1"
         aria-label="Close"
       >
