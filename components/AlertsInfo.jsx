@@ -4,7 +4,7 @@ function AlertsInfo() {
   return (
     <div
       id="alert-1"
-      className="fixed top-20 flex p-4 mb-4 text-blue-800 rounded-lg bg-blue-300"
+      className="z-50 fixed top-20 flex p-4 mb-4 text-blue-800 rounded-lg bg-blue-300"
       role="alert"
     >
       <svg
@@ -21,7 +21,7 @@ function AlertsInfo() {
         />
       </svg>
       <span className="sr-only">Info</span>
-      <div className="ml-3 text-sm font-medium">
+      <div className="ml-3 text-sm font-medium text-white">
         Uspesno ste poslali CV i podatke.
       </div>
       <button
