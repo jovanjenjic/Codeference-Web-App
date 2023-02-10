@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import Collapse from "react-css-collapse";
 import BaseFormFieldCv from "./BaseFormFieldCv";
 import AdvancedFormFieldCv from "./AdvancedFormFieldCv";
 import CvUpload from "./CvUpload";
+import collapseIcon from "../public/collapse-arrow.png";
 import checkmarkIcon from "../public/ok-16.png";
 
 const validateEmail = (emailAddress = "") => {
@@ -45,6 +47,8 @@ const advancedInfoInitError = {
 };
 
 function UploadCvForm({ showAlertHandler }) {
+  const [openItemIndex, setOpenItemIndex] = React.useState(undefined);
+
   const [baseInfo, setBaseInfo] = React.useState(baseInfoInit);
   const [baseInfoError, setBaseInfoError] = React.useState(baseInfoInitError);
 
@@ -72,8 +76,6 @@ function UploadCvForm({ showAlertHandler }) {
       setViewCvLinkError(viewCvLinkInitError);
       setAdvancedInfoError(advancedInfoInitError);
     }
-
-    await response.json();
   };
 
   const isBaseInfoValid =
@@ -130,148 +132,102 @@ function UploadCvForm({ showAlertHandler }) {
     }
   };
 
+  const elements = [
+    {
+      id: 1,
+      label: "Osnovni podaci i korisniku",
+      component: (
+        <BaseFormFieldCv
+          baseInfo={baseInfo}
+          setBaseInfo={setBaseInfo}
+          baseInfoError={baseInfoError}
+          setBaseInfoError={setBaseInfoError}
+        />
+      ),
+    },
+    {
+      id: 2,
+      label: "Dodaj CV",
+      component: (
+        <CvUpload
+          onInputChange={onCvInputChange}
+          viewCvLinkError={viewCvLinkError}
+          setViewCvLinkError={setViewCvLinkError}
+        />
+      ),
+    },
+    {
+      id: 3,
+      label: "Dodatni podaci o korisniku",
+      component: (
+        <AdvancedFormFieldCv
+          advancedInfo={advancedInfo}
+          setAdvancedInfo={setAdvancedInfo}
+          advancedInfoError={advancedInfoError}
+          setAdvancedInfoError={setAdvancedInfoError}
+        />
+      ),
+    },
+  ];
+
+  const toggleCollapse = (id) => {
+    setOpenItemIndex(openItemIndex === id ? undefined : id);
+  };
+
+  const showSuccessIcon = (id) => {
+    switch (id) {
+      case 1: {
+        return isBaseInfoValid;
+      }
+      case 2: {
+        return isCvValid;
+      }
+      case 3: {
+        return isAdvancedInfoValid;
+      }
+      default:
+        return false;
+    }
+  };
+
   return (
     <div className="lg:col-span-3 text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
-      <div
-        id="accordion-color"
-        data-accordion="collapse"
-        data-active-classes="bg-blue-100 text-blue-600"
-      >
-        <h2 id="accordion-color-heading-1">
-          <button
-            type="button"
-            className="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl hover:bg-blue-100"
-            data-accordion-target="#accordion-color-body-1"
-            aria-expanded="true"
-            aria-controls="accordion-color-body-1"
-          >
-            <span>Osnovni podaci o korisniku</span>
-            <div className="relative inline-flex">
-              <svg
-                data-accordion-icon
-                className="w-6 h-6 shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {isBaseInfoValid && (
+      <ul>
+        {elements.map((element) => (
+          <li key={element.id} cl>
+            <button
+              type="button"
+              onClick={() => toggleCollapse(element.id)}
+              className={`inline-flex w-full justify-between py-6 px-4 border border-gray-300 ${
+                openItemIndex === element.id || element.id === 3
+                  ? "border-b-1"
+                  : "border-b-0"
+              }`}
+            >
+              {element.label}
+              <div className="inline-flex items-center">
                 <img
-                  alt="success-icon"
-                  className="absolute right-[-44px] top-[4px] h-[16px] w-[16px]"
-                  src={checkmarkIcon.src}
+                  className={`w-[16px] h-[16px] transition-all ${
+                    element.id === openItemIndex && "-rotate-180"
+                  }`}
+                  src={collapseIcon.src}
+                  alt="arrow-icon"
                 />
-              )}
-            </div>
-          </button>
-        </h2>
-        <div
-          id="accordion-color-body-1"
-          className="hidden"
-          aria-labelledby="accordion-color-heading-1"
-        >
-          <BaseFormFieldCv
-            baseInfo={baseInfo}
-            setBaseInfo={setBaseInfo}
-            baseInfoError={baseInfoError}
-            setBaseInfoError={setBaseInfoError}
-          />
-        </div>
-        <h2 id="accordion-color-heading-2">
-          <button
-            type="button"
-            className="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 hover:bg-blue-100"
-            data-accordion-target="#accordion-color-body-2"
-            aria-expanded="false"
-            aria-controls="accordion-color-body-2"
-          >
-            <span>Dodaj CV</span>
-            <div className="relative inline-flex">
-              <svg
-                data-accordion-icon
-                className="w-6 h-6 shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {isCvValid && (
-                <img
-                  alt="success-icon"
-                  className="absolute right-[-44px] top-[4px] h-[16px] w-[16px]"
-                  src={checkmarkIcon.src}
-                />
-              )}
-            </div>
-          </button>
-        </h2>
-        <div
-          id="accordion-color-body-2"
-          className="hidden"
-          aria-labelledby="accordion-color-heading-2"
-        >
-          <CvUpload
-            onInputChange={onCvInputChange}
-            viewCvLinkError={viewCvLinkError}
-            setViewCvLinkError={setViewCvLinkError}
-          />
-        </div>
-        <h2 id="accordion-color-heading-3">
-          <button
-            type="button"
-            className="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 hover:bg-blue-100"
-            data-accordion-target="#accordion-color-body-3"
-            aria-expanded="false"
-            aria-controls="accordion-color-body-3"
-          >
-            <span>Dodatni podaci o korisniku</span>
-            <div className="relative inline-flex">
-              <svg
-                data-accordion-icon
-                className="w-6 h-6 shrink-0"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {isAdvancedInfoValid && (
-                <img
-                  alt="success-icon"
-                  className="absolute right-[-44px] top-[4px] h-[16px] w-[16px]"
-                  src={checkmarkIcon.src}
-                />
-              )}
-            </div>
-          </button>
-        </h2>
-        <div
-          id="accordion-color-body-3"
-          className="hidden"
-          aria-labelledby="accordion-color-heading-3"
-        >
-          <AdvancedFormFieldCv
-            advancedInfo={advancedInfo}
-            setAdvancedInfo={setAdvancedInfo}
-            advancedInfoError={advancedInfoError}
-            setAdvancedInfoError={setAdvancedInfoError}
-          />
-        </div>
-      </div>
+                {showSuccessIcon(element?.id) && (
+                  <img
+                    alt="success-icon"
+                    className="w-[16px] h-[16px] absolute right-[-10px]"
+                    src={checkmarkIcon.src}
+                  />
+                )}
+              </div>
+            </button>
+            <Collapse isOpen={openItemIndex === element.id}>
+              <div>{element.component}</div>
+            </Collapse>
+          </li>
+        ))}
+      </ul>
       <button
         onClick={onSubmitHandler}
         type="button"

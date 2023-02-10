@@ -28,7 +28,7 @@ function UploadCvPage() {
             transition={{ delay: 0.3 }}
             className="bg-white rounded shadow-lg p-8 mb-6"
           >
-            <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-6 min-h-[630px]">
+            <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-6 min-h-[640px]">
               <CvText />
               <UploadCvForm showAlertHandler={showAlertHandler} />
             </div>
