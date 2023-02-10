@@ -26,8 +26,8 @@ const baseInfoInitError = {
   email: false,
 };
 
-const viewCvLinkInit = { cv_url: "" };
-const viewCvLinkInitError = { cv_url: false };
+const viewCvInit = null;
+const viewCvInitError = false;
 
 const advancedInfoInit = {
   smer_i_fakultet: "",
@@ -48,20 +48,20 @@ const advancedInfoInitError = {
 
 function UploadCvForm({ showAlertHandler }) {
   const [openItemIndex, setOpenItemIndex] = React.useState(undefined);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const [baseInfo, setBaseInfo] = React.useState(baseInfoInit);
   const [baseInfoError, setBaseInfoError] = React.useState(baseInfoInitError);
 
-  const [viewCvLink, setViewCvLink] = React.useState(viewCvLinkInit);
-  const [viewCvLinkError, setViewCvLinkError] =
-    React.useState(viewCvLinkInitError);
+  const [viewCv, setViewCv] = React.useState(viewCvInit);
+  const [viewCvError, setViewCvError] = React.useState(viewCvInitError);
 
   const [advancedInfo, setAdvancedInfo] = React.useState(advancedInfoInit);
   const [advancedInfoError, setAdvancedInfoError] = React.useState(
     advancedInfoInitError
   );
 
-  const onCvInputChange = async (_, file) => {
+  const uploadCvOnServer = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
 
@@ -71,11 +71,9 @@ function UploadCvForm({ showAlertHandler }) {
     });
 
     if (response.ok) {
-      const { webViewLink } = await response.json();
-      setViewCvLink({ cv_url: webViewLink });
-      setViewCvLinkError(viewCvLinkInitError);
-      setAdvancedInfoError(advancedInfoInitError);
+      return response.json();
     }
+    return {};
   };
 
   const isBaseInfoValid =
@@ -83,7 +81,7 @@ function UploadCvForm({ showAlertHandler }) {
     baseInfo?.broj_telefona &&
     baseInfo?.email &&
     validateEmail(baseInfo?.email);
-  const isCvValid = viewCvLink?.cv_url;
+  const isCvValid = !!viewCv;
   const isAdvancedInfoValid =
     advancedInfo?.smer_i_fakultet &&
     advancedInfo?.godina_studija &&
@@ -94,17 +92,15 @@ function UploadCvForm({ showAlertHandler }) {
 
   const isValid = isBaseInfoValid && (isCvValid || isAdvancedInfoValid);
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = async () => {
     if (!isValid) {
       setBaseInfoError({
         ime: !baseInfo.ime,
         broj_telefona: !baseInfo.broj_telefona,
         email: !baseInfo.email || !validateEmail(baseInfo.email),
       });
-      setViewCvLinkError({
-        cv_url: !viewCvLink.cv_url,
-      });
-      if (!viewCvLink?.cv_url) {
+      setViewCvError(!viewCv);
+      if (!viewCv) {
         setAdvancedInfoError({
           smer_i_fakultet: !advancedInfo.smer_i_fakultet,
           godina_studija: !advancedInfo.godina_studija,
@@ -115,20 +111,23 @@ function UploadCvForm({ showAlertHandler }) {
         });
       }
     } else {
-      axios
+      setIsLoading(true);
+      const { webViewLink } = await uploadCvOnServer(viewCv);
+      await axios
         .post("https://sheetdb.io/api/v1/q34tp75e5230l", {
           ...baseInfo,
           ...advancedInfo,
-          ...viewCvLink,
+          cv_url: webViewLink,
         })
         .then(() => {
           showAlertHandler();
           setBaseInfo(baseInfoInit);
-          setViewCvLink(viewCvLinkInit);
+          setViewCv(viewCvInit);
           setAdvancedInfo(advancedInfoInit);
           // restart input file field
           document.getElementById("formFileSm").value = "";
         });
+      setIsLoading(false);
     }
   };
 
@@ -150,9 +149,12 @@ function UploadCvForm({ showAlertHandler }) {
       label: "Dodaj CV",
       component: (
         <CvUpload
-          onInputChange={onCvInputChange}
-          viewCvLinkError={viewCvLinkError}
-          setViewCvLinkError={setViewCvLinkError}
+          setViewCv={setViewCv}
+          viewCvError={viewCvError}
+          onFileUploadHandler={() => {
+            setViewCvError(viewCvInitError);
+            setAdvancedInfoError(advancedInfoInitError);
+          }}
         />
       ),
     },
@@ -216,7 +218,7 @@ function UploadCvForm({ showAlertHandler }) {
                 {showSuccessIcon(element?.id) && (
                   <img
                     alt="success-icon"
-                    className="w-[16px] h-[16px] absolute right-[-10px]"
+                    className="w-[16px] h-[16px] absolute lg:right-[-10px] right-[-20px]"
                     src={checkmarkIcon.src}
                   />
                 )}
@@ -232,10 +234,20 @@ function UploadCvForm({ showAlertHandler }) {
         onClick={onSubmitHandler}
         type="button"
         className={`${
-          !isValid && "opacity-50"
-        } inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out`}
+          (!isValid || isLoading) && "opacity-50"
+        } flex justify-center px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out`}
       >
         Pošalji
+        {isLoading && (
+          <div className="inline-flex justify-center items-center ml-3">
+            <div
+              className="spinner-border animate-spin inline-block w-3 h-3 border-2 rounded-full"
+              role="status"
+            >
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
       </button>
     </div>
   );

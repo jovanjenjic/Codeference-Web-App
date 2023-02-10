@@ -9,7 +9,7 @@ const ACCEPT_MIME_TYPES = [
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
 
-function CvUpload({ viewCvLinkError, onInputChange = () => {} }) {
+function CvUpload({ setViewCv, viewCvError, onFileUploadHandler }) {
   return (
     <div className="m-4">
       <label
@@ -19,7 +19,7 @@ function CvUpload({ viewCvLinkError, onInputChange = () => {} }) {
         Dodaj CV
       </label>
       <input
-        className={`${viewCvLinkError?.cv_url ? "focus:ring-0 border-red-400" : "border-stone-300"} 
+        className={`${viewCvError ? "focus:ring-0 border-red-400" : "border-stone-300"} 
                     focus:ring-0
                     focus:border-blue-300
                     form-control
@@ -47,8 +47,10 @@ function CvUpload({ viewCvLinkError, onInputChange = () => {} }) {
         id="formFileSm"
         type="file"
         accept={ACCEPT_MIME_TYPES.join(",")}
-        onChange={() =>
-          onInputChange("cv", document.getElementById("formFileSm")?.files?.[0])
+        onChange={() => {
+          setViewCv(document.getElementById("formFileSm")?.files?.[0]);
+          onFileUploadHandler();
+        }
         }
       />
     </div>
@@ -56,7 +58,7 @@ function CvUpload({ viewCvLinkError, onInputChange = () => {} }) {
 }
 
 CvUpload.propTypes = {
-  viewCvLinkError: PropTypes.arrayOf.isRequired,
+  viewCvError: PropTypes.arrayOf.isRequired,
   onInputChange: PropTypes.func.isRequired,
 };
 
