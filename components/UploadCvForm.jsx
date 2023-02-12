@@ -113,21 +113,34 @@ function UploadCvForm({ showAlertHandler }) {
     } else {
       setIsLoading(true);
       const { webViewLink } = await uploadCvOnServer(viewCv);
-      await axios
-        .post("https://sheetdb.io/api/v1/q34tp75e5230l", {
-          ...baseInfo,
-          ...advancedInfo,
-          cv_url: webViewLink,
-        })
-        .then(() => {
+      // case when webview link is created
+      // upload to the google sheet db
+      if (webViewLink) {
+        const response = await fetch(
+          "https://sheetdb.io/api/v1/q34tp75e5230l",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              ...baseInfo,
+              ...advancedInfo,
+              cv_url: webViewLink,
+            }),
+          }
+        );
+
+        if (response.ok) {
           showAlertHandler();
           setBaseInfo(baseInfoInit);
           setViewCv(viewCvInit);
           setAdvancedInfo(advancedInfoInit);
           // restart input file field
-          document.getElementById("formFileSm").value = "";
-        });
-      setIsLoading(false);
+          document.getElementById("formFileSm").value = null;
+        }
+        setIsLoading(false);
+      }
     }
   };
 

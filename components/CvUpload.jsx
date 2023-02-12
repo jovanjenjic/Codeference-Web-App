@@ -4,6 +4,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ACCEPT_MIME_TYPES = [
+  '.pdf',
+  '.doc',
+  '.docx',
   "application/pdf",
   "application/msword",
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
