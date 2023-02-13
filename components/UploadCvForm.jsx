@@ -69,7 +69,7 @@ function UploadCvForm({ showAlertHandler }) {
     const controller = new AbortController();
     const { signal, abort } = controller;
 
-    const id = setTimeout(() => abort(), timeout);
+    const id = setTimeout(() => abort(), [timeout]);
 
     const response = await fetch("/api/cv", {
       method: "POST",
