@@ -65,15 +65,23 @@ function UploadCvForm({ showAlertHandler }) {
     const formData = new FormData();
     formData.append("file", file);
 
+    const timeout = 10000;
+    const controller = new AbortController();
+    const { signal, abort } = controller;
+
+    const id = setTimeout(() => abort(), timeout);
+
     const response = await fetch("/api/cv", {
       method: "POST",
       body: formData,
+      signal,
     });
+    clearTimeout(id);
 
     if (response.ok) {
       return response.json();
     }
-    return {};
+    return false;
   };
 
   const isBaseInfoValid =
@@ -113,34 +121,23 @@ function UploadCvForm({ showAlertHandler }) {
     } else {
       setIsLoading(true);
       const { webViewLink } = await uploadCvOnServer(viewCv);
-      // case when webview link is created
-      // upload to the google sheet db
       if (webViewLink) {
-        const response = await fetch(
-          "https://sheetdb.io/api/v1/q34tp75e5230l",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              ...baseInfo,
-              ...advancedInfo,
-              cv_url: webViewLink,
-            }),
-          }
-        );
-
-        if (response.ok) {
-          showAlertHandler();
-          setBaseInfo(baseInfoInit);
-          setViewCv(viewCvInit);
-          setAdvancedInfo(advancedInfoInit);
-          // restart input file field
-          document.getElementById("formFileSm").value = null;
-        }
-        setIsLoading(false);
+        await axios
+          .post("https://sheetdb.io/api/v1/q34tp75e5230l", {
+            ...baseInfo,
+            ...advancedInfo,
+            cv_url: webViewLink,
+          })
+          .then(() => {
+            showAlertHandler();
+            setBaseInfo(baseInfoInit);
+            setAdvancedInfo(advancedInfoInit);
+            // restart input file field
+          });
       }
+      document.getElementById("formFileSm").value = "";
+      setViewCv(viewCvInit);
+      setIsLoading(false);
     }
   };
 
