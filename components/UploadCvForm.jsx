@@ -70,22 +70,21 @@ function UploadCvForm({ showAlertHandler }) {
 
     const id = setTimeout(() => abort(), [timeout]);
 
-    return fetch("/api/cv", {
-      method: "POST",
-      body: formData,
-      signal: controller?.signal,
-    })
-      .then((response) => {
-        clearTimeout(id);
-        if (response.ok) {
-          return response.json();
-        }
-        return { webViewLink: false };
-      })
-      .catch(() => {
-        clearTimeout(id);
-        return { webViewLink: false };
+    try {
+      const response = await fetch("/api/cv", {
+        method: "POST",
+        body: formData,
+        signal: controller?.signal,
       });
+      clearTimeout(id);
+      if (response.ok) {
+        return response.json();
+      }
+      return { webViewLink: false };
+    } catch (err) {
+      clearTimeout(id);
+      return { webViewLink: false };
+    }
   };
 
   const isBaseInfoValid =
@@ -125,7 +124,7 @@ function UploadCvForm({ showAlertHandler }) {
     } else {
       setIsLoading(true);
       const { webViewLink } = await uploadCvOnServer(viewCv);
-      console.log("webViewLinkwebViewLink", webViewLink);
+
       if (webViewLink) {
         await axios
           .post("https://sheetdb.io/api/v1/q34tp75e5230l", {

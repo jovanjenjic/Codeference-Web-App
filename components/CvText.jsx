@@ -45,16 +45,30 @@ function CvText({ showSuccessMessage, showErrorMessage }) {
         <br />
         <br />
         Neophodno je popuniti osnovne podatke koji se nalaze u sekciji Osnovni
-        podaci. Zatim, treba ili popuniti napredne podatke o sebi ili samo
-        otpremiti svoj CV. Tvoj CV ce biti dostupan vodecim kompanijama sa
-        naseih prostora, nakon cega ce te kontaktirati neka od kompanija.
+        podaci. Zatim je dovoljno ili popuniti napredne podatke o sebi ili samo
+        otpremiti svoj CV. CV file ce biti dostupan vodecim kompanijama sa naših
+        prostora, nakon čega ce te kontaktirati neka od kompanija.
         <br />
         <br />
+        U slučaju da dobiješ obaveštenje da CV nije uspešno otpremljen:
+        <br />
+        <br />
+        <div className="inline-flex">
+          <p className="text-red-400 pr-1">*</p>
+          Izbegavaj otpremanje fajla koji se nalazi na google drive-u.
+        </div>
+        <br />
+        <br />
+        <div className="inline-flex">
+          <p className="text-red-400 pr-1">*</p>
+          Izbegavaj otpremanje velikih fajlova. Pokušaj da dodatno zapakuješ cv
+          fajl.
+        </div>
       </div>
       <br />
       <br />
       <p className="mt-6">
-        Za sve probleme pri prijavi kontaktirajte nas na email:{" "}
+        Za sve probleme ili informacije kontaktirajte nas na email:{" "}
         <b>codeference@gmail.com</b>.
       </p>
       <div className="-ml-0.5 lg:w-0.5 h-full right-0 bg-gray-300 absolute" />
