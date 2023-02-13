@@ -36,3 +36,4 @@ export { default as AdvancedFormFieldCv } from "./AdvancedFormFieldCv";
 export { default as CvText } from "./CvText";
 export { default as CvUpload } from "./CvUpload";
 export { default as AlertsInfo } from "./AlertsInfo";
+export { default as AlertsErrorInfo } from "./AlertsErrorInfo";

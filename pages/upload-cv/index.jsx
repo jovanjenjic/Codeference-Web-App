@@ -1,15 +1,29 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Meta, UploadCvForm, CvText, AlertsInfo } from "../../components";
+import {
+  Meta,
+  UploadCvForm,
+  CvText,
+  AlertsInfo,
+  AlertsErrorInfo,
+} from "../../components";
 
 function UploadCvPage() {
   const [showAlert, setShowAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
 
-  const showAlertHandler = () => {
-    setShowAlert(true);
-    setTimeout(() => {
-      setShowAlert(false);
-    }, [5000]);
+  const showAlertHandler = (type = true) => {
+    if (type) {
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, [5000]);
+    } else {
+      setShowErrorAlert(true);
+      setTimeout(() => {
+        setShowErrorAlert(false);
+      }, [5000]);
+    }
   };
 
   return (
@@ -20,6 +34,7 @@ function UploadCvPage() {
         title="Ostavi CV"
       />
       {showAlert && <AlertsInfo />}
+      {showErrorAlert && <AlertsErrorInfo />}
       <div className="container max-w-screen-lg mx-auto">
         <div>
           <motion.div
