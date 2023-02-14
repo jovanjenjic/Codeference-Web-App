@@ -13,8 +13,20 @@ import {
   AfterMovieAndVideos,
   Support,
   Meta,
+  WaveRevarse,
+  Wave,
+  Gallery,
+  TitleComponent,
 } from "../../components";
 
+const titleData = {
+  titleText: "Da li te interesuje kako je to ranije izgledalo?",
+  subtitleText:
+    "Prethodnih godina smo organizovali mnoge dogadjaje na Zlatiboru i na Fakultetu. Ovde je rezime!",
+  colorText: "[Konferencija, Sajam, Otvoreni dan]",
+  backgroundText: "GALERIJA",
+  backgroundColor: "text-white",
+};
 function CategoryPost({ posts, subDetails }) {
   const [sizeAndPages, setSizeAndPages] = useState({ size: 3, page: 1 });
   const postsLength = posts?.length || 0;
@@ -39,8 +51,13 @@ function CategoryPost({ posts, subDetails }) {
         subDetails={subDetails}
         images={subDetails?.images}
       />
+      <WaveRevarse bgColor="bg-blue-600" waveColor="#eff6ff" />
       <Support subDetails={subDetails} />
+      <Wave bgColor="bg-blue-600" waveColor="#fff" />
+      <Gallery whiteBackground />
+      <WaveRevarse bgColor="bg-blue-50" waveColor="#fff" />
       <div className="container mx-auto lg:px-10 px-6 mb-8">
+        <TitleComponent {...titleData} />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="relative col-span-1 lg:col-span-8 lg:col-start-3 mt-8">
             {posts.slice(0, size * page).map((post) => (

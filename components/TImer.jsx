@@ -10,7 +10,7 @@ function MyTimer() {
   });
 
   useEffect(() => {
-    setTime(new Date(new Date("10/24/2022").getTime()));
+    setTime(new Date(new Date("05/17/2023").getTime()));
   }, []);
 
   useEffect(() => {
@@ -23,68 +23,59 @@ function MyTimer() {
   const secondTime = seconds < 10 ? `0${seconds}` : `${seconds}`;
 
   return (
-    <div className="container max-w-3xl mx-auto">
-      <div className="flex flex-wrap flex-row items-center justify-evenly">
-        <motion.div
-          initial={{ y: 160, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          <div className="flex items-center flex-col flex-nowrap transform transition duration-300 ease-in-out hover:-translate-y-2">
-            <span
-              className="bg-white font-semibold time-elem relative w-16 h-16 2xl:w-32 lg:w-30 md:w-24 sm:w-20 2xl:h-32 lg:h-30 md:h-24 sm:h-20 shadow-xl flex items-center justify-center mb-2 xl:mb-3 rounded-lg 2xl:text-6xl xl:text:5xl lg:text-4xl md:text-3xl text-3xl"
-              id="days"
-            >
+    <div className="bg-white px-4 lg:px-8 py-6 mx-auto max-w-[650px] shadow-lg">
+      <div className="flex justify-center">
+        <div className="w-2/5 sm:w-1/4 text-base lg:text-lg font-[600]">
+          <div className="inline-flex">
+            Brojite <p className="text-blue-600 pl-[4px]">Svaku</p>
+          </div>
+          <p className="text-blue-600">Sekundu</p>
+          Do Događaja
+        </div>
+        <div className="left-1/2 -ml-0.5 w-0.5 bg-gray-300 hidden lg:flex" />
+        <div className="w-3/5 sm:w-3/4 flex flex-row justify-around	">
+          <div className="lg:px-6">
+            <div className="text-[34px] lg:text-[50px] leading-snug font-medium">
               {dayTime}
-            </span>
-            <span className="title">Dana</span>
+            </div>
+            <p className="text-[8px] lg:text-[12px] text-blue-600 text-center	font-[600]">
+              [dana]
+            </p>
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ y: 120, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          <div className="flex items-center flex-col flex-nowrap transform transition duration-300 ease-in-out hover:-translate-y-2">
-            <span
-              className="bg-white  font-semibold time-elem relative w-16 h-16 2xl:w-32 lg:w-30 md:w-24 sm:w-20 2xl:h-32 lg:h-30 md:h-24 sm:h-20 shadow-xl flex items-center justify-center mb-2 xl:mb-3 rounded-lg 2xl:text-6xl xl:text:5xl lg:text-4xl md:text-3xl text-3xl"
-              id="hours"
-            >
+          <div className="text-[34px] lg:text-[50px] leading-snug text-gray-300">
+            :
+          </div>
+          <div className="lg:px-6">
+            <div className="text-[34px] lg:text-[50px] leading-snug font-medium">
               {hourTime}
-            </span>
-            <span className="title">Sati</span>
+            </div>
+            <p className="text-[8px] lg:text-[12px] text-blue-600 text-center	font-[600]">
+              [sati]
+            </p>
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          <div className="flex items-center flex-col flex-nowrap transform transition duration-300 ease-in-out hover:-translate-y-2">
-            <span
-              className="bg-white  font-semibold time-elem relative w-16 h-16 2xl:w-32 lg:w-30 md:w-24 sm:w-20 2xl:h-32 lg:h-30 md:h-24 sm:h-20 shadow-xl flex items-center justify-center mb-2 xl:mb-3 rounded-lg 2xl:text-6xl xl:text:5xl lg:text-4xl md:text-3xl text-3xl"
-              id="minutes"
-            >
+          <div className="text-[34px] lg:text-[50px] leading-snug text-gray-300">
+            :
+          </div>
+          <div className="lg:px-6">
+            <div className="text-[34px] lg:text-[50px] leading-snug font-medium">
               {minuteTime}
-            </span>
-            <span className="title">Minuta</span>
+            </div>
+            <p className="text-[8px] lg:text-[12px] text-blue-600 text-center	font-[600]">
+              [minuta]
+            </p>
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="flex items-center flex-col flex-nowrap transform transition duration-300 ease-in-out hover:-translate-y-2">
-            <span
-              className="bg-white font-semibold time-elem relative w-16 h-16 2xl:w-32 lg:w-30 md:w-24 sm:w-20 2xl:h-32 lg:h-30 md:h-24 sm:h-20 shadow-xl flex items-center justify-center mb-2 xl:mb-3 rounded-lg 2xl:text-6xl xl:text:5xl lg:text-4xl md:text-3xl text-3xl"
-              id="seconds"
-            >
+          <div className="text-[34px] lg:text-[50px] leading-snug text-gray-300 hidden sm:inline">
+            :
+          </div>
+          <div className="lg:px-6 hidden sm:inline">
+            <div className="text-[34px] lg:text-[50px] leading-snug font-medium lg:min-w-[70px] text-center">
               {secondTime}
-            </span>
-            <span className="title">Sekundi</span>
+            </div>
+            <p className="text-[8px] lg:text-[12px] text-blue-600 text-center	font-[600]">
+              [sekundi]
+            </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

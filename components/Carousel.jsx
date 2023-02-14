@@ -35,7 +35,7 @@ function Carousel({ images, dark = false, hideNavigation = false }) {
             } relative float-left w-full h-full`}
           >
             <img
-              src={img.url}
+              src={img.url || img.src}
               className="block w-full h-full object-cover"
               alt="Motorbike Smoke"
             />

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import validator from "validator";
-
 import emailjs from "emailjs-com";
 
 (() => {
   emailjs.init("user_1SqBNhYaPHbhrnf53LizK");
 })();
 
-function AskForm({ slug }) {
+function AskForm() {
   const [error, setError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -51,7 +49,7 @@ function AskForm({ slug }) {
     const { name, email, question, storeData } = formData;
 
     const isValid =
-      isEmail(email) && !isEmpty(name) && !isEmpty(question || "");
+      isEmail(email || "") && !isEmpty(name) && !isEmpty(question || "");
 
     setError(!isValid);
     if (!isValid) {
@@ -87,88 +85,103 @@ function AskForm({ slug }) {
           setShowSuccessMessage(true);
           setTimeout(() => {
             setShowSuccessMessage(false);
-          }, 3000);
+          }, 5000);
         },
         () => {}
       );
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
-        Postavi pitanje
-      </h3>
-      <div className="grid grid-cols-1 gap-4 mb-4">
-        <textarea
-          value={formData.question || ""}
-          onChange={onInputChange}
-          className="p-4 outline-none w-full rounded-lg h-40 focus:ring-2 focus:ring-gray-200 bg-blue-50 text-gray-700"
-          name="question"
-          placeholder="Pitanje"
-        />
-      </div>
+    <section id="AskForm" className="relative block bg-blue-600">
+      <div className="container mx-auto lg:px-4">
+        <div className="flex flex-wrap justify-center">
+          <div className="w-full lg:w-6/12 px-4">
+            <div className="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-blue-50">
+              <div className="flex-auto p-5 lg:p-10">
+                <h4 className="text-2xl font-semibold">Da li imaš pitanja?</h4>
+                <p className="leading-relaxed mt-1 mb-4 text-gray-600">
+                  Popuni formu ispod, obavezno ostavi svoj email i neko će te
+                  kontaktirati u narednih 24h!
+                </p>
+                <div className="relative w-full mb-3 mt-8">
+                  <label
+                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                    htmlFor="full-name"
+                  >
+                    Ime i prezime
+                  </label>
+                  <input
+                    onChange={onInputChange}
+                    type="text"
+                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                    placeholder="Ime i prezime"
+                    style={{ transition: "all .15s ease" }}
+                    value={formData.name || ""}
+                    name="name"
+                  />
+                </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-        <input
-          type="text"
-          value={formData.name || ""}
-          onChange={onInputChange}
-          className="py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-blue-50 text-gray-700"
-          placeholder="Ime"
-          name="name"
-        />
-        <input
-          type="email"
-          value={formData.email || ""}
-          onChange={onInputChange}
-          className="py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-blue-50 text-gray-700"
-          placeholder="Email"
-          name="email"
-        />
-      </div>
-      <div className="grid grid-cols-1 gap-4 mb-4">
-        <div>
-          <input
-            checked={formData.storeData}
-            onChange={onInputChange}
-            type="checkbox"
-            id="storeData"
-            name="storeData"
-            value="true"
-          />
-          <label className="text-gray-500 cursor-pointer" htmlFor="storeData">
-            {" "}
-            Zapamti moje podatke za sledeći put kada budem pitao.
-          </label>
+                <div className="relative w-full mb-3">
+                  <label
+                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
+                  <input
+                    onChange={onInputChange}
+                    type="email"
+                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                    placeholder="Email"
+                    style={{ transition: "all .15s ease" }}
+                    value={formData.email || ""}
+                    name="email"
+                  />
+                </div>
+
+                <div className="relative w-full mb-3">
+                  <label
+                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                    htmlFor="message"
+                  >
+                    Poruka
+                  </label>
+                  <textarea
+                    onChange={onInputChange}
+                    rows={4}
+                    cols={80}
+                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                    placeholder="Teks poruke..."
+                    value={formData.question || ""}
+                    name="question"
+                  />
+                </div>
+                {error && (
+                  <p className="text-base text-red-500">
+                    Sva polja moraju biti ispravno popunjena
+                  </p>
+                )}
+                {showSuccessMessage && (
+                  <span className="text-base text-blue-600">
+                    Pitanje je uspešno poslato
+                  </span>
+                )}
+                <div className="text-center mt-6">
+                  <button
+                    onClick={handlePostSubmission}
+                    className="transition-all duration-500 bg-blue-600 border hover:border-blue-600 hover:bg-white hover:text-blue-600 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                    type="button"
+                  >
+                    POŠALJI
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      {error && (
-        <p className="text-xs text-red-500">Sva polja moraju biti popunjena</p>
-      )}
-      <div className="mt-8">
-        <button
-          type="button"
-          onClick={handlePostSubmission}
-          className="transition duration-500 ease hover:bg-sky-700 inline-block bg-sky-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer"
-        >
-          Pošalji
-        </button>
-        {showSuccessMessage && (
-          <span className="text-xl float-right font-semibold mt-3 text-green-500">
-            Pitanje je uspešno poslato
-          </span>
-        )}
-      </div>
-    </div>
+    </section>
   );
 }
-
-AskForm.propTypes = {
-  slug: PropTypes.string,
-};
-
-AskForm.defaultProps = {
-  slug: "",
-};
 
 export default AskForm;

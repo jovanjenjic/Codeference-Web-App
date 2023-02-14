@@ -6,8 +6,10 @@ import { useRouter } from "next/router";
 import * as ga from "../lib";
 import { Layout } from "../components";
 import "../styles/globals.scss";
-import "../styles/card.css";
 import "../styles/afterMovie.css";
+import "../styles/gallery.css";
+import "../styles/title.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -81,6 +83,10 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js" />
+        <link
+          rel="stylesheet"
+          href="path/to/font-awesome/css/font-awesome.min.css"
+        />
       </Head>
       <Layout>
         <Component {...pageProps} /> {/* eslint-disable-line */}

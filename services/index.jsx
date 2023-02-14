@@ -36,6 +36,28 @@ export const getPosts = async (hide = false) => {
   return result.postsConnection.edges;
 };
 
+export const getLogos = async () => {
+  const query = gql`
+    query GetLogos {
+      logos(first: 100) {
+        name
+        image {
+          url
+        }
+        subcategories {
+          name
+          slug
+          hide
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result?.logos;
+};
+
 export const getCategories = async () => {
   const query = gql`
     query GetGategories {
@@ -95,6 +117,12 @@ export const getSubcategoryDetails = async (slug) => {
         lockComponent {
           name
           disabled
+        }
+        logos {
+          name
+          image {
+            url
+          }
         }
       }
     }

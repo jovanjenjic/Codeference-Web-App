@@ -1,9 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
-import img from "../public/land.png";
-import imgDate from "../public/date.png";
-import imgLocation from "../public/location.png";
-import imgMembers from "../public/members.png";
 import LandingImg from "../public/LandingImg.jpg";
 import Timer from "./TImer";
 
@@ -33,110 +28,61 @@ const fadeInUp = {
 
 function LandingComponent() {
   return (
-    <div className="w-full">
-      <div
-        className="flex bg-blue-50"
-        style={{
-          backgroundSize: "cover",
-          backgroundImage: `url(${img.src})`,
-          height: "80vh",
-          clipPath: "polygon(0 0, 100% 0%, 100% 93%, 0 100%)",
-        }}
-      >
-        <div className="flex items-start text-center lg:text-left px-6 md:px-12 lg:w-1/2">
-          <div className="flex flex-col justify-evenly h-5/6">
-            <Timer />
-            <div className="w-full max-w-4xl rounded-md border-2 border-gray-100 bg-white bg-opacity-40 lg:p-10 px-4 py-6">
-              <div className="flex flex-col items-center">
-                <span className="-rotate-1 rounded-lg bg-red-100 py-px px-2 text-sm text-red-800">
-                  Da li si spreman da učestvuješ na jos jednoj konferenciji?
-                </span>
-                <h3 className="mt-2 max-w-2xl text-center font-bold leading-tight text:xl lg:text-2xl xl:text-3xl md:leading-tight">
-                  Pratite sekciju vesti i našu instagram stranicu putem kojih
-                  ćemo te obavestiti o sledećim događajima. <br />
-                  <br />
-                  Za sve informacije, kontaktiraj nas klikom na dugme ispod.
-                </h3>
-                <button
-                  onClick={() =>
-                    window.scrollTo({
-                      left: 0,
-                      top: document.body.scrollHeight,
-                      behavior: "smooth",
-                    })
-                  }
-                  type="button"
-                  className="font-bold mt-8 transition duration-500 ease hover:bg-sky-700 inline-block bg-sky-500 lg:text-lg md:text-md text-sm font-medium rounded-full text-white px-8 py-3 cursor-pointer"
-                >
-                  Postavi pitanje
-                </button>
+    <div className="relative w-full min-h-[550px]">
+      <div className="lg:my-5 3xl:my-10 mx-auto relative object-cover lg:w-3/5 min-h-[550px] max-h-[650px] flex justify-center">
+        <span className="rounded-2xl absolute w-full h-full z-30 opacity-60 bg-black" />
+        <img
+          className="rounded-2xl mx-auto object-cover	w-full"
+          initial={{ x: -60, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          src={LandingImg?.src}
+        />
+      </div>
+      <div className="absolute flex justify-center w-full  mx-auto top-[100px] z-[40]">
+        <div className="items-center flex flex-wrap mx-auto">
+          <div className="w-full px-4 mx-auto text-center">
+            <div className="text-white font-semibold text-xl sm:text-2x md:text-3xl xl:text-4xl 2xl:text-5xl">
+              <div className="flex pb-4">
+                <p className="text-blue-500">Codeference</p>
+                <p className="pl-3 min-w-max">Zlatibor</p>
+              </div>
+              <div className="flex pb-4">
+                <p className="text-blue-500">Codefair</p>
+                <p className="pl-3 min-w-max">Hol FTN-a</p>
+              </div>
+              <div className="flex pb-4">
+                <p className="text-blue-500">Codeday</p>
+                <p className="pl-3 min-w-max">Svečana sala FTN-a</p>
               </div>
             </div>
+            <div className="text-sm lg:text-base flex justify-start flex-col lg:flex-row w-2/3 lg:w-full">
+              <p
+                onClick={() => {
+                  const elmntToView = document.getElementById("AskForm");
+                  elmntToView.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                    inline: "center",
+                  });
+                }}
+                className="cursor-pointer mb-4 font-semibold lg:mr-4 rounded-3xl transition-all duration-500 bg-blue-500 border border-transparent hover:border-white hover:bg-transparent text-white lg:px-16 lg:py-3 py-2"
+              >
+                Postavi pitanje
+              </p>
+              <a
+                href="/upload-cv"
+                className="mb-4 font-semibold rounded-3xl transition-all duration-500 bg-transparent border border-blue-500 hover:bg-blue-500 text-white lg:px-16 lg:py-3 py-2"
+              >
+                Ostavi CV
+              </a>
+            </div>
           </div>
-        </div>
-        <div
-          className="hidden lg:block lg:w-1/2"
-          style={{ clipPath: "polygon(12% 0, 100% 0%, 100% 100%, 0 100%)" }}
-        >
-          <motion.img
-            initial={{ x: -60, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="h-full"
-            src={LandingImg?.src}
-          />
-          <div className="h-full bg-black opacity-25" />
         </div>
       </div>
-      <section className="pb-10 bg-blueGray-200 -mt-24">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap">
-            <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center transform transition duration-300 ease-in-out hover:-translate-y-2">
-              <motion.div variants={fadeInUp}>
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-inner rounded-lg">
-                  <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center">
-                      <img alt="landing" src={imgDate.src} />
-                    </div>
-                    <h6 className="text-xl font-semibold">Datum</h6>
-                    <p className="mt-2 mb-4 text-blueGray-500">
-                      24.10.2022 - 27.10.2022.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-            <div className="w-full md:w-4/12 px-4 text-center transform transition duration-300 ease-in-out hover:-translate-y-2">
-              <motion.div variants={fadeInUp}>
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-inner rounded-lg">
-                  <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center">
-                      <img alt="landing" src={imgLocation.src} />
-                    </div>
-                    <h6 className="text-xl font-semibold">Lokacija</h6>
-                    <p className="mt-2 mb-4 text-blueGray-500">
-                      Zlatibor - Studentsko odmaralište <q>Ratko Mitrović</q>
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-            <div className="md:pt-6 w-full md:w-4/12 px-4 text-center transform transition duration-300 ease-in-out hover:-translate-y-2">
-              <motion.div variants={fadeInUp}>
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-inner rounded-lg">
-                  <div className="px-4 py-5 flex-auto">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center">
-                      <img alt="landing" src={imgMembers.src} />
-                    </div>
-                    <h6 className="text-xl font-semibold">Učesnici</h6>
-                    <p className="mt-2 mb-4 text-blueGray-500">400+</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="relative lg:w-2/3 mx-auto mt-[-120px] 2xl-[-100px] z-40">
+        <Timer />
+      </div>
     </div>
   );
 }
