@@ -103,7 +103,11 @@ export const getSubcategoryDetails = async (slug) => {
       subcategory(where: { slug: $slug }) {
         name
         images(first: 100) {
-          url
+          url(
+            transformation: {
+              image: { resize: { width: 500, height: 500, fit: clip } }
+            }
+          )
         }
         startDate
         endDate
