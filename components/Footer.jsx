@@ -18,7 +18,11 @@ function Footer() {
                 type="button"
               >
                 <Link href="https://www.linkedin.com/company/studentska-unija-fakulteta-tehni%C4%8Dkih-nauka/">
-                  <a target="_blank">
+                  <a
+                    href="https://www.linkedin.com/company/studentska-unija-fakulteta-tehni%C4%8Dkih-nauka/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fab fa-linkedin-in" />
                   </a>
                 </Link>
@@ -28,7 +32,11 @@ function Footer() {
                 type="button"
               >
                 <Link href="https://www.facebook.com/codeferenceftn">
-                  <a target="_blank">
+                  <a
+                    href="https://www.facebook.com/codeferenceftn"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="flex fab fa-facebook-square" />
                   </a>
                 </Link>
@@ -38,7 +46,11 @@ function Footer() {
                 type="button"
               >
                 <Link href="https://www.instagram.com/codeference">
-                  <a target="_blank">
+                  <a
+                    href="https://www.instagram.com/codeference"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fa-brands fa-instagram" />
                   </a>
                 </Link>
@@ -48,7 +60,11 @@ function Footer() {
                 type="button"
               >
                 <Link href="https://www.youtube.com/@codeference3265">
-                  <a target="_blank">
+                  <a
+                    href="https://www.youtube.com/@codeference3265"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fa-brands fa-youtube" />
                   </a>
                 </Link>
@@ -63,25 +79,32 @@ function Footer() {
                 </span>
                 <ul className="list-unstyled">
                   <li>
-                    <a
+                    <button
+                      type="button"
                       onClick={() =>
                         window.scrollTo({ top: 0, behavior: "smooth" })
                       }
                       className="cursor-pointer text-white hover:text-gray-200 font-semibold block pb-2 text-sm"
                     >
                       Početna
-                    </a>
+                    </button>
                   </li>
                   <li>
                     <Link href="/post">
-                      <a className="text-white hover:text-gray-200 font-semibold block pb-2 text-sm">
+                      <a
+                        href="/post"
+                        className="text-white hover:text-gray-200 font-semibold block pb-2 text-sm"
+                      >
                         Vesti
                       </a>
                     </Link>
                   </li>
                   <li>
                     <Link href="/upload-cv">
-                      <a className="text-white hover:text-gray-200 font-semibold block pb-2 text-sm">
+                      <a
+                        href="/upload-cv"
+                        className="text-white hover:text-gray-200 font-semibold block pb-2 text-sm"
+                      >
                         Otpremi CV
                       </a>
                     </Link>

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   AskForm,
   SaidAboutUss,
@@ -12,7 +13,7 @@ import {
 } from "../components";
 import { getLogos } from "../services";
 
-export default function Home({ logos }) {
+function Home({ logos }) {
   return (
     <div>
       <Meta
@@ -47,3 +48,9 @@ export async function getStaticProps() {
     props: { logos },
   };
 }
+
+Home.propTypes = {
+  logos: PropTypes.arrayOf.isRequired,
+};
+
+export default Home;

@@ -2,30 +2,6 @@ import React from "react";
 import LandingImg from "../public/LandingImg.jpg";
 import Timer from "./TImer";
 
-// Our custom easing
-const easing = [0.6, -0.05, 0.01, 0.99];
-
-// animate: defines animation
-// initial: defines initial state of animation or stating point.
-// exit: defines animation when component exits
-
-// Custom variant
-const fadeInUp = {
-  initial: {
-    y: 60,
-    opacity: 0,
-    transition: { duration: 1, ease: easing },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      ease: easing,
-    },
-  },
-};
-
 function LandingComponent() {
   return (
     <div className="relative w-full min-h-[550px]">
@@ -33,10 +9,8 @@ function LandingComponent() {
         <span className="rounded-2xl absolute w-full h-full z-30 opacity-60 bg-black" />
         <img
           className="rounded-2xl mx-auto object-cover	w-full"
-          initial={{ x: -60, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
           src={LandingImg?.src}
+          alt={LandingImg?.src}
         />
       </div>
       <div className="absolute flex justify-center w-full  mx-auto top-[100px] z-[40]">
@@ -57,7 +31,8 @@ function LandingComponent() {
               </div>
             </div>
             <div className="text-sm lg:text-base flex justify-start flex-col lg:flex-row w-2/3 lg:w-full">
-              <p
+              <button
+                type="button"
                 onClick={() => {
                   const elmntToView = document.getElementById("AskForm");
                   elmntToView.scrollIntoView({
@@ -69,7 +44,7 @@ function LandingComponent() {
                 className="cursor-pointer mb-4 font-semibold lg:mr-4 rounded-3xl transition-all duration-500 bg-blue-500 border border-transparent hover:border-white hover:bg-transparent text-white lg:px-16 lg:py-3 py-2"
               >
                 Postavi pitanje
-              </p>
+              </button>
               <a
                 href="/upload-cv"
                 className="mb-4 font-semibold rounded-3xl transition-all duration-500 bg-transparent border border-blue-500 hover:bg-blue-500 text-white lg:px-16 lg:py-3 py-2"

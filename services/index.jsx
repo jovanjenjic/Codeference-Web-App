@@ -102,27 +102,26 @@ export const getSubcategoryDetails = async (slug) => {
     query GetSubcategoryDetails($slug: String!) {
       subcategory(where: { slug: $slug }) {
         name
-        videoUrl
-        images {
+        images(first: 100) {
           url
         }
         startDate
         endDate
         location
         participantsNumber
-        sponsorsImage {
-          url
-        }
         sponsorsText
         lockComponent {
           name
           disabled
         }
-        logos {
+        logos(first: 100) {
           name
           image {
             url
           }
+        }
+        video {
+          url
         }
       }
     }

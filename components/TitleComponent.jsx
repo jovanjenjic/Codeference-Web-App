@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function TitleComponent({
   titleText,
@@ -25,5 +26,14 @@ function TitleComponent({
     </div>
   );
 }
+TitleComponent.propTypes = {
+  titleText: PropTypes.string.isRequired,
+  subtitleText: PropTypes.string.isRequired,
+  subtitleTextSecond: PropTypes.string.isRequired,
+  colorText: PropTypes.string.isRequired,
+  backgroundText: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string.isRequired,
+};
 
 export default TitleComponent;

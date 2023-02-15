@@ -1,3 +1,4 @@
+/* eslint jsx-a11y/label-has-associated-control: ["error", { assert: "either" } ] */
 import React, { useState, useEffect } from "react";
 import validator from "validator";
 import emailjs from "emailjs-com";
@@ -118,6 +119,7 @@ function AskForm() {
                     style={{ transition: "all .15s ease" }}
                     value={formData.name || ""}
                     name="name"
+                    id="full-name"
                   />
                 </div>
 

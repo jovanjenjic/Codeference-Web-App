@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import TitleComponent from "./TitleComponent";
 import starovicImg from "../public/starovic.jpg";

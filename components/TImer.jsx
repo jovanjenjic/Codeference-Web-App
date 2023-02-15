@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useTimer } from "react-timer-hook";
-import { motion } from "framer-motion";
 
 function MyTimer() {
   const [time, setTime] = useState();

@@ -1,19 +1,21 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
+import PropTypes from "prop-types";
 import TitleComponent from "./TitleComponent";
-import Image01 from "../public/slika_5.jpg";
 import Image02 from "../public/slika_1.jpg";
-import Image03 from "../public/slika_2.jpg";
 import Image04 from "../public/slika_3.jpg";
 import Image05 from "../public/slika_4.jpg";
-import Image06 from "../public/slika_16.jpg";
-import Image07 from "../public/slika_18.jpg";
-import Image08 from "../public/slika_10.jpg";
-import Image09 from "../public/slika_6.jpg";
-import Image10 from "../public/slika_17.jpg";
-import Image11 from "../public/slika_11.jpg";
+import Image01 from "../public/slika_5.jpg";
 import Image12 from "../public/slika_6.jpg";
-import Image13 from "../public/slika_13.jpg";
+import Image09 from "../public/slika_9.jpg";
+import Image08 from "../public/slika_10.jpg";
+import Image11 from "../public/slika_11.jpg";
+import Image13 from "../public/slika_12.jpg";
 import Image14 from "../public/slika_14.jpg";
+import Image03 from "../public/slika_15.jpg";
+import Image06 from "../public/slika_16.jpg";
+import Image10 from "../public/slika_17.jpg";
+import Image07 from "../public/slika_18.jpg";
 import Carousel from "./Carousel";
 
 const titleData = {
@@ -56,11 +58,7 @@ function Gallery({ whiteBackground }) {
                 key={img?.src}
                 className={`gallery__item gallery__item--${index + 1}`}
               >
-                <img
-                  src={img?.src}
-                  alt={`Gallery image ${index + 1}`}
-                  className="gallery__img"
-                />
+                <img src={img?.src} alt={img?.src} className="gallery__img" />
               </figure>
             ))}
           </div>
@@ -74,3 +72,7 @@ function Gallery({ whiteBackground }) {
 }
 
 export default Gallery;
+
+Gallery.propTypes = {
+  whiteBackground: PropTypes.bool.isRequired,
+};

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function SupportHomePage({ logos }) {
   return (
@@ -10,6 +11,7 @@ function SupportHomePage({ logos }) {
         >
           {logos.map((logo) => (
             <img
+              alt={logo?.image?.url}
               className="mx-auto h-[70px] lg:h-[90px]"
               src={logo.image?.url}
             />
@@ -19,5 +21,9 @@ function SupportHomePage({ logos }) {
     </section>
   );
 }
+
+SupportHomePage.propTypes = {
+  logos: PropTypes.arrayOf.isRequired,
+};
 
 export default SupportHomePage;

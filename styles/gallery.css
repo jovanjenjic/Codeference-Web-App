@@ -84,7 +84,12 @@
 }
 
 .video-js {
-  /* min-height: 560px; */
   object-fit: cover;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+  .video-js {
+    border-radius: 0;
+  }
 }
