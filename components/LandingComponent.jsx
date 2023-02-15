@@ -27,7 +27,7 @@ function LandingComponent() {
               </div>
               <div className="flex pb-4">
                 <p className="text-blue-500">Codeday</p>
-                <p className="pl-3 min-w-max">Svečana sala FTN-a</p>
+                <p className="pl-3 min-w-max">Svečana sala FTNa</p>
               </div>
             </div>
             <div className="text-sm lg:text-base flex justify-start flex-col lg:flex-row w-2/3 lg:w-full">
