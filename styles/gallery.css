@@ -86,10 +86,19 @@
 .video-js {
   object-fit: cover;
   border-radius: 10px;
+  height: 600px;
+}
+
+@media screen and (max-width: 1024px) {
+  .video-js {
+    border-radius: 0;
+    height: 500px;
+  }
 }
 
 @media screen and (max-width: 700px) {
   .video-js {
     border-radius: 0;
+    height: 400px;
   }
 }

@@ -58,12 +58,14 @@ function CategoryPost({ posts, subDetails }) {
         description={subDetails?.name}
         keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Novi Sad, Zlatibor, Codeference 2021, Codefair 2021"
       />
-      <LandingVideoComponent
-        subDetails={subDetails}
-        numOfPosts={(posts || []).length}
-      />
+      <div>
+        <LandingVideoComponent
+          subDetails={subDetails}
+          numOfPosts={(posts || []).length}
+        />
+      </div>
       <div className={`${width > 1024 ? "bg-blue-50" : "bg-white"}`}>
-        <div className="pt-[120px] sm:pt-[100px] md:pt-[80px] pt-[50px] xl:pt-[0px]">
+        <div>
           <WaveRevarse
             bgColor="bg-blue-600"
             waveColor={`${width > 1024 ? "#eff6ff" : "#fff"}`}
