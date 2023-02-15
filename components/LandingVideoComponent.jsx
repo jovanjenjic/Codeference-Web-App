@@ -10,13 +10,13 @@ function LandingVideoComponent({ subDetails, numOfPosts }) {
   const resolveLocationText = (location) => {
     switch (location) {
       case "Hol Fakulteta tehničkih nauka - Novi Sad": {
-        return "Hol FTN-a";
+        return "Hol FTNa";
       }
       case 'Studentsko odmaralište "Ratko Mitrović" - Zlatibor': {
         return "Zlatibor";
       }
       case "Svečana sala Fakulteta tehničkih nauka - Novi Sad": {
-        return "Svečana sala FTN-a";
+        return "Svečana sala FTNa";
       }
       default: {
         return location;
