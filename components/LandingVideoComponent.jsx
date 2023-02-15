@@ -24,11 +24,26 @@ function LandingVideoComponent({ subDetails, numOfPosts }) {
     }
   };
 
+  const handleVideoClick = () => {
+    const video = document.getElementById("video");
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  };
+
   return (
     <div className="bg-white lg:bg-blue-50 relative w-full min-h-[550px] md:min-h-[670px] lg:min-h-[870px] ">
-      <div className="lg:my-5 3xl:my-10 mx-auto relative object-cover h-3/4 max-h-[650px] flex justify-center ">
+      <button
+        type="button"
+        onClick={handleVideoClick}
+        className="lg:my-5 3xl:my-10 mx-auto relative object-cover h-3/4 max-h-[650px] flex justify-center "
+      >
         <div className="flex justify-center w-full lg:w-3/4">
           <video
+            id="video"
             className="video-js"
             controls
             loop
@@ -38,8 +53,12 @@ function LandingVideoComponent({ subDetails, numOfPosts }) {
             <source src={subDetails?.video?.url} />
           </video>
         </div>
-      </div>
-      <div className="absolute flex justify-center w-full  mx-auto top-[100px] z-[40]">
+      </button>
+      <button
+        type="button"
+        onClick={handleVideoClick}
+        className="absolute flex justify-center w-full  mx-auto top-[100px] z-[40]"
+      >
         <div className="items-center flex flex-wrap mx-auto">
           <div className="w-full px-4 mx-auto text-center">
             <div className="text-white font-semibold text-xl sm:text-2x md:text-3xl xl:text-4xl 2xl:text-5xl">
@@ -67,7 +86,7 @@ function LandingVideoComponent({ subDetails, numOfPosts }) {
             </div>
           </div>
         </div>
-      </div>
+      </button>
       <div className="relative lg:w-3/4 xl:w-3/5 mx-auto z-40">
         <EventInfoComponent subDetails={subDetails} numOfPosts={numOfPosts} />
       </div>
