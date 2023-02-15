@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
@@ -10,16 +11,39 @@ import {
 import {
   PostCard,
   Loader,
-  AfterMovieAndVideos,
+  LandingVideoComponent,
   Support,
   Meta,
+  WaveRevarse,
+  Wave,
+  TitleComponent,
+  GalleryEvent,
 } from "../../components";
 
+const titleData = {
+  titleText: "Da li želiš da saznaš više?",
+  subtitleText:
+    "Pogledaj sva obaveštenja koja su pratila ova događaj i budi u korak sa svim aktivnostima!",
+  colorText: "[Vesti i obaveštenja]",
+  backgroundText: "OBJAVE",
+  backgroundColor: "text-white",
+};
 function CategoryPost({ posts, subDetails }) {
+  const [width, setWidth] = useState(0);
   const [sizeAndPages, setSizeAndPages] = useState({ size: 3, page: 1 });
   const postsLength = posts?.length || 0;
 
   const router = useRouter();
+
+  const handleResize = () => setWidth(window.innerWidth);
+
+  React.useEffect(() => {
+    if (document.readyState === "complete") {
+      handleResize();
+    }
+    window.addEventListener("resize", handleResize);
+    return () => document.removeEventListener("resize", handleResize);
+  }, [handleResize]);
 
   if (router.isFallback) {
     return <Loader />;
@@ -34,13 +58,24 @@ function CategoryPost({ posts, subDetails }) {
         description={subDetails?.name}
         keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Novi Sad, Zlatibor, Codeference 2021, Codefair 2021"
       />
-      <AfterMovieAndVideos
-        videoUrl={subDetails?.videoUrl}
+      <LandingVideoComponent
         subDetails={subDetails}
-        images={subDetails?.images}
+        numOfPosts={(posts || []).length}
       />
+      <div className={`${width > 1024 ? "bg-blue-50" : "bg-white"}`}>
+        <div className="pt-[134px] sm:pt-[100px] md:pt-[80px] pt-[50px] xl:pt-[0px]">
+          <WaveRevarse
+            bgColor="bg-blue-600"
+            waveColor={`${width > 1024 ? "#eff6ff" : "#fff"}`}
+          />
+        </div>
+      </div>
       <Support subDetails={subDetails} />
+      <Wave bgColor="bg-blue-600" waveColor="#fff" />
+      <GalleryEvent whiteBackground subDetails={subDetails} />
+      <WaveRevarse bgColor="bg-blue-50" waveColor="#fff" />
       <div className="container mx-auto lg:px-10 px-6 mb-8">
+        <TitleComponent {...titleData} />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="relative col-span-1 lg:col-span-8 lg:col-start-3 mt-8">
             {posts.slice(0, size * page).map((post) => (
