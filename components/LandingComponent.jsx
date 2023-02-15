@@ -6,9 +6,9 @@ function LandingComponent() {
   return (
     <div className="relative w-full min-h-[550px]">
       <div className="lg:my-5 3xl:my-10 mx-auto relative object-cover lg:w-3/5 min-h-[550px] max-h-[650px] flex justify-center">
-        <span className="rounded-2xl absolute w-full h-full z-30 opacity-60 bg-black" />
+        <span className="md:rounded-2xl absolute w-full h-full z-30 opacity-60 bg-black" />
         <img
-          className="rounded-2xl mx-auto object-cover	w-full"
+          className="md:rounded-2xl mx-auto object-cover	w-full"
           src={LandingImg?.src}
           alt={LandingImg?.src}
         />
