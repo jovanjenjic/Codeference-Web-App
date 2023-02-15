@@ -25,6 +25,37 @@ function SaidAboutUss() {
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-md transition-all border border-blue-400">
               <img
+                src={kiljaImg?.src}
+                alt="art cover"
+                loading="lazy"
+                width="1000"
+                height="667"
+                className="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500"
+              />
+              <div className="sm:w-7/12 pl-0 p-5">
+                <div className="space-y-2">
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-cyan-900">
+                      Aleksandar Okiljević
+                    </h4>
+                    <p className="text-gray-600 text-sm font-medium text-gray-500">
+                      Veoma kompetentna i kompletna podrška od planiranja do
+                      realizacije. Postupanje sa nama kao i ispunjavanje naših
+                      visokih zahteva i očekivanja iznenadilo nas je veoma
+                      pozitivno i odražava se u konačnom rezultatu saradnje.
+                    </p>
+                  </div>
+                  <p
+                    style={{ fontFamily: "Anonymous Pro" }}
+                    className="text-blue-500"
+                  >
+                    [CTO Positive Tech IT]
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-md transition-all border border-blue-400">
+              <img
                 src={starovicImg.src}
                 alt="art cover"
                 loading="lazy"
@@ -82,37 +113,6 @@ function SaidAboutUss() {
                     className="text-blue-500"
                   >
                     [Founder of CoNStruction]
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="p-1 rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-md transition-all border border-blue-400">
-              <img
-                src={kiljaImg?.src}
-                alt="art cover"
-                loading="lazy"
-                width="1000"
-                height="667"
-                className="h-56 sm:h-full w-full sm:w-5/12 object-cover object-top rounded-lg transition duration-500"
-              />
-              <div className="sm:w-7/12 pl-0 p-5">
-                <div className="space-y-2">
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-semibold text-cyan-900">
-                      Aleksandar Okiljević
-                    </h4>
-                    <p className="text-gray-600 text-sm font-medium text-gray-500">
-                      Veoma kompetentna i kompletna podrška od planiranja do
-                      realizacije. Postupanje sa nama kao i ispunjavanje naših
-                      visokih zahteva i očekivanja iznenadilo nas je veoma
-                      pozitivno i odražava se u konačnom rezultatu saradnje.
-                    </p>
-                  </div>
-                  <p
-                    style={{ fontFamily: "Anonymous Pro" }}
-                    className="text-blue-500"
-                  >
-                    [CTO Positive Tech IT]
                   </p>
                 </div>
               </div>

@@ -23,7 +23,7 @@ function LandingComponent() {
               </div>
               <div className="flex pb-4">
                 <p className="text-blue-500">Codefair</p>
-                <p className="pl-3 min-w-max">Hol FTN-a</p>
+                <p className="pl-3 min-w-max">Hol FTNa</p>
               </div>
               <div className="flex pb-4">
                 <p className="text-blue-500">Codeday</p>
