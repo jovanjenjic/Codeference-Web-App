@@ -22,14 +22,27 @@ function Description() {
             <div className="md:7/12 lg:w-6/12">
               <h2 className="text-2xl font-bold md:text-4xl">O nama</h2>
               <p className="mt-6">
-                Codeference predstavlja ideju studenata, okupljenih sa jednim
-                zadatkom da olakšaju tebi kao pojedincu i otkriju pravce i nova
-                znanja koje možda ni ne poznaješ vezane za tvoju buduću
-                karijeru.
+                Mi smo studentska organizacija koja okuplja studente sa
+                interesovanjem za informacione tehnologije i elektrotehniku na
+                našem fakultetu i na drugim univerzitetima u državi i regionu.
+                Kroz organizaciju različitih događaja i aktivnosti, te saradnju
+                sa relevantnim organizacijama i uz podršku Fakulteta i
+                Ministarstva, težimo da pružimo podršku studentima u njihovom
+                razvoju i napredovanju u IT sektoru.
               </p>
               <p className="mt-4">
-                Codeference tim ima za zadatak da ti omogući kontakt sa ljudima
-                koji će ti definitivno uticati na dalju budućnost!
+                Naša organizacija je poznata po tri važna događaja koja
+                organizujemo tokom godine. Codeference je događaj koji se
+                održava u oktobru ili novembru, a okuplja stručnjake iz
+                industrije i studente koji su zainteresovani da steknu nova
+                znanja iz oblasti informacionih tehnologija. Codefair je događaj
+                koji organizujemo u maju, a pruža studentima mogućnost da se
+                upoznaju sa kompanijama iz IT sektora, saznaju više o
+                mogućnostima za praksu i zaposlenje, te da se povežu sa
+                relevantnim ljudima u industriji. Takođe, nekoliko puta godišnje
+                organizujemo Codeday - jednodnevni događaj koji pruža priliku
+                studentima da se okupe, steknu nova znanja i veštine, te se
+                druže i zabave sa kolegama iz IT zajednice.
               </p>
             </div>
           </div>
@@ -39,14 +52,24 @@ function Description() {
             <div className="md:7/12 lg:w-6/12">
               <h2 className="text-2xl font-bold md:text-4xl">Cilj</h2>
               <p className="mt-6">
-                Naš cilj je da okupimo što veći broj studenata iz oblasti
-                elektrotehnike i računarstva i omogućimo komunikaciju između
-                studenata i kompanija, da im se omogući neformalno obrazovanje i
-                svi mogući izazovi prilikom prvog zaposlenja.
+                Cilj naše organizacije je da pružimo podršku studentima koji se
+                bave informacionim tehnologijama i elektrotehnikom, da
+                unapredimo kvalitet IT obrazovanja i da doprinesemo razvoju IT
+                zajednice. Kroz organizaciju događaja kao što su Codeference,
+                Codefair i Codeday, težimo da povežemo studente sa stručnjacima
+                iz industrije, omogućimo im da razvijaju svoje veštine i da se
+                upoznaju sa najnovijim trendovima i inovacijama u IT sektoru.
               </p>
               <p className="mt-4">
-                Pored ovih ozbiljnih stvari nam je i cilj da se dobro provedeš i
-                upoznaš nove prijatelje i buduće kolege za ceo život.
+                Pored toga, kao zvanični predstavnici studenata ispred
+                studentskog parlamenta, naša organizacija ima mogućnost da utiče
+                na dešavanja koja se odnose na IT obrazovanje i da zastupa
+                interese studenata koji se bave informacionim tehnologijama i
+                elektrotehnikom. Naš cilj je da studentima pružimo priliku za
+                razvoj i napredovanje u karijeri u IT sektoru, kao i priliku da
+                se povežu sa relevantnim akterima u industriji. Naša
+                organizacija je otvorena za sve studente koji žele da se uključe
+                i doprinesu razvoju IT zajednice.
               </p>
             </div>
             <div className="md:5/12 lg:w-5/12">
@@ -80,15 +103,24 @@ function Description() {
             <div className="md:7/12 lg:w-6/12">
               <h2 className="text-2xl font-bold md:text-4xl">Misija</h2>
               <p className="mt-6">
-                Misija Codeference se ne ogleda samo u ova 3 dana, ona se bazira
-                na stvaranju kulture razmene znanja između studenata i
-                predavača, istim onim koji su bili kao i ti student.
+                Misija naše organizacije je da pružimo podršku studentima koji
+                se bave informacionim tehnologijama i elektrotehnikom, te da
+                stvorimo zajednicu u kojoj se studenti mogu povezati sa
+                stručnjacima iz industrije, steknu nova znanja i veštine, te
+                razviju svoje karijere u IT sektoru. Kroz organizaciju događaja
+                i aktivnosti, te saradnju sa relevantnim organizacijama i uz
+                podršku Fakulteta i Ministarstva, težimo da podignemo nivo
+                kvaliteta IT obrazovanja na našem fakultetu, te da unapredimo
+                poziciju studenata koji se bave informacionim tehnologijama.
               </p>
               <p className="mt-4">
-                Znanje se možda ne može steći kroz 3 dana, ali težiće se ka tome
-                da kroz stalne radionice i korisne informacije i predavanja u
-                toku godine Codeference postane jedan od tvojih omiljenih izvora
-                informacija.
+                Naša misija se takođe sastoji od toga da budemo glas studenata
+                koji se bave informacionim tehnologijama i elektrotehnikom, te
+                da zagovaramo interese i potrebe ove grupe studenata pred
+                fakultetom. Misija Codeference se ne ogleda samo u ova 3 ili
+                manje dana, ona se bazira na stvaranju kulture razmene znanja
+                između studenata i predavača, istim onim koji su bili kao i ti
+                student.
               </p>
             </div>
           </div>
