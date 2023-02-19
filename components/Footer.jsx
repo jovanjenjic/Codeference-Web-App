@@ -105,7 +105,7 @@ function Footer() {
                         href="/upload-cv"
                         className="text-white hover:text-gray-200 font-semibold block pb-2 text-sm"
                       >
-                        Otpremi CV
+                        Ostavi CV
                       </a>
                     </Link>
                   </li>

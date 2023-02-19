@@ -120,7 +120,7 @@ function Header() {
           ))}
           <Link href="/upload-cv">
             <span className="md:float-right  py-2 px-4 rounded inline-flex items-center ml-4 font-semibold cursor-pointer ">
-              Otpremi CV
+              Ostavi CV
             </span>
           </Link>
           <Link href="/">

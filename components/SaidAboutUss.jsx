@@ -45,12 +45,7 @@ function SaidAboutUss() {
                       pozitivno i odražava se u konačnom rezultatu saradnje.
                     </p>
                   </div>
-                  <p
-                    style={{ fontFamily: "Anonymous Pro" }}
-                    className="text-blue-500"
-                  >
-                    [CTO Positive Tech IT]
-                  </p>
+                  <p className="text-blue-500">[CTO Positive Tech IT]</p>
                 </div>
               </div>
             </div>
@@ -76,12 +71,7 @@ function SaidAboutUss() {
                       iskustvo i utisak studenata. Radujem se sledećem susretu.
                     </p>
                   </div>
-                  <p
-                    style={{ fontFamily: "Anonymous Pro" }}
-                    className="text-blue-500"
-                  >
-                    [Student Vice-Dean]
-                  </p>
+                  <p className="text-blue-500">[Student Vice-Dean]</p>
                 </div>
               </div>
             </div>
@@ -108,12 +98,7 @@ function SaidAboutUss() {
                       talentovane i uspešne ekipe.
                     </p>
                   </div>
-                  <p
-                    style={{ fontFamily: "Anonymous Pro" }}
-                    className="text-blue-500"
-                  >
-                    [Founder of CoNStruction]
-                  </p>
+                  <p className="text-blue-500">[Founder of CoNStruction]</p>
                 </div>
               </div>
             </div>
@@ -140,12 +125,7 @@ function SaidAboutUss() {
                       primer.
                     </p>
                   </div>
-                  <p
-                    style={{ fontFamily: "Anonymous Pro" }}
-                    className="text-blue-500"
-                  >
-                    [Student Vice-Chancellor]
-                  </p>
+                  <p className="text-blue-500">[Student Vice-Chancellor]</p>
                 </div>
               </div>
             </div>

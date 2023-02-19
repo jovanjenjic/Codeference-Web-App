@@ -39,14 +39,14 @@ function CvText({ showSuccessMessage, showErrorMessage }) {
       <div>
         <br />
         <b>
-          Popuni osnovne podatke i otpremi svoj CV i ostvari komunikaciju sa
+          Popuni osnovne podatke i ostavi svoj CV i ostvari komunikaciju sa
           nekom od IT firmi.
         </b>
         <br />
         <br />
         Neophodno je popuniti osnovne podatke koji se nalaze u sekciji Osnovni
         podaci. Zatim je dovoljno ili popuniti napredne podatke o sebi ili samo
-        otpremiti svoj CV. CV file ce biti dostupan vodecim kompanijama sa naših
+        ostaviti svoj CV. CV file ce biti dostupan vodecim kompanijama sa naših
         prostora, nakon čega ce te kontaktirati neka od kompanija.
         <br />
         <br />
