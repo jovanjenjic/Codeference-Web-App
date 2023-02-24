@@ -90,6 +90,10 @@
   width: 1300px;
 }
 
+.video-js-poster {
+  width: 300px !important;
+}
+
 @media screen and (max-width: 1024px) {
   .video-js {
     border-radius: 0;

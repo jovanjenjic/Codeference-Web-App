@@ -1,7 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import dayjs from "dayjs";
 
 function MyTimer({ subDetails, numOfPosts }) {
+  const dateFormatter = (date, withoutDot) => {
+    return dayjs(date).format(`DD. MM. YYYY${!withoutDot ? "." : ""}`);
+  };
   return (
     <div className="flex flex-col">
       <div className="lg:rounded-xl bg-white grid lg:shadow-lg grid-cols-2 xl:grid-cols-4">
@@ -104,8 +108,11 @@ function MyTimer({ subDetails, numOfPosts }) {
             <p className="mt-2 text-[12px] md:text-sm text-gray-500">
               {`Ovaj događaj se održao ${
                 subDetails?.endDate
-                  ? `u vremenskom intervalu: ${subDetails?.startDate}-${subDetails?.endDate}`
-                  : `: ${subDetails?.startDate}`
+                  ? `u vremenskom intervalu: ${dateFormatter(
+                      subDetails?.startDate,
+                      true
+                    )} - ${dateFormatter(subDetails?.endDate)}`
+                  : `: ${dateFormatter(subDetails?.startDate)}`
               }`}
             </p>
           </div>

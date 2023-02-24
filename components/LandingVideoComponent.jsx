@@ -48,7 +48,7 @@ function LandingVideoComponent({ subDetails, numOfPosts }) {
             controls
             loop
             src={subDetails?.video?.url}
-            poster={poster.src}
+            poster={subDetails?.videoPosterImage?.url || poster.src}
           >
             <source src={subDetails?.video?.url} />
           </video>

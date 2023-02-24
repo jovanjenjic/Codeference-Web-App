@@ -20,7 +20,7 @@ function PostCard({ post }) {
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 0.3 }}
     >
-      <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+      <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-6 lg:pb-12 mb-8">
         <div className="relative overflow-hidden shadow-md pb-80 mb-6">
           <img
             src={post.featuredImage.url}
@@ -29,7 +29,7 @@ function PostCard({ post }) {
           />
         </div>
 
-        <h1 className="transition duration-500 text-center mb-8 cursor-pointer hover:text-sky-600 text-3xl font-semibold">
+        <h1 className="transition duration-500 text-center mb-8 cursor-pointer hover:text-sky-600 text-2xl lg:text-3xl font-semibold">
           <Link href={`/post/${post.slug}`}>{post.title}</Link>
         </h1>
         <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
@@ -43,7 +43,7 @@ function PostCard({ post }) {
               className="align-middle rounded-full"
               src={post.author.photo.url}
             />
-            <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">
+            <p className="inline align-middle text-gray-700 ml-2 font-medium text-base lg:text-lg">
               {post.author.name}
             </p>
           </div>
@@ -62,17 +62,17 @@ function PostCard({ post }) {
                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
               />
             </svg>
-            <span className="align-middle">
+            <span className="align-middle text-base lg:text-lg">
               {dayjs(post?.date || post?.createdAt).format("DD.MM.YYYY.")}
             </span>
           </div>
         </div>
-        <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">
+        <p className="text-center text-base lg:text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">
           {post.exce}
         </p>
         <div className="text-center">
           <Link href={`/post/${post.slug}`} onClick={onOpenPost}>
-            <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-sky-500 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
+            <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-sky-500 text-base lg:text-lg font-medium rounded-full text-white px-4 lg:px-8 py-2 lg:py-3 cursor-pointer">
               Nastavi čitanje
             </span>
           </Link>

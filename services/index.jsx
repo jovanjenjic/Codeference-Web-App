@@ -105,7 +105,7 @@ export const getSubcategoryDetails = async (slug) => {
         images(first: 100) {
           url(
             transformation: {
-              image: { resize: { width: 500, height: 500, fit: clip } }
+              image: { resize: { width: 800, height: 800, fit: clip } }
             }
           )
         }
@@ -125,6 +125,9 @@ export const getSubcategoryDetails = async (slug) => {
           }
         }
         video {
+          url
+        }
+        videoPosterImage {
           url
         }
       }
