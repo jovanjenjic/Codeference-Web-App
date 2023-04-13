@@ -46,7 +46,7 @@ function LandingComponent() {
                 Postavi pitanje
               </button>
               <a
-                href="/upload-cv"
+                href="/cv"
                 className="mb-4 font-semibold rounded-3xl transition-all duration-500 bg-transparent border border-blue-500 hover:bg-blue-500 text-white lg:px-16 lg:py-3 py-2"
               >
                 Ostavi CV

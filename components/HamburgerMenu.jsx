@@ -68,7 +68,7 @@ function Header({ categories }) {
                 tabIndex={0}
                 className="font-bold border-b border-gray-900 my-5 uppercase text-center"
               >
-                <Link href="/upload-cv">Ostavi CV</Link>
+                <Link href="/cv">Ostavi CV</Link>
               </div>
               {/* <div
                 role="button"

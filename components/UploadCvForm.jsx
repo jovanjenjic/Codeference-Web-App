@@ -212,7 +212,7 @@ function UploadCvForm({ showAlertHandler }) {
   };
 
   return (
-    <div className="lg:col-span-3 text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
+    <div className="lg:col-span-3 text-black justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <ul>
         {elements.map((element) => (
           <li key={element.id} cl>

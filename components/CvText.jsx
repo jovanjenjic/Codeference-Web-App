@@ -5,7 +5,7 @@ import AlertMessageSuccess from "./AlertMessageSuccess";
 
 function CvText({ showSuccessMessage, showErrorMessage }) {
   return (
-    <div className="lg:col-span-3 text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
+    <div className="lg:col-span-3 text-red justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <div>
         <div className="flex">
           <svg
@@ -64,6 +64,11 @@ function CvText({ showSuccessMessage, showErrorMessage }) {
           Izbegavaj otpremanje velikih fajlova. Pokušaj da dodatno zapakuješ cv
           fajl.
         </div>
+      </div>
+      <div>
+        <b>NAPOMENA:</b> Kada upload-ujete svoj CV, automatski dajete saglasnost
+        da se isti može koristiti od strane kompanija u svrhu odabira kandidata
+        za otvorena radna mesta ili stručne prakse.
       </div>
       <br />
       <br />

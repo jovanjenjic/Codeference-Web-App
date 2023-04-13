@@ -100,9 +100,9 @@ function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/upload-cv">
+                    <Link href="/cv">
                       <a
-                        href="/upload-cv"
+                        href="/cv"
                         className="text-white hover:text-gray-200 font-semibold block pb-2 text-sm"
                       >
                         Ostavi CV

@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import tim from "../public/tim.png";
+import misija from "../public/misija.png";
+import vizija from "../public/vizija.png";
 
 function Description() {
   return (
@@ -12,7 +15,7 @@ function Description() {
                 initial={{ x: 30, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                src="https://www.pngmart.com/files/About-Us-PNG-Free-Download.png"
+                src={tim.src}
                 alt="image"
                 loading="lazy"
                 width=""
@@ -77,7 +80,7 @@ function Description() {
                 initial={{ x: -30, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                src="https://qq.co.id/wp-content/uploads/2019/04/kisspng-clip-art-recruitment-vector-graphics-illustration-philips-metal-industries-careers-5c648684496bc9.4283209715500919083007-982x780.png"
+                src={misija.src}
                 alt="image"
                 loading="lazy"
                 width=""
@@ -93,7 +96,7 @@ function Description() {
                 initial={{ x: 30, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                src="https://user-images.githubusercontent.com/762297/59157609-ca692180-8ad7-11e9-88ab-552f8e88a202.png"
+                src={vizija.src}
                 alt="image"
                 loading="lazy"
                 width=""
