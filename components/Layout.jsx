@@ -9,8 +9,10 @@ function Layout({ children }) {
     <div className="flex flex-col justify-between h-screen">
       <Header />
       {children}
-      <WaveRevarse bgColor="bg-blue-600" waveColor="#eff6ff" />
-      <Footer />
+      <div>
+        <WaveRevarse bgColor="bg-blue-600" waveColor="#eff6ff" />
+        <Footer />
+      </div>
     </div>
   );
 }
