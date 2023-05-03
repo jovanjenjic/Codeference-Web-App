@@ -83,6 +83,32 @@ function Header() {
               </button>
             </ul>
           </div> */}
+          <div className="group inline-block relative">
+            <button
+              type="button"
+              className="text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center"
+            >
+              <span className="mr-1">Radionice 2023</span>
+              <svg
+                className="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </button>
+
+            <ul className="absolute hidden text-gray-900 pt-1 group-hover:block">
+              <button
+                type="button"
+                className="rounded-b w-full text-left bg-blue-100 hover:bg-blue-200 py-2 px-4 block whitespace-no-wrap"
+                onClick={() => onClick(`/radionice-2023/lily021`)}
+                onKeyPress={() => onClick(`/radionice-2023/lily021`)}
+              >
+                <Link href="/radionice-2023/lily021">Radionica - Lily 021</Link>
+              </button>
+            </ul>
+          </div>
           {categories.map((cat) => (
             <div className="group inline-block relative" key={cat.slug}>
               <button
