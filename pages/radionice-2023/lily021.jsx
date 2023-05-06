@@ -9,12 +9,16 @@ const initData = {
   prezime: "",
   brTelefona: "",
   email: "",
+  godinaStudija: "",
+  smer: "",
 };
 const initDataError = {
   ime: false,
   prezime: false,
   brTelefona: false,
   email: false,
+  godinaStudija: false,
+  smer: false,
 };
 
 const validateEmail = (emailAddress = "") => {
@@ -41,6 +45,8 @@ function Lily021RadionicaPage() {
     !formData.prezime ||
     !formData.brTelefona ||
     !formData.email ||
+    !formData.godinaStudija ||
+    !formData.smer ||
     !validateEmail(formData.email);
 
   const onSubmitHandler = () => {
@@ -49,6 +55,8 @@ function Lily021RadionicaPage() {
         ime: !formData.ime,
         prezime: !formData.prezime,
         brTelefona: !formData.brTelefona,
+        godinaStudija: !formData.godinaStudija,
+        smer: !formData.smer,
         email: !formData.email || !validateEmail(formData.email),
       });
     } else {

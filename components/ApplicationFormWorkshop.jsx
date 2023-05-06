@@ -71,6 +71,35 @@ function ApplicationFormWorkshop({
               value={formData?.brTelefona}
             />
           </div>
+
+          <div className="md:col-span-3">
+            <label htmlFor="smer">Smer</label>
+            <input
+              type="text"
+              className={`${
+                formDataError?.smer
+                  ? "border-red-500 outline-red-400"
+                  : "outline-blue-400"
+              } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+              placeholder="E2"
+              onChange={(e) => onInputChange("smer", e.target.value)}
+              value={formData?.smer}
+            />
+          </div>
+          <div className="md:col-span-2">
+            <label htmlFor="godinaStudija">Godina studija</label>
+            <input
+              type="text"
+              className={`${
+                formDataError?.godinaStudija
+                  ? "border-red-500 outline-red-400"
+                  : "outline-blue-400"
+              } h-10 border mt-1 rounded px-4 w-full bg-blue-50 bg-opacity-40`}
+              placeholder="4."
+              onChange={(e) => onInputChange("godinaStudija", e.target.value)}
+              value={formData?.godinaStudija}
+            />
+          </div>
           {showMemberField && (<div className="md:col-span-5">
             <label htmlFor="tim">Članovi tima</label>
             <input
