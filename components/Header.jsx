@@ -107,6 +107,14 @@ function Header() {
               >
                 <Link href="/radionice-2023/lily021">Radionica - Lily 021</Link>
               </button>
+              <button
+                type="button"
+                className="rounded-b w-full text-left bg-blue-100 hover:bg-blue-200 py-2 px-4 block whitespace-no-wrap"
+                onClick={() => onClick(`/radionice-2023/syrmia`)}
+                onKeyPress={() => onClick(`/radionice-2023/syrmia`)}
+              >
+                <Link href="/radionice-2023/syrmia">Radionica - Syrmia</Link>
+              </button>
             </ul>
           </div>
           {categories.map((cat) => (
