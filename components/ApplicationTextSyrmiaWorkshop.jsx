@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 import AlertMessageError from "./AlertMessageError";
 import AlertMessageSuccess from "./AlertMessageSuccess";
 
-function ApplicationTextSyrmiaWorkshop({
-  showSuccessMessage,
-  showErrorMessage,
-}) {
+function ApplicationTextSyrmiaWorkshop({ showSuccessMessage, showErrorMessage }) {
   return (
     <div className="lg:col-span-3 text-red justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <div>
@@ -59,13 +56,13 @@ function ApplicationTextSyrmiaWorkshop({
         neuronske mreže, pokaže kako izbor platforme (procesor ili grafička
         kartica) kao i izbor verzije ove mreže utiče na performanse i na tačnost
         samog algoritma. Radionica je namenjena starijim studentima koji su već
-        stekli određena znanja iz oblasti digitalne obrade slike i videa. Od
-        studenata se neće zahtevati da bilo šta koduju jer bi samo podešavanje
-        razvojnog okruženja oduzelo dosta vremena.
+        stekli određena znanja iz oblasti digitalne obrade slike i videa.
         <br />
         <br />
         Broj mesta je ograničen zato se požuri i prijavi se što pre.
         <br />
+        <br />
+        P.S. Nije potreban laptop ili dodatna oprema za učestvovanje
       </div>
       <br />
       <br />
