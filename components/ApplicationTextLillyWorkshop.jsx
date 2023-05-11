@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import AlertMessageError from "./AlertMessageError";
 import AlertMessageSuccess from "./AlertMessageSuccess";
 
-function ApplicationTextLilyWorkshop({ showSuccessMessage, showErrorMessage }) {
+function ApplicationTextLillyWorkshop({
+  showSuccessMessage,
+  showErrorMessage,
+}) {
   return (
     <div className="lg:col-span-3 text-red justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <div>
@@ -31,7 +34,7 @@ function ApplicationTextLilyWorkshop({ showSuccessMessage, showErrorMessage }) {
             </g>
           </svg>
           <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">
-            Radionica Lily 021
+            Radionica Lilly 021
           </p>
         </div>
         {showSuccessMessage && <AlertMessageSuccess />}
@@ -41,8 +44,8 @@ function ApplicationTextLilyWorkshop({ showSuccessMessage, showErrorMessage }) {
       <div>
         <br />
         <b>
-          Prijavi se za radionicu koja te očekuje 15.05.2023. ispred kompanije
-          LILY 021 - Kako postati junior programer, a zatim i senior?
+          Prijavi se za radionicu koja te očekuje u četvrtak 18.05. u 17h ispred
+          kompanije LILLY 021 - Kako postati junior programer, a zatim i senior?
         </b>
         <br />
         <br />
@@ -73,9 +76,9 @@ function ApplicationTextLilyWorkshop({ showSuccessMessage, showErrorMessage }) {
   );
 }
 
-ApplicationTextLilyWorkshop.propTypes = {
+ApplicationTextLillyWorkshop.propTypes = {
   showSuccessMessage: PropTypes.bool.isRequired,
   showErrorMessage: PropTypes.bool.isRequired,
 };
 
-export default ApplicationTextLilyWorkshop;
+export default ApplicationTextLillyWorkshop;

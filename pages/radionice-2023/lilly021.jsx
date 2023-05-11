@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { Meta, ApplicationFormWorkshop } from "../../components";
-import ApplicationTextLilyWorkshop from "../../components/ApplicationTextLilyWorkshop";
+import ApplicationTextLillyWorkshop from "../../components/ApplicationTextLillyWorkshop";
 
 const initData = {
   ime: "",
@@ -28,7 +28,7 @@ const validateEmail = (emailAddress = "") => {
   );
 };
 
-function Lily021RadionicaPage() {
+function Lilly021RadionicaPage() {
   const [formData, setFormData] = useState(initData);
   const [formDataError, setFormDataError] = useState(initDataError);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -64,7 +64,7 @@ function Lily021RadionicaPage() {
       axios
         .post("https://sheetdb.io/api/v1/80k5ymtta8hrx", {
           ...formData,
-          tip: "lily021",
+          tip: "lilly021",
         })
         .then(() => {
           setLoading(false);
@@ -87,7 +87,7 @@ function Lily021RadionicaPage() {
       <Meta
         description="Konferencija studenata elektrotehnike i računarstva."
         keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
-        title="Radionica Lily 021 - Codefair 2023"
+        title="Radionica Lilly 021 - Codefair 2023"
       />
       <div className="container max-w-screen-lg mx-auto">
         <div>
@@ -98,7 +98,7 @@ function Lily021RadionicaPage() {
             className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6"
           >
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-5">
-              <ApplicationTextLilyWorkshop
+              <ApplicationTextLillyWorkshop
                 showSuccessMessage={showSuccessMessage}
                 showErrorMessage={showErrorMessage}
               />
@@ -118,4 +118,4 @@ function Lily021RadionicaPage() {
   );
 }
 
-export default Lily021RadionicaPage;
+export default Lilly021RadionicaPage;

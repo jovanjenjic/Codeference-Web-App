@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import AlertMessageError from "./AlertMessageError";
 import AlertMessageSuccess from "./AlertMessageSuccess";
 
-function ApplicationTextSyrmiaWorkshop({ showSuccessMessage, showErrorMessage }) {
+function ApplicationTextSyrmiaWorkshop({
+  showSuccessMessage,
+  showErrorMessage,
+}) {
   return (
     <div className="lg:col-span-3 text-red justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <div>
