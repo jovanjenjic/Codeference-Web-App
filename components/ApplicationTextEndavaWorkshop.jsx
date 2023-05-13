@@ -44,7 +44,7 @@ function ApplicationTextEndavaWorkshop({
       <div>
         <br />
         <b>
-          Prijavi se za radionicu koja te očekuje u utorak 15.05. u 17h ispred
+          Prijavi se za radionicu koja te očekuje u ponedeljak 15.05. u 17h ispred
           kompanije Endava - Mikroservisna arhitektura
         </b>
         <br />
