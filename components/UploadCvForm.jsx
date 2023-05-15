@@ -123,30 +123,26 @@ function UploadCvForm({ showAlertHandler }) {
       }
     } else {
       setIsLoading(true);
-      const { webViewLink } = await uploadCvOnServer(viewCv);
 
-      if (webViewLink) {
-        await axios
-          .post("https://sheetdb.io/api/v1/j6smbmjkswof7", {
-            ...baseInfo,
-            ...advancedInfo,
-            cv_url: webViewLink,
-          })
-          .then(() => {
-            showAlertHandler();
-            setBaseInfo(baseInfoInit);
-            setAdvancedInfo(advancedInfoInit);
-            // restart input file field
-            document.getElementById("formFileSm").value = "";
-            setViewCv(viewCvInit);
-            setIsLoading(false);
-          });
-      } else {
-        showAlertHandler(false);
-        document.getElementById("formFileSm").value = "";
-        setViewCv(viewCvInit);
-        setIsLoading(false);
-      }
+      const { webViewLink } = isCvValid
+        ? await uploadCvOnServer(viewCv)
+        : { webViewLink: "" };
+
+      await axios
+        .post("https://sheetdb.io/api/v1/j6smbmjkswof7", {
+          ...baseInfo,
+          ...advancedInfo,
+          cv_url: webViewLink,
+        })
+        .then(() => {
+          showAlertHandler();
+          setBaseInfo(baseInfoInit);
+          setAdvancedInfo(advancedInfoInit);
+          // restart input file field
+          document.getElementById("formFileSm").value = "";
+          setViewCv(viewCvInit);
+          setIsLoading(false);
+        });
     }
   };
 
@@ -219,16 +215,18 @@ function UploadCvForm({ showAlertHandler }) {
             <button
               type="button"
               onClick={() => toggleCollapse(element.id)}
-              className={`inline-flex w-full justify-between py-6 px-4 border border-gray-300 ${openItemIndex === element.id || element.id === 3
+              className={`inline-flex w-full justify-between py-6 px-4 border border-gray-300 ${
+                openItemIndex === element.id || element.id === 3
                   ? "border-b-1"
                   : "border-b-0"
-                }`}
+              }`}
             >
               {element.label}
               <div className="inline-flex items-center">
                 <img
-                  className={`w-[16px] h-[16px] transition-all ${element.id === openItemIndex && "-rotate-180"
-                    }`}
+                  className={`w-[16px] h-[16px] transition-all ${
+                    element.id === openItemIndex && "-rotate-180"
+                  }`}
                   src={collapseIcon.src}
                   alt="arrow-icon"
                 />
@@ -250,8 +248,9 @@ function UploadCvForm({ showAlertHandler }) {
       <button
         onClick={onSubmitHandler}
         type="button"
-        className={`${(!isValid || isLoading) && "opacity-50"
-          } flex justify-center px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out`}
+        className={`${
+          (!isValid || isLoading) && "opacity-50"
+        } flex justify-center px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out`}
       >
         Pošalji
         {isLoading && (

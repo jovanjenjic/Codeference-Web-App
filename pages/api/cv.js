@@ -36,7 +36,7 @@ const uploadFile = async (file) => {
   const drive = google.drive({ version: "v3", auth: jwtClient });
 
   const media = {
-    mimeType: file.mimetype,
+    mimeType: file?.mimetype,
     body: bufferToStream(file.buffer),
   };
 
