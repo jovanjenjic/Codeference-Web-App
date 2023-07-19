@@ -14,7 +14,9 @@ function Header() {
 
   useEffect(() => {
     getCategories().then((newCategories) => {
-      setCategories(newCategories);
+      setCategories(
+        newCategories.sort((a, b) => (b?.order ?? 1) - (a?.order ?? 1))
+      );
     });
   }, []);
 
@@ -83,7 +85,9 @@ function Header() {
               </button>
             </ul>
           </div> */}
-          <div className="group inline-block relative">
+
+          {/* TODO: Back later for codeference */}
+          {/* <div className="group inline-block relative">
             <button
               type="button"
               className="text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center"
@@ -126,7 +130,7 @@ function Header() {
                 <Link href="/radionice-2023/endava">Radionica - Endava</Link>
               </button>
             </ul>
-          </div>
+          </div> */}
           {categories.map((cat) => (
             <div className="group inline-block relative" key={cat.slug}>
               <button

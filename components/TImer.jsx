@@ -9,7 +9,7 @@ function MyTimer() {
   });
 
   useEffect(() => {
-    setTime(new Date(new Date("05/17/2023").getTime()));
+    setTime(new Date(new Date("10/26/2023").getTime()));
   }, []);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function MyTimer() {
             Brojite <p className="text-blue-600 pl-[4px]">Svaku</p>
           </div>
           <p className="text-blue-600">Sekundu</p>
-          Do Codefair-a
+          Do Codeference
         </div>
         <div className="left-1/2 -ml-0.5 w-0.5 bg-gray-300 hidden lg:flex" />
         <div className="w-3/5 sm:w-3/4 flex flex-row justify-around	">

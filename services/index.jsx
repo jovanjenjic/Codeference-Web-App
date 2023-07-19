@@ -44,6 +44,7 @@ export const getLogos = async () => {
         image {
           url
         }
+        url
         subcategories {
           name
           slug
@@ -69,6 +70,7 @@ export const getCategories = async () => {
           slug
           hide
         }
+        order
       }
     }
   `;
@@ -120,6 +122,7 @@ export const getSubcategoryDetails = async (slug) => {
         }
         logos(first: 100) {
           name
+          url
           image {
             url
           }
