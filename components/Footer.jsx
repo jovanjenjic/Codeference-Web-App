@@ -1,6 +1,27 @@
 import React from "react";
 import Link from "next/link";
 
+import { SocialIcon } from "react-social-icons";
+
+const socialLinks = [
+  {
+    name: 'linkedin',
+    url: "https://www.linkedin.com/company/studentska-unija-fakulteta-tehni%C4%8Dkih-nauka/",
+  },
+  {
+    name: 'facebook',
+    url: 'https://www.facebook.com/codeferenceftn'
+  },
+  {
+    name: 'instagram',
+    url: 'https://www.instagram.com/codeference'
+  },
+  {
+    name: 'youtube',
+    url: 'https://www.youtube.com/@codeference3265'
+  },
+];
+
 function Footer() {
   return (
     <footer className="relative bg-blue-600 pt-8 pb-6">
@@ -12,63 +33,19 @@ function Footer() {
               Klikni na ikonicu ispod i pronađi nas na nekoj od društvenih
               mreža!
             </h5>
-            <div className="mt-6">
-              <button
-                className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <Link href="https://www.linkedin.com/company/studentska-unija-fakulteta-tehni%C4%8Dkih-nauka/">
-                  <a
-                    href="https://www.linkedin.com/company/studentska-unija-fakulteta-tehni%C4%8Dkih-nauka/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i className="fab fa-linkedin-in" />
-                  </a>
-                </Link>
-              </button>
-              <button
-                className="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <Link href="https://www.facebook.com/codeferenceftn">
-                  <a
-                    href="https://www.facebook.com/codeferenceftn"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i className="flex fab fa-facebook-square" />
-                  </a>
-                </Link>
-              </button>
-              <button
-                className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <Link href="https://www.instagram.com/codeference">
-                  <a
-                    href="https://www.instagram.com/codeference"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i className="fa-brands fa-instagram" />
-                  </a>
-                </Link>
-              </button>
-              <button
-                className="bg-white text-red-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <Link href="https://www.youtube.com/@codeference3265">
-                  <a
-                    href="https://www.youtube.com/@codeference3265"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i className="fa-brands fa-youtube" />
-                  </a>
-                </Link>
-              </button>
+            <div className="mt-3 flex flex-row gap-[10px]">
+              {socialLinks.map((link) => (
+                <SocialIcon
+                  url={link.url}
+                  key={link.name}
+                  fgColor="blue"
+                  bgColor="white"
+                  style={{
+                    width: 40,
+                    height: 40
+                  }}
+                />
+              ))}
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
