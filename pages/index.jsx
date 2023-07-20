@@ -40,7 +40,6 @@ function Home({ logos }) {
   );
 }
 
-// Fetch data at build time
 export async function getStaticProps() {
   const logos = await getLogos();
 
