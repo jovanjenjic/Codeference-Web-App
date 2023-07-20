@@ -70,33 +70,6 @@ function Header({ categories }) {
               >
                 <Link href="/cv">Ostavi CV</Link>
               </div>
-              <div
-                role="button"
-                onClick={handleOnClick}
-                onKeyPress={handleOnClick}
-                tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
-              >
-                <Link href="/radionice-2023/lilly021">Radionica Lilly 021</Link>
-              </div>
-              <div
-                role="button"
-                onClick={handleOnClick}
-                onKeyPress={handleOnClick}
-                tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
-              >
-                <Link href="/radionice-2023/syrmia">Radionica Syrmia</Link>
-              </div>
-              <div
-                role="button"
-                onClick={handleOnClick}
-                onKeyPress={handleOnClick}
-                tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
-              >
-                <Link href="/radionice-2023/endava">Radionica Endava</Link>
-              </div>
               {/* <div
                 role="button"
                 onClick={handleOnClick}
