@@ -10,10 +10,11 @@ import {
   Wave,
   WaveRevarse,
   Gallery,
+  Testimonials
 } from "../components";
-import { getLogos } from "../services";
+import { getCitations, getLogos } from "../services";
 
-function Home({ logos }) {
+function Home({ logos, citations }) {
   return (
     <div>
       <Meta
@@ -31,6 +32,7 @@ function Home({ logos }) {
         <SupportHomePage logos={logos} />
         <Wave bgColor="bg-blue-600" waveColor="white" />
         <SaidAboutUss />
+        <Testimonials citations={citations} />
         <WaveRevarse bgColor="bg-blue-600" waveColor="white" />
         <AskForm />
         <Wave bgColor="bg-blue-600" />
@@ -42,9 +44,10 @@ function Home({ logos }) {
 
 export async function getStaticProps() {
   const logos = await getLogos();
+  const citations = await getCitations();
 
   return {
-    props: { logos },
+    props: { logos, citations },
   };
 }
 

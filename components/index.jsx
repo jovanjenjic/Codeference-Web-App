@@ -43,3 +43,4 @@ export { default as Gallery } from "./Gallery";
 export { default as GalleryEvent } from "./GalleryEvent";
 export { default as TitleComponent } from "./TitleComponent";
 export { default as EventInfoComponent } from "./EventInfoComponent";
+export { default as Testimonials } from "./Testimonials";
