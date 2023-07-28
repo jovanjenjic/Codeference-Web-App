@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import imgLogo from "../public/logo-crni.png";
-import { getCategories } from "../services";
 import HamburgerMenu from "./HamburgerMenu";
+
+import categories from "../data/header.json";
+
+const sortedCategories = categories.sort(
+  (a, b) => (b?.order ?? 1) - (a?.order ?? 1)
+);
 
 function Header() {
   const router = useRouter();
 
-  const [categories, setCategories] = useState([]);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    getCategories().then((newCategories) => {
-      setCategories(
-        newCategories.sort((a, b) => (b?.order ?? 1) - (a?.order ?? 1))
-      );
-    });
-  }, []);
 
   const onClick = (path) => router.push(path);
   return (
@@ -32,7 +28,7 @@ function Header() {
           </div>
           <div className="md:hidden">
             <HamburgerMenu
-              categories={categories}
+              categories={sortedCategories}
               open={open}
               setOpen={setOpen}
             />
@@ -131,7 +127,7 @@ function Header() {
               </button>
             </ul>
           </div> */}
-          {categories.map((cat) => (
+          {sortedCategories.map((cat) => (
             <div className="group inline-block relative" key={cat.slug}>
               <button
                 type="button"
