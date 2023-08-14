@@ -10,6 +10,10 @@ import "../styles/afterMovie.css";
 import "../styles/gallery.css";
 import "../styles/title.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "swiper/css";
+import "swiper/css/bundle";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

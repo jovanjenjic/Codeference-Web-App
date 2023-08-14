@@ -31,7 +31,6 @@ function Home({ logos, citations }) {
         <WaveRevarse bgColor="bg-blue-600" waveColor="white" />
         <SupportHomePage logos={logos} />
         <Wave bgColor="bg-blue-600" waveColor="white" />
-        <SaidAboutUss />
         <Testimonials citations={citations} />
         <WaveRevarse bgColor="bg-blue-600" waveColor="white" />
         <AskForm />

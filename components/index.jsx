@@ -10,7 +10,6 @@ export { default as CommentsForm } from "./CommentsForm";
 export { default as Loader } from "./Loader";
 export { default as Footer } from "./Footer";
 export { default as AskForm } from "./AskForm";
-export { default as SaidAboutUss } from "./SaidAboutUss";
 export { default as SupportHomePage } from "./SupportHomePage";
 export { default as LandingComponent } from "./LandingComponent";
 export { default as Description } from "./Description";
