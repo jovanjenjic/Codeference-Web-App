@@ -25,6 +25,7 @@ function Author({ author }) {
 }
 
 Author.propTypes = {
+  // eslint-disable-next-line react/no-array-index-key
   author: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 

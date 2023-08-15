@@ -33,7 +33,7 @@ function Testimonials({ citations }) {
           navigation
           loop
         >
-          {citations.map((citation, idx) => (
+          {citations.map((citation) => (
             <SwiperSlide key={citation.author.name}>
               <div className="flex flex-col items-center w-4/5 m-auto">
                 <NextImage

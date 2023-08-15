@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { google } from "googleapis";
 import { Readable } from "stream";
 import nc from "next-connect";

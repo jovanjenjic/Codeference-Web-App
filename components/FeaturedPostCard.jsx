@@ -41,6 +41,7 @@ function FeaturedPostCard({ post }) {
 }
 
 FeaturedPostCard.propTypes = {
+  // eslint-disable-next-line react/no-array-index-key
   post: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
