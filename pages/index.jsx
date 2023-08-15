@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import {
   AskForm,
-  SaidAboutUss,
   SupportHomePage,
   LandingComponent,
   Description,
@@ -52,6 +51,7 @@ export async function getStaticProps() {
 
 Home.propTypes = {
   logos: PropTypes.arrayOf.isRequired,
+  citations: PropTypes.arrayOf.isRequired,
 };
 
 export default Home;

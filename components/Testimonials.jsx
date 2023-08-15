@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import NextImage from "next/image";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Autoplay, Navigation } from "swiper";
+import PropTypes from "prop-types";
 import TitleComponent from "./TitleComponent";
 
 const titleData = {
@@ -64,5 +66,9 @@ function Testimonials({ citations }) {
     </div>
   );
 }
+
+Testimonials.propTypes = {
+  citations: PropTypes.arrayOf.isRequired,
+};
 
 export default Testimonials;
