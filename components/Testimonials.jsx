@@ -34,7 +34,7 @@ function Testimonials({ citations }) {
           loop
         >
           {citations.map((citation, idx) => (
-            <SwiperSlide key={idx}>
+            <SwiperSlide key={citation.author.name}>
               <div className="flex flex-col items-center w-4/5 m-auto">
                 <NextImage
                   src="/svg/quote.svg"
