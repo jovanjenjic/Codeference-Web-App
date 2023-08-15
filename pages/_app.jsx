@@ -5,15 +5,15 @@ import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import * as ga from "../lib";
 import { Layout } from "../components";
-import "../styles/globals.scss";
-import "../styles/afterMovie.css";
-import "../styles/gallery.css";
-import "../styles/title.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "../styles/globals.scss";
+import "../styles/afterMovie.css";
+import "../styles/gallery.css";
+import "../styles/title.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
