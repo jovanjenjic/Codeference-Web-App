@@ -63,8 +63,7 @@ function AdjacentPostCard({ post, position }) {
 }
 
 AdjacentPostCard.propTypes = {
-  // eslint-disable-next-line react/no-array-index-key
-  post: PropTypes.objectOf(PropTypes.object).isRequired,
+  post: PropTypes.objectOf().isRequired,
   position: PropTypes.string.isRequired,
 };
 

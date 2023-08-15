@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import { google } from "googleapis";
 import { Readable } from "stream";
+import { google } from "googleapis";
 import nc from "next-connect";
 import multer from "multer";
 
