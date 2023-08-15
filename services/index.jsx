@@ -396,3 +396,23 @@ export const getRecentPosts = async (hide = false) => {
 
   return result.posts;
 };
+
+export const getCitations = async () => {
+  const query = gql`
+  query getCitations() {
+      citations(first: 100) {
+        text
+        author {
+          photo {
+            url
+          }
+          bio
+          name
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+  return result.citations;
+}
