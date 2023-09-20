@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { ApplicationText, ApplicationForm, Meta } from "../../components";
+import {
+  ApplicationText,
+  ApplicationForm,
+  Meta,
+  ApplicationTextOtherFaculties,
+} from "../../components";
 
 const initData = {
+  fakultet: "",
   imePrezime: "",
   brTelefona: "",
   email: "",
@@ -16,6 +22,7 @@ const initData = {
   komentar: "",
 };
 const initDataError = {
+  fakultet: false,
   imePrezime: false,
   brTelefona: false,
   email: false,
@@ -47,7 +54,25 @@ function PrijaviSePage() {
     setFormData({ ...formData, [key]: value });
   };
 
+  const resolveParam = () => {
+    switch (formData.fakultet) {
+      case "FTN Novi Sad":
+        return "?sheet=FTN NS";
+      case "ETF Beograd":
+        return "?sheet=ETF BG";
+      case "RAF Beograd":
+        return "?sheet=RAF BG";
+      case "ETF Banjaluka":
+        return "?sheet=ETF BL";
+      case "ETF Skoplje":
+        return "?sheet=ETF Skoplje";
+      default:
+        return "?sheet=sheet1";
+    }
+  };
+
   const isNotValid =
+    !formData.fakultet ||
     !formData.imePrezime ||
     !formData.brTelefona ||
     !formData.email ||
@@ -62,6 +87,7 @@ function PrijaviSePage() {
   const onSubmitHandler = () => {
     if (isNotValid) {
       setFormDataError({
+        fakultet: !formData.fakultet,
         imePrezime: !formData.imePrezime,
         brTelefona: !formData.brTelefona,
         email: !formData.email || !validateEmail(formData.email),
@@ -75,7 +101,10 @@ function PrijaviSePage() {
     } else {
       setLoading(true);
       axios
-        .post("https://sheetdb.io/api/v1/jpil7f51reydf", formData)
+        .post(
+          `https://sheetdb.io/api/v1/dlzlthlqjyuco${resolveParam()}`,
+          formData
+        )
         .then(() => {
           setLoading(false);
           setShowSuccessMessage(true);
@@ -91,6 +120,11 @@ function PrijaviSePage() {
         });
     }
   };
+
+  const FormText =
+    formData.fakultet === "FTN Novi Sad" || !formData.fakultet
+      ? ApplicationText
+      : ApplicationTextOtherFaculties;
 
   return (
     <div className="p-6 flex items-center justify-center">
@@ -108,7 +142,7 @@ function PrijaviSePage() {
             className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6"
           >
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
-              <ApplicationText
+              <FormText
                 showSuccessMessage={showSuccessMessage}
                 showErrorMessage={showErrorMessage}
               />
