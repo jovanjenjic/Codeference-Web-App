@@ -17,7 +17,7 @@ const titleData = {
 };
 
 function Separator() {
-  return <div className="py-14 border-t border-transparent h-0" />;
+  return <div className="py-8 lg:py-14 border-t border-transparent h-0" />;
 }
 
 function Testimonials({ citations }) {
