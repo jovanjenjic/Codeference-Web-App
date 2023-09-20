@@ -22,6 +22,7 @@ export { default as AlertMessageSuccess } from "./AlertMessageSuccess";
 export { default as AlertMessageInfo } from "./AlertMessageInfo";
 export { default as AlertMessageError } from "./AlertMessageError";
 export { default as ApplicationText } from "./ApplicationText";
+export { default as ApplicationTextOtherFaculties } from "./ApplicationTextOtherFaculties";
 export { default as ApplicationForm } from "./ApplicationForm";
 export { default as ApplicationTextPrivate } from "./ApplicationTextPrivate";
 export { default as ApplicationFormPrivate } from "./ApplicationFormPrivate";

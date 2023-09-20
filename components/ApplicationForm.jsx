@@ -24,6 +24,106 @@ function ApplicationForm({
   return (
     <div className="lg:col-span-2">
       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+      <div className="md:col-span-5">
+          <label htmlFor="faculty">Fakultet na kojem studiraš</label>
+          <ul
+            className={`${
+              formDataError?.fakultet && "border-red-500"
+            } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border sm:flex`}
+          >
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+              <div className="flex items-center pl-3">
+                <input
+                  id="ftn-ns"
+                  type="radio"
+                  name="radio-faculty"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                  onChange={() => onInputChange("fakultet", "FTN Novi Sad")}
+                />
+                <label
+                  htmlFor="ftn-ns"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
+                >
+                  FTN Novi Sad
+                </label>
+              </div>
+            </li>
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+              <div className="flex items-center pl-3">
+                <input
+                  id="etf-bg"
+                  type="radio"
+                  name="radio-faculty"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                  onChange={() => onInputChange("fakultet", "ETF Beograd")}
+                />
+                <label
+                  htmlFor="etf-bg"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
+                >
+                  ETF Beograd
+                </label>
+              </div>
+            </li>
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+              <div className="flex items-center pl-3">
+                <input
+                  id="raf-bg"
+                  type="radio"
+                  name="radio-faculty"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                  onChange={() => onInputChange("fakultet", "RAF Beograd")}
+                />
+                <label
+                  htmlFor="raf-bg"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
+                >
+                  RAF Beograd
+                </label>
+              </div>
+            </li>
+          </ul>
+          <ul
+            className={`${
+              formDataError?.fakultet && "border-red-500"
+            } bg-blue-50 bg-opacity-40 border-t-0 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border sm:flex`}
+          >
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+              <div className="flex items-center pl-3">
+                <input
+                  id="etf-bl"
+                  type="radio"
+                  name="radio-faculty"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                  onChange={() => onInputChange("fakultet", "ETF Banjaluka")}
+                />
+                <label
+                  htmlFor="etf-bl"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
+                >
+                  ETF Banjaluka
+                </label>
+              </div>
+            </li>
+            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
+              <div className="flex items-center pl-3">
+                <input
+                  id="etf-skoplje"
+                  type="radio"
+                  name="radio-faculty"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                  onChange={() => onInputChange("fakultet", "ETF Skoplje")}
+                />
+                <label
+                  htmlFor="etf-skoplje"
+                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
+                >
+                  ETF Skoplje
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
         <div className="md:col-span-3">
           <label htmlFor="full_name">Ime i prezime</label>
           <input

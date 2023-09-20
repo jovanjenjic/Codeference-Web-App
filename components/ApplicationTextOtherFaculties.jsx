@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 import AlertMessageError from "./AlertMessageError";
 import AlertMessageSuccess from "./AlertMessageSuccess";
 
-function ApplicationText({ showSuccessMessage, showErrorMessage }) {
+function ApplicationTextOtherFaculties({
+  showSuccessMessage,
+  showErrorMessage,
+}) {
   return (
     <div className="text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <div>
@@ -41,13 +44,13 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
       <div>
         <br />
         <b>
-          Prijava za Studentsko odmaralište{" "}
+          Prijava za Privatan Smeštaj{" "}
           <a
             target="_blank"
             href="http://usob.rs/odmaralista/ratko-mitrovic-zlatibor/?script=lat"
             rel="noreferrer"
           >
-            <q>Ratko Mitrović</q>.
+            <q>Apartmani Alibi, Mandić...</q>.
           </a>
         </b>
         <br />
@@ -56,38 +59,35 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
         obavezna.
         <div>
           <br />
-          Cena koja uključuje prevoz, smeštaj (pun pansion), kotizacije i poklon
-          materijale:
+          <br />
+          Cena za sve studente bez obzira da li ja na buđetu: <b>80e</b>
+          <br />
+          <br />
           <ul className="space-y-4 list-disc list-inside text-gray-500">
             <li>
-              Odmaralište
+              Cena uključuje:
               <ol className="pl-5 mt-2 space-y-1 list-decimal list-inside">
-                <li>Budžet: 6490 RSD</li>
-                <li>Samofinansiranje: 8490 RSD</li>
-                <li>Privatni smeštaj: 9990 RSD</li>
+                <li>Smeštaj</li>
+                <li>Polupansion</li>
+                <li>Kotizaciju (učešće na predavanjima i redionicama)</li>
+                <li>Poklon materijale</li>
               </ol>
-            </li>
-            <li>
-              Privatan smeštaj
-              <ul className="pl-5 mt-2 space-y-1 list-decimal list-inside">
-                <i>(Uskoro više informacija)</i>
-              </ul>
             </li>
           </ul>
         </div>
       </div>
       <p className="mt-6">
-        Za sve probleme pri prijavi kontaktirajte nas na email:{" "}
-        <b>codeference@gmail.com</b>.
+        Za sve probleme pri prijavi kontaktirajte nas na email ili se obratite
+        nekome od organizatora. Email: <b>codeference@gmail.com</b>.
       </p>
       <div className="-ml-0.5 lg:w-0.5 h-full right-0 bg-gray-300 absolute" />
     </div>
   );
 }
 
-ApplicationText.propTypes = {
+ApplicationTextOtherFaculties.propTypes = {
   showSuccessMessage: PropTypes.bool.isRequired,
   showErrorMessage: PropTypes.bool.isRequired,
 };
 
-export default ApplicationText;
+export default ApplicationTextOtherFaculties;
