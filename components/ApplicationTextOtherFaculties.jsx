@@ -60,7 +60,7 @@ function ApplicationTextOtherFaculties({
         <div>
           <br />
           <br />
-          Cena za sve studente bez obzira da li ja na buđetu: <b>80e</b>
+          Za cenu kontaktiraj predstavnike sa svog <b>fakulteta.</b>
           <br />
           <br />
           <ul className="space-y-4 list-disc list-inside text-gray-500">
