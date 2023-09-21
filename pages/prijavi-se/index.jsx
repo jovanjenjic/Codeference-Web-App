@@ -50,7 +50,8 @@ function PrijaviSePage() {
   const [loading, setLoading] = useState(false);
 
   const onInputChange = (key, value) => {
-    setFormDataError({ ...formDataError, [key]: !value });
+    // prosek se ne validira
+    if (key !== "prosek") setFormDataError({ ...formDataError, [key]: !value });
     setFormData({ ...formData, [key]: value });
   };
 
@@ -79,7 +80,7 @@ function PrijaviSePage() {
     !validateEmail(formData.email) ||
     !formData.brIndeksa ||
     !formData.uSobi ||
-    !formData.prosek ||
+    // !formData.prosek ||
     !formData.majica ||
     !formData.finansiranje ||
     !formData.pol;
@@ -93,7 +94,7 @@ function PrijaviSePage() {
         email: !formData.email || !validateEmail(formData.email),
         brIndeksa: !formData.brIndeksa,
         uSobi: !formData.uSobi,
-        prosek: !formData.prosek,
+        // prosek: !formData.prosek,
         majica: !formData.majica,
         finansiranje: !formData.finansiranje,
         pol: !formData.pol,
@@ -101,10 +102,10 @@ function PrijaviSePage() {
     } else {
       setLoading(true);
       axios
-        .post(
-          `https://sheetdb.io/api/v1/dlzlthlqjyuco${resolveParam()}`,
-          formData
-        )
+        .post(`https://sheetdb.io/api/v1/dlzlthlqjyuco${resolveParam()}`, {
+          ...formData,
+          prosek: formData.prosek || "0",
+        })
         .then(() => {
           setLoading(false);
           setShowSuccessMessage(true);
