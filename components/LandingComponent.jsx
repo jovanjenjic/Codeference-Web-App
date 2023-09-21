@@ -1,8 +1,14 @@
 import React from "react";
+import { useRouter } from "next/router";
+
 import LandingImg from "../public/LandingImg.jpg";
 import Timer from "./TImer";
 
 function LandingComponent() {
+  const router = useRouter();
+
+  const onClick = (path) => router.push(path);
+
   return (
     <div className="relative w-full min-h-[550px]">
       <div className="lg:my-5 3xl:my-10 mx-auto relative object-cover lg:w-3/5 min-h-[550px] max-h-[650px] flex justify-center">
@@ -33,17 +39,18 @@ function LandingComponent() {
             <div className="text-sm lg:text-base flex justify-start flex-col lg:flex-row w-2/3 lg:w-full">
               <button
                 type="button"
-                onClick={() => {
-                  const elmntToView = document.getElementById("AskForm");
-                  elmntToView.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                    inline: "center",
-                  });
-                }}
+                onClick={() => onClick("/prijavi-se")}
+                // onClick={() => {
+                //   const elmntToView = document.getElementById("AskForm");
+                //   elmntToView.scrollIntoView({
+                //     behavior: "smooth",
+                //     block: "center",
+                //     inline: "center",
+                //   });
+                // }}
                 className="cursor-pointer mb-4 font-semibold lg:mr-4 rounded-3xl transition-all duration-500 bg-blue-500 border border-transparent hover:border-white hover:bg-transparent text-white lg:px-16 lg:py-3 py-2"
               >
-                Postavi pitanje
+                Prijavi se
               </button>
               <a
                 href="/cv"

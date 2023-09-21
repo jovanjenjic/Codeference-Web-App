@@ -162,6 +162,11 @@ function Header() {
               </ul>
             </div>
           ))}
+          <Link href="/prijavi-se">
+            <span className="md:float-right  py-2 px-4 rounded inline-flex items-center ml-4 font-semibold cursor-pointer ">
+              Prijavi se
+            </span>
+          </Link>
           <Link href="/cv">
             <span className="md:float-right  py-2 px-4 rounded inline-flex items-center ml-4 font-semibold cursor-pointer ">
               Ostavi CV
@@ -175,11 +180,6 @@ function Header() {
           <Link href="/post">
             <span className="md:float-right  py-2 px-4 rounded inline-flex items-center ml-4 font-semibold cursor-pointer ">
               Vesti
-            </span>
-          </Link>
-          <Link href="/prijavi-se">
-            <span className="md:float-right  py-2 px-4 rounded inline-flex items-center ml-4 font-semibold cursor-pointer ">
-              Prijavi se
             </span>
           </Link>
         </div>

@@ -41,14 +41,14 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
       <div>
         <br />
         <b>
-          Prijava za Studentsko odmaralište{" "}
-          <a
+          Prijava za Codeference 2023{" "}
+          {/* <a
             target="_blank"
             href="http://usob.rs/odmaralista/ratko-mitrovic-zlatibor/?script=lat"
             rel="noreferrer"
           >
             <q>Ratko Mitrović</q>.
-          </a>
+          </a> */}
         </b>
         <br />
         <br />
