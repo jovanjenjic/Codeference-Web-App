@@ -64,7 +64,6 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
               <ol className="pl-5 mt-2 space-y-1 list-decimal list-inside">
                 <li>Budžet: 6490 RSD</li>
                 <li>Samofinansiranje: 8490 RSD</li>
-                <li>Privatni smeštaj: 9990 RSD</li>
               </ol>
             </li>
             <li>
