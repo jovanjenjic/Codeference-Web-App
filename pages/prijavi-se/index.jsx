@@ -127,6 +127,8 @@ function PrijaviSePage() {
       ? ApplicationText
       : ApplicationTextOtherFaculties;
 
+  const isDisabled = formData.fakultet === "FTN Novi Sad";
+
   return (
     <div className="p-6 flex items-center justify-center">
       <Meta
@@ -153,6 +155,7 @@ function PrijaviSePage() {
                 formData={formData}
                 formDataError={formDataError}
                 onSubmitHandler={onSubmitHandler}
+                isDisabled={isDisabled}
               />
             </div>
           </motion.div>

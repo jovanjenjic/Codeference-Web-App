@@ -10,8 +10,9 @@ function ApplicationForm({
   onSubmitHandler,
   loading,
   onInputChange,
+  isDisabled,
 }) {
-  const [disabledForm, setDisabledForm] = React.useState(false);
+  const [disabledForm, setDisabledForm] = React.useState();
 
   React.useEffect(() => {
     const fetchSubDetails = async () => {
@@ -413,13 +414,13 @@ function ApplicationForm({
         </div>
 
         <div className="md:col-span-5 text-right">
-          {disabledForm && <AlertMessageInfo />}
+          {(disabledForm || isDisabled) && <AlertMessageInfo />}
           <div className="inline-flex items-end">
             <button
               type="button"
               onClick={onSubmitHandler}
               className="flex mt-4 bg-blue-500 bg-opacity-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-25 disabled:cursor-not-allowed"
-              disabled={loading || disabledForm}
+              disabled={loading || disabledForm || isDisabled}
             >
               {loading && (
                 <div role="status" className="flex justify-center">
@@ -456,6 +457,7 @@ ApplicationForm.propTypes = {
   onSubmitHandler: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
+  isDisabled: PropTypes.bool.isRequired
 };
 
 export default ApplicationForm;
