@@ -58,7 +58,7 @@ function PrijaviSePage() {
   const resolveParam = () => {
     switch (formData.fakultet) {
       case "FTN Novi Sad":
-        return "?sheet=FTN NS";
+        return "?sheet=FTN NS PRIVATNI";
       case "ETF Beograd":
         return "?sheet=ETF BG";
       case "RAF Beograd":
@@ -127,8 +127,6 @@ function PrijaviSePage() {
       ? ApplicationText
       : ApplicationTextOtherFaculties;
 
-  const isDisabled = formData.fakultet === "FTN Novi Sad";
-
   return (
     <div className="p-6 flex items-center justify-center">
       <Meta
@@ -155,7 +153,7 @@ function PrijaviSePage() {
                 formData={formData}
                 formDataError={formDataError}
                 onSubmitHandler={onSubmitHandler}
-                isDisabled={isDisabled}
+                isDisabled={false}
               />
             </div>
           </motion.div>

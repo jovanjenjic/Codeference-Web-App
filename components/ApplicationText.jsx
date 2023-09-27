@@ -39,44 +39,26 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
         <br />
       </div>
       <div>
-        <br />
-        <b>
-          Prijava za Codeference 2023{" "}
-          {/* <a
-            target="_blank"
-            href="http://usob.rs/odmaralista/ratko-mitrovic-zlatibor/?script=lat"
-            rel="noreferrer"
-          >
-            <q>Ratko Mitrović</q>.
-          </a> */}
-        </b>
+        <b>Prijava za Codeference 2023 - Privatan smeštaj </b>
         <br />
         <br />
-        Proverite da li ste ispravno uneli sve informacije. Sva polja u formi su
-        obavezna.
+        S obzirom na to da su mesta u studentskom odmaralištu Ratko Mitrović
+        rezervisana samo za jedan dan, a postoji velika potražnja za dodatnim
+        smeštajnim kapacitetima, odlučili smo da našim studentima obezbedimo
+        dodatni privatni smeštaj.
+        <br />
         <div>
           <br />
-          Cena koja uključuje prevoz, smeštaj (pun pansion), kotizacije i poklon
+          Cena koja uključuje prevoz, smeštaj (polupansion), kotizacije i poklon
           materijale:
           <ul className="space-y-4 list-disc list-inside text-gray-500">
-            <li>
-              Odmaralište
-              <ol className="pl-5 mt-2 space-y-1 list-decimal list-inside">
-                <li>Budžet: 6490 RSD</li>
-                <li>Samofinansiranje: 8490 RSD</li>
-              </ol>
-            </li>
-            <li>
-              Privatan smeštaj
-              <ul className="pl-5 mt-2 space-y-1 list-decimal list-inside">
-                <i>(Uskoro više informacija)</i>
-              </ul>
-            </li>
+            <br />
+            <li>9990 RSD</li>
           </ul>
         </div>
       </div>
       <p className="mt-6">
-        Za sve probleme pri prijavi kontaktirajte nas na email:{" "}
+        Za sve probleme pri prijavi ili informacije kontaktirajte nas na email:{" "}
         <b>codeference@gmail.com</b>.
       </p>
       <div className="-ml-0.5 lg:w-0.5 h-full right-0 bg-gray-300 absolute" />
