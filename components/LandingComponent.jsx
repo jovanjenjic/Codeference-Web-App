@@ -37,21 +37,6 @@ function LandingComponent() {
               </div>
             </div>
             <div className="text-sm lg:text-base flex justify-start flex-col lg:flex-row w-2/3 lg:w-full">
-              <button
-                type="button"
-                onClick={() => onClick("/prijavi-se")}
-                // onClick={() => {
-                //   const elmntToView = document.getElementById("AskForm");
-                //   elmntToView.scrollIntoView({
-                //     behavior: "smooth",
-                //     block: "center",
-                //     inline: "center",
-                //   });
-                // }}
-                className="cursor-pointer mb-4 font-semibold lg:mr-4 rounded-3xl transition-all duration-500 bg-blue-500 border border-transparent hover:border-white hover:bg-transparent text-white lg:px-16 lg:py-3 py-2"
-              >
-                Prijavi se
-              </button>
               <a
                 href="/cv"
                 className="mb-4 font-semibold rounded-3xl transition-all duration-500 bg-transparent border border-blue-500 hover:bg-blue-500 text-white lg:px-16 lg:py-3 py-2"

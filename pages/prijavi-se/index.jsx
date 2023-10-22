@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import {
   ApplicationText,
   ApplicationForm,
@@ -43,11 +44,18 @@ const validateEmail = (emailAddress = "") => {
 };
 
 function PrijaviSePage() {
+  const router = useRouter();
+
   const [formData, setFormData] = useState(initData);
   const [formDataError, setFormDataError] = useState(initDataError);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // privremeno do sledecih prijava
+  React.useEffect(() => {
+    router.push("/");
+  }, []);
 
   const onInputChange = (key, value) => {
     // prosek se ne validira
