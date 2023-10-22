@@ -1,14 +1,9 @@
 import React from "react";
-import { useRouter } from "next/router";
 
 import LandingImg from "../public/LandingImg.jpg";
 import Timer from "./TImer";
 
 function LandingComponent() {
-  const router = useRouter();
-
-  const onClick = (path) => router.push(path);
-
   return (
     <div className="relative w-full min-h-[550px]">
       <div className="lg:my-5 3xl:my-10 mx-auto relative object-cover lg:w-3/5 min-h-[550px] max-h-[650px] flex justify-center">
