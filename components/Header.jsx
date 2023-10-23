@@ -101,8 +101,8 @@ function Header() {
               <button
                 type="button"
                 className="rounded-b w-full text-left bg-blue-100 hover:bg-blue-200 py-2 px-4 block whitespace-no-wrap"
-                onClick={() => onClick(`/radionice-2023/lilly021`)}
-                onKeyPress={() => onClick(`/radionice-2023/lilly021`)}
+                onClick={() => onClick(`/radionice-2023/vega`)}
+                onKeyPress={() => onClick(`/radionice-2023/vega`)}
               >
                 <Link href="/radionice-2023/vega">Radionica - VegaIT</Link>
               </button>
