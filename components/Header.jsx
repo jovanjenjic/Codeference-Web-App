@@ -82,8 +82,7 @@ function Header() {
             </ul>
           </div> */}
 
-          {/* TODO: Back later for codeference */}
-          {/* <div className="group inline-block relative">
+          <div className="group inline-block relative">
             <button
               type="button"
               className="text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center"
@@ -105,28 +104,10 @@ function Header() {
                 onClick={() => onClick(`/radionice-2023/lilly021`)}
                 onKeyPress={() => onClick(`/radionice-2023/lilly021`)}
               >
-                <Link href="/radionice-2023/lilly021">
-                  Radionica - Lilly 021
-                </Link>
-              </button>
-              <button
-                type="button"
-                className="rounded-b w-full text-left bg-blue-100 hover:bg-blue-200 py-2 px-4 block whitespace-no-wrap"
-                onClick={() => onClick(`/radionice-2023/syrmia`)}
-                onKeyPress={() => onClick(`/radionice-2023/syrmia`)}
-              >
-                <Link href="/radionice-2023/syrmia">Radionica - Syrmia</Link>
-              </button>
-              <button
-                type="button"
-                className="rounded-b w-full text-left bg-blue-100 hover:bg-blue-200 py-2 px-4 block whitespace-no-wrap"
-                onClick={() => onClick(`/radionice-2023/endava`)}
-                onKeyPress={() => onClick(`/radionice-2023/endava`)}
-              >
-                <Link href="/radionice-2023/endava">Radionica - Endava</Link>
+                <Link href="/radionice-2023/vega">Radionica - VegaIT</Link>
               </button>
             </ul>
-          </div> */}
+          </div>
           {sortedCategories.map((cat) => (
             <div className="group inline-block relative" key={cat.slug}>
               <button

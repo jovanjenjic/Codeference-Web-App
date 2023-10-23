@@ -70,16 +70,16 @@ function Header({ categories }) {
               >
                 <Link href="/cv">Ostavi CV</Link>
               </div>
-              {/* <div
+              <div
                 role="button"
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
                 className="font-bold border-b border-gray-900 my-5 uppercase text-center"
               >
-                <Link href="/radionice-2022/vega">Radionica - Vega IT</Link>
+                <Link href="/radionice-2023/vega">Radionica - Vega IT</Link>
               </div>
-              <div
+              {/* <div
                 role="button"
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}

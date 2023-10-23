@@ -41,28 +41,32 @@ function ApplicationTextVegaWorkshop({ showSuccessMessage, showErrorMessage }) {
       <div>
         <br />
         <b>
-          Prijavi se za radionicu koja te očekuje 25.10. u 16h ispred kompanije
-          Vega IT - Greške i feedback - alat za građenje karijere!
+          Prijavi se za radionicu koja te očekuje 27.10. u 16h ispred kompanije
+          Vega IT - Demystifying OAuth and OpenID Connect
         </b>
         <br />
         <br />
-        Zašto su greške poželjne a feedback važan za rast i razvoj? Kroz
-        praktične primere, koleginica Dunja će vam pomoći da razvijete veštinu
-        davanja i primanja feedback-a, kao i da strah od greške savladate, a
-        samu grešku prihvatite kao sastavni deo razvoja vaše karijere.
+        Pozivamo vas da se pridružite našoj radionici, gde ćemo zajedno
+        istražiti ključne aspekte OAuth i OpenID Connect protokola. Ovi
+        protokoli su od suštinskog značaja za jednostavnu i sigurnu integraciju
+        sa modernim Identity providerima.
         <br />
         <br />
-        Broj mesta je ograničen zato se požuri i prijavi se do 23.10. za
-        učestvovanje!
+        Ne propustite priliku da steknete dragoceno znanje i unapredite svoje
+        veštine. Prijavite se sada i budite spremni za intenzivno i edukativno
+        iskustvo!
         <br />
         <br />
-        P.S. Nije potreban laptop ili dodatna oprema za učestvovanje
+        Broj mesta je ograničen zato požuri i prijavi se!
+        <br />
+        <br />
+        <b>P.S. Laptop je obavezan!</b>
       </div>
       <br />
       <br />
       <p className="mt-6">
         Za sve probleme pri prijavi kontaktirajte nas na email:{" "}
-        <b>codeference@gmail.com</b>.
+        <b>codeference@gmail.com</b>
       </p>
       <div className="-ml-0.5 lg:w-0.5 h-full right-0 bg-gray-300 absolute" />
     </div>
