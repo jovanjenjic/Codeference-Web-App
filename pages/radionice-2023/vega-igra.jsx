@@ -69,7 +69,7 @@ function EndavaRadionicaPage() {
     } else {
       setLoading(true);
       axios
-        .post("https://sheetdb.io/api/v1/80k5ymtta8hrx", {
+        .post("https://sheetdb.io/api/v1/idzik55t0b8h0", {
           ...formData,
           tip: "vega-igra-codeference-23",
         })
