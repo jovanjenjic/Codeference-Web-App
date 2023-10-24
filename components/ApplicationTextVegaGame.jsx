@@ -34,7 +34,7 @@ function ApplicationTextVegaFindWorkshop({
             </g>
           </svg>
           <p className="font-medium text-lg ml-4 mb-6 lg:mg-0">
-            Istraži Zlatibor sa Vega IT
+            Programeru, ne ljuti se! Igra sa Vega IT
           </p>
         </div>
         {showSuccessMessage && <AlertMessageSuccess />}
@@ -49,7 +49,7 @@ function ApplicationTextVegaFindWorkshop({
         </b>
         <br />
         <br />
-        Pripremil su veliku tablu 3x3m koja će biti postavljena napolju, a
+        Pripremili su veliku tablu 3x3m koja će biti postavljena napolju, a
         igraće se u timovima od 3-4 igrača. Figure će se pomerati kada timovi
         tačno odgovore na pitanja. Pitanja će testirati vaše tehničko znanje, a
         odgovori nose različit broj poena: Easy - 1, Medium - 2, Hard - 3
