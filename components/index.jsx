@@ -27,7 +27,7 @@ export { default as ApplicationForm } from "./ApplicationForm";
 export { default as ApplicationTextPrivate } from "./ApplicationTextPrivate";
 export { default as ApplicationFormPrivate } from "./ApplicationFormPrivate";
 export { default as ApplicationTextVegaWorkshop } from "./ApplicationTextVegaWorkshop";
-export { default as ApplicationTextVegaFindWorkshop } from "./ApplicationTextVegaFindWorkshop";
+export { default as ApplicationTextVegaFindWorkshop } from "./ApplicationTextVegaGame";
 export { default as ApplicationTextZFWorkshop } from "./ApplicationTextZFWorkshop";
 export { default as ApplicationFormWorkshop } from "./ApplicationFormWorkshop";
 export { default as UploadCvForm } from "./UploadCvForm";

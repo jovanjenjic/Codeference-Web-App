@@ -44,39 +44,29 @@ function ApplicationTextVegaFindWorkshop({
       <div>
         <br />
         <b>
-          Prijave za aktivaciju koja te očekuje 26.10. u 13h ispred kompanije
-          Vega IT - Istraži Zlatibor sa Vega IT
+          Prijave za igru koja te očekuje 28.10. u 11h ispred kompanije Vega IT
+          - Programeru, ne ljuti se!
         </b>
         <br />
         <br />
-        Da li ste spremni za avanturu? Hajde da zajedno bolje upoznamo Zlatibor
-        sa Vega IT tako što ćemo otkriti 5 tajnih lokacija!
+        Pripremil su veliku tablu 3x3m koja će biti postavljena napolju, a
+        igraće se u timovima od 3-4 igrača. Figure će se pomerati kada timovi
+        tačno odgovore na pitanja. Pitanja će testirati vaše tehničko znanje, a
+        odgovori nose različit broj poena: Easy - 1, Medium - 2, Hard - 3
         <br />
         <br />
-        Za to će vam poslužiti aplikacija uz pomoć koje ćete pratiti sve korake,
-        a mi ćemo vam biti najveća podrška na svakoj od stanica koje ćete morati
-        da prođete da biste stigli do cilja.
+        Cilj je ući prvi u kućicu, a za najbolji tim slede kul nagrade!
         <br />
         <br />
-        <b>Evo nekoliko za sada bitnih detalja:</b>
+        <b>
+          Samo prva 3 najbrža tima koja se prijave na našem sajtu će učestvovati
+          u igri.{" "}
+        </b>
         <br />
         <br />
-        <p className="inline text-red-700">*</p> Svaka stanica imaće svoj
-        zadatak, koji će podrazumevati da budete brzi, kreativni, da pokažete
-        znanje ili koliko ste fizički pripremljeni <br />
-        <p className="inline text-red-700">*</p> Nema preskakanja stanica i
-        zadataka <br />
-        <p className="inline text-red-700">*</p> Na svakoj stanici će vas čekati
-        neko od organizatora sa dodatnim hintovima, osveženjem, hranom i
-        podrškom
         <br />
-        <br />
-        Oformi ekipu od maksimalno 5 članova (minimum 2 člana), odaberi svog
-        kapitena i kreni u avanturu istrazivanja Zlatibora.
-        <br />
-        <br />
-        Nakon što se svi timovi prijave više logističkih detalja ćete dobiti
-        putem mail-a.
+        Da li ste spremni da pokažete svoje veštine? Prijavite svoju ekipu što
+        pre!
       </div>
       <br />
       <br />

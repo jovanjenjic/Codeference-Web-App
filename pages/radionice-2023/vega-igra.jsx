@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { Meta, ApplicationFormWorkshop } from "../../components";
-import ApplicationTextEndavaWorkshop from "../../components/ApplicationTextEndavaWorkshop";
+import {
+  Meta,
+  ApplicationFormWorkshop,
+  ApplicationTextVegaFindWorkshop,
+} from "../../components";
 
 const initData = {
   ime: "",
@@ -11,6 +14,7 @@ const initData = {
   email: "",
   godinaStudija: "",
   smer: "",
+  tim: "",
 };
 const initDataError = {
   ime: false,
@@ -19,6 +23,7 @@ const initDataError = {
   email: false,
   godinaStudija: false,
   smer: false,
+  tim: false,
 };
 
 const validateEmail = (emailAddress = "") => {
@@ -47,6 +52,7 @@ function EndavaRadionicaPage() {
     !formData.email ||
     !formData.godinaStudija ||
     !formData.smer ||
+    !formData.tim ||
     !validateEmail(formData.email);
 
   const onSubmitHandler = () => {
@@ -57,6 +63,7 @@ function EndavaRadionicaPage() {
         brTelefona: !formData.brTelefona,
         godinaStudija: !formData.godinaStudija,
         smer: !formData.smer,
+        tim: !formData.tim,
         email: !formData.email || !validateEmail(formData.email),
       });
     } else {
@@ -64,7 +71,7 @@ function EndavaRadionicaPage() {
       axios
         .post("https://sheetdb.io/api/v1/80k5ymtta8hrx", {
           ...formData,
-          tip: "endava",
+          tip: "vega-igra-codeference-23",
         })
         .then(() => {
           setLoading(false);
@@ -86,8 +93,8 @@ function EndavaRadionicaPage() {
     <div className="p-6 flex items-center justify-center">
       <Meta
         description="Konferencija studenata elektrotehnike i računarstva."
-        keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
-        title="Radionica Endava - Codefair 2023"
+        keywords="Codeference, Codefair, 2021, 2022, 2023, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
+        title="Igra Vega - Codeference 2023"
       />
       <div className="container max-w-screen-lg mx-auto">
         <div>
@@ -98,7 +105,7 @@ function EndavaRadionicaPage() {
             className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6"
           >
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-5">
-              <ApplicationTextEndavaWorkshop
+              <ApplicationTextVegaFindWorkshop
                 showSuccessMessage={showSuccessMessage}
                 showErrorMessage={showErrorMessage}
               />
@@ -108,7 +115,7 @@ function EndavaRadionicaPage() {
                 formData={formData}
                 formDataError={formDataError}
                 onSubmitHandler={onSubmitHandler}
-                showMemberField={false}
+                showMemberField
               />
             </div>
           </motion.div>
