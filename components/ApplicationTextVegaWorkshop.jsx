@@ -5,7 +5,7 @@ import AlertMessageSuccess from "./AlertMessageSuccess";
 
 function ApplicationTextVegaWorkshop({ showSuccessMessage, showErrorMessage }) {
   return (
-    <div className="lg:col-span-3 text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
+    <div className="lg:col-span-3 text-gray-600 justify-between flex flex-col relative lg:pr-2 pb-10 lg:pb-0">
       <div>
         <div className="flex">
           <svg
@@ -41,26 +41,34 @@ function ApplicationTextVegaWorkshop({ showSuccessMessage, showErrorMessage }) {
       <div>
         <br />
         <b>
-          Prijavi se za radionicu koja te očekuje 27.10. u 16h ispred kompanije
-          Vega IT - Demystifying OAuth and OpenID Connect
+          Pridružite nam se na radionici "Unveiling the Power of Web Browsers in Modern Development" i otkrijte kako da iskoristite puni potencijal web pretraživača!
         </b>
         <br />
         <br />
-        Pozivamo vas da se pridružite našoj radionici, gde ćemo zajedno
-        istražiti ključne aspekte OAuth i OpenID Connect protokola. Ovi
-        protokoli su od suštinskog značaja za jednostavnu i sigurnu integraciju
-        sa modernim Identity providerima.
+        <b>Teme koje ćemo pokriti:</b>
         <br />
         <br />
-        Ne propustite priliku da steknete dragoceno znanje i unapredite svoje
-        veštine. Prijavite se sada i budite spremni za intenzivno i edukativno
-        iskustvo!
+        <div>
+          🔹 Šta su web pretraživači?
+        </div>
+        <div>
+          🔹 Kako pretraživači renderuju web stranicu?
+        </div>
+        <div>
+          🔹 Browser API-ji.
+        </div>
+        <div>
+          🔹 Alati za razvoj u pretraživačima - debugging, profilisanje, optimizacija performansi.
+        </div> 
+        <br />
+        <br />
+        Ova radionica je savršena prilika da naučite kako da efikasnije koristite web pretraživače za razvoj, debagovanje i optimizaciju vaših projekata. Kroz praktične primere i interaktivnu sesiju, naučićete kako da rešavate uobičajene probleme u kodu, poboljšate performanse svojih aplikacija i iskoristite sve prednosti koje moderne tehnologije nude, a takođe, dobijate i dragocene uvide i veštine koje će vam pomoći u daljem razvoju karijere.
+        <br />
+        <br />
+        Radionica je dizajnirana tako da bude pristupačna i korisna studentima svih nivoa, od početnika do onih koji već imaju iskustva u web razvoju.
         <br />
         <br />
         Broj mesta je ograničen zato požuri i prijavi se!
-        <br />
-        <br />
-        <b>P.S. Laptop je obavezan!</b>
       </div>
       <br />
       <br />
