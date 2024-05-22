@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { Meta, ApplicationFormWorkshop } from "../../components";
-import ApplicationTextLillyWorkshop from "../../components/ApplicationTextLillyWorkshop";
+import {
+  Meta,
+  ApplicationFormWorkshop,
+  ApplicationTextVegaWorkshop,
+} from "../../components";
 
 const initData = {
   ime: "",
@@ -28,7 +31,7 @@ const validateEmail = (emailAddress = "") => {
   );
 };
 
-function Lilly021RadionicaPage() {
+function EndavaRadionicaPage() {
   const [formData, setFormData] = useState(initData);
   const [formDataError, setFormDataError] = useState(initDataError);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -62,9 +65,9 @@ function Lilly021RadionicaPage() {
     } else {
       setLoading(true);
       axios
-        .post("https://sheetdb.io/api/v1/80k5ymtta8hrx", {
+        .post("https://sheetdb.io/api/v1/u0tut15mpmat2", {
           ...formData,
-          tip: "lilly021",
+          tip: "vega-codefair-24",
         })
         .then(() => {
           setLoading(false);
@@ -86,8 +89,8 @@ function Lilly021RadionicaPage() {
     <div className="p-6 flex items-center justify-center">
       <Meta
         description="Konferencija studenata elektrotehnike i računarstva."
-        keywords="Codeference, Codefair, 2021, 2022, Codeference 2022, Codefair 2022, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
-        title="Radionica Lilly 021 - Codefair 2023"
+        keywords="Codeference, Codefair, 2021, 2022, 2023, 2024, Codeference 2024, Codefair 2024, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
+        title="Radionica Vega - Codefair 2024"
       />
       <div className="container max-w-screen-lg mx-auto">
         <div>
@@ -98,7 +101,7 @@ function Lilly021RadionicaPage() {
             className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6"
           >
             <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-5">
-              <ApplicationTextLillyWorkshop
+              <ApplicationTextVegaWorkshop
                 showSuccessMessage={showSuccessMessage}
                 showErrorMessage={showErrorMessage}
               />
@@ -118,4 +121,4 @@ function Lilly021RadionicaPage() {
   );
 }
 
-export default Lilly021RadionicaPage;
+export default EndavaRadionicaPage;
