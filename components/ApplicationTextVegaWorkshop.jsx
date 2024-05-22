@@ -41,7 +41,7 @@ function ApplicationTextVegaWorkshop({ showSuccessMessage, showErrorMessage }) {
       <div>
         <br />
         <b>
-          Pridružite nam se na radionici "Unveiling the Power of Web Browsers in Modern Development" i otkrijte kako da iskoristite puni potencijal web pretraživača!
+          Pridružite nam se na radionici &quot;Unveiling the Power of Web Browsers in Modern Development&quot; i otkrijte kako da iskoristite puni potencijal web pretraživača!
         </b>
         <br />
         <br />
