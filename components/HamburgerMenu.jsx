@@ -57,7 +57,7 @@ function Header({ categories }) {
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
+                className="font-bold border-b border-gray-900 my-3 uppercase text-center"
               >
                 <Link href="/">Početna stranica</Link>
               </div>
@@ -66,7 +66,7 @@ function Header({ categories }) {
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
+                className="font-bold border-b border-gray-900 my-3 uppercase text-center"
               >
                 <Link href="/cv">Ostavi CV</Link>
               </div>
@@ -75,16 +75,7 @@ function Header({ categories }) {
                 onClick={handleOnClick}
                 onKeyPress={handleOnClick}
                 tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
-              >
-                <Link href="/radionice-2024/vega">Radionica - Vega IT</Link>
-              </div>
-              <div
-                role="button"
-                onClick={handleOnClick}
-                onKeyPress={handleOnClick}
-                tabIndex={0}
-                className="font-bold border-b border-gray-900 my-5 uppercase text-center"
+                className="font-bold border-b border-gray-900 my-3 uppercase text-center"
               >
                 <Link href="/post">Vesti</Link>
               </div>
@@ -98,7 +89,7 @@ function Header({ categories }) {
                         onClick={handleOnClick}
                         onKeyPress={handleOnClick}
                         tabIndex={0}
-                        className="font-bold border-b border-gray-900 my-5 uppercase text-center"
+                        className="font-bold border-b border-gray-900 my-3 uppercase text-center"
                       >
                         <Link href={`/${cat?.slug}/${sub?.slug}`}>
                           {sub?.name}
