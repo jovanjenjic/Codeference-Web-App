@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 function Support({ subDetails }) {
   const onLogoClick = ({ url }) => {
-    if (url) window.location.href = url;
+    if (url) window.open(url, "_newtab");
   };
 
   return (
@@ -13,8 +13,9 @@ function Support({ subDetails }) {
       <div className="md:w-2/3 mx-auto">
         <div
           id="services"
-          className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 ${subDetails?.logos?.length % 4 !== 0 && "xl:grid-cols-5"
-            }`}
+          className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 ${
+            subDetails?.logos?.length % 4 !== 0 && "xl:grid-cols-5"
+          }`}
         >
           {subDetails?.logos.map((logo, idx) => (
             <div
@@ -22,7 +23,7 @@ function Support({ subDetails }) {
               role="button"
               onClick={() => onLogoClick(logo)}
               tabIndex={idx}
-              onKeyDown={() => { }}
+              onKeyDown={() => {}}
             >
               <img
                 className="mx-auto h-[70px] lg:h-[90px] cursor-pointer"

@@ -5,20 +5,20 @@ import { SocialIcon } from "react-social-icons";
 
 const socialLinks = [
   {
-    name: 'linkedin',
+    name: "linkedin",
     url: "https://www.linkedin.com/in/codeference-suftn",
   },
   {
-    name: 'facebook',
-    url: 'https://www.facebook.com/codeferenceftn'
+    name: "facebook",
+    url: "https://www.facebook.com/codeferenceftn",
   },
   {
-    name: 'instagram',
-    url: 'https://www.instagram.com/codeference'
+    name: "instagram",
+    url: "https://www.instagram.com/codeference",
   },
   {
-    name: 'youtube',
-    url: 'https://www.youtube.com/@codeference3265'
+    name: "youtube",
+    url: "https://www.youtube.com/@codeference3265",
   },
 ];
 
@@ -42,7 +42,7 @@ function Footer() {
                   bgColor="white"
                   style={{
                     width: 40,
-                    height: 40
+                    height: 40,
                   }}
                   target="_blank"
                 />
@@ -98,8 +98,10 @@ function Footer() {
             <div className="text-sm text-white font-semibold py-1">
               Copyright © {new Date().getFullYear()} CODEFERENCE Novi Sad{" "}
               <a
-                href="https://www.creative-tim.com"
+                href="https://www.linkedin.com/in/codeference-suftn"
                 className="text-white hover:text-gray-200"
+                target="_blank"
+                rel="noreferrer"
               >
                 Tim
               </a>

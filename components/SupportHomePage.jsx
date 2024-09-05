@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function SupportHomePage({ logos }) {
   const onLogoClick = ({ url }) => {
-    if (url) window.location.href = url;
+    if (url) window.open(url, "_newtab");
   };
 
   return (
@@ -19,7 +19,7 @@ function SupportHomePage({ logos }) {
               role="button"
               onClick={() => onLogoClick(logo)}
               tabIndex={idx}
-              onKeyDown={() => { }}
+              onKeyDown={() => {}}
             >
               <img
                 alt={logo?.image?.url}
@@ -27,7 +27,6 @@ function SupportHomePage({ logos }) {
                 src={logo.image?.url}
               />
             </div>
-
           ))}
         </div>
       </div>
