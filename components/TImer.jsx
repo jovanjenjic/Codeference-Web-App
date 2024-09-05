@@ -9,7 +9,7 @@ function MyTimer() {
   });
 
   useEffect(() => {
-    setTime(new Date(new Date("10/01/2024").getTime()));
+    setTime(new Date(new Date("10/24/2024").getTime()));
   }, []);
 
   useEffect(() => {

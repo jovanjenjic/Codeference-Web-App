@@ -6,7 +6,7 @@ import { SocialIcon } from "react-social-icons";
 const socialLinks = [
   {
     name: 'linkedin',
-    url: "https://www.linkedin.com/company/studentska-unija-fakulteta-tehni%C4%8Dkih-nauka/",
+    url: "https://www.linkedin.com/in/codeference-suftn",
   },
   {
     name: 'facebook',
@@ -44,6 +44,7 @@ function Footer() {
                     width: 40,
                     height: 40
                   }}
+                  target="_blank"
                 />
               ))}
             </div>
