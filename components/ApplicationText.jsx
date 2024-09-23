@@ -3,7 +3,89 @@ import PropTypes from "prop-types";
 import AlertMessageError from "./AlertMessageError";
 import AlertMessageSuccess from "./AlertMessageSuccess";
 
-function ApplicationText({ showSuccessMessage, showErrorMessage }) {
+const privateAccomodation = (
+  <div>
+    <b>Prijava za Codeference 2024 - Privatan smeštaj </b>
+    <br />
+    <br />
+    S obzirom na to da su mesta u studentskom odmaralištu Ratko Mitrović
+    rezervisana samo za jedan dan, a postoji velika potražnja za dodatnim
+    smeštajnim kapacitetima, odlučili smo da našim studentima obezbedimo dodatni
+    privatni smeštaj.
+    <br />
+    <div>
+      <br />
+      Cena koja uključuje prevoz, smeštaj (polupansion), kotizacije i poklon
+      materijale:
+      <ul className="space-y-4 list-disc list-inside text-gray-500">
+        <br />
+        <li>10990 RSD</li>
+      </ul>
+    </div>
+  </div>
+);
+
+const ratkoMitrovicAccomodation = (
+  <div>
+    <br />
+    <b>
+      {/* TODO: Pomerili u dogovoru sa rodjom */}
+      Prijava za Codeference 2024{" "}
+      {/* <a
+        target="_blank"
+        href="http://usob.rs/odmaralista/ratko-mitrovic-zlatibor/?script=lat"
+        rel="noreferrer"
+      >
+        <q>Ratko Mitrović</q>.
+      </a> */}
+    </b>
+    <br />
+    <br />
+    Proverite da li ste ispravno uneli sve informacije. Sva polja u formi su
+    obavezna.
+    <div>
+      <br />
+      Cena koja uključuje prevoz, smeštaj (pun pansion), kotizacije i poklon
+      materijale:
+      <ul className="space-y-4 mt-2 list-disc list-inside text-gray-500">
+        <li>
+          Odmaralište{" "}
+          <a
+            target="_blank"
+            href="http://usob.rs/odmaralista/ratko-mitrovic-zlatibor/?script=lat"
+            rel="noreferrer"
+          >
+            <q>Ratko Mitrović</q>.
+          </a>
+          <ol className="pl-5 mt-2 space-y-1 list-decimal list-inside">
+            <li>Budžet: 7490 RSD</li>
+            <li>Samofinansiranje: 9490 RSD</li>
+          </ol>
+        </li>
+        {/* TODO: Dogovorio sa rodjom da ne treba za sad */}
+        {/* <li>
+          Privatan smeštaj
+          <ul className="pl-5 mt-2 space-y-1 list-decimal list-inside">
+            <i>(Uskoro više informacija)</i>
+          </ul>
+        </li> */}
+      </ul>
+    </div>
+  </div>
+);
+
+function ApplicationText({
+  showSuccessMessage,
+  showErrorMessage,
+  // if true text for private will be displayed
+  isPrivateAccomodation,
+  // display price information only in case if faculty selected
+  showInformation,
+}) {
+  const accomodationText = isPrivateAccomodation
+    ? privateAccomodation
+    : ratkoMitrovicAccomodation;
+
   return (
     <div className="text-gray-600 justify-between flex flex-col relative lg:pr-4 pb-10 lg:pb-0">
       <div>
@@ -38,25 +120,7 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
         {showErrorMessage && <AlertMessageError />}
         <br />
       </div>
-      <div>
-        <b>Prijava za Codeference 2023 - Privatan smeštaj </b>
-        <br />
-        <br />
-        S obzirom na to da su mesta u studentskom odmaralištu Ratko Mitrović
-        rezervisana samo za jedan dan, a postoji velika potražnja za dodatnim
-        smeštajnim kapacitetima, odlučili smo da našim studentima obezbedimo
-        dodatni privatni smeštaj.
-        <br />
-        <div>
-          <br />
-          Cena koja uključuje prevoz, smeštaj (polupansion), kotizacije i poklon
-          materijale:
-          <ul className="space-y-4 list-disc list-inside text-gray-500">
-            <br />
-            <li>9990 RSD</li>
-          </ul>
-        </div>
-      </div>
+      {showInformation && accomodationText}
       <p className="mt-6">
         Za sve probleme pri prijavi ili informacije kontaktirajte nas na email:{" "}
         <b>codeference@gmail.com</b>.
@@ -69,6 +133,8 @@ function ApplicationText({ showSuccessMessage, showErrorMessage }) {
 ApplicationText.propTypes = {
   showSuccessMessage: PropTypes.bool.isRequired,
   showErrorMessage: PropTypes.bool.isRequired,
+  isPrivateAccomodation: PropTypes.bool.isRequired,
+  showInformation: PropTypes.bool.isRequired,
 };
 
 export default ApplicationText;

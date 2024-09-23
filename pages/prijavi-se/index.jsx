@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import {
   ApplicationText,
   ApplicationForm,
@@ -39,12 +39,15 @@ const initDataError = {
 const validateEmail = (emailAddress = "") => {
   return emailAddress?.match(
     // eslint-disable-next-line
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
 };
 
 function PrijaviSePage() {
-  const router = useRouter();
+  // koristimo za Novi Sad da li je privatan smestaj
+  const isPrivateAccomodation = false;
+
+  // const router = useRouter();
 
   const [formData, setFormData] = useState(initData);
   const [formDataError, setFormDataError] = useState(initDataError);
@@ -53,9 +56,9 @@ function PrijaviSePage() {
   const [loading, setLoading] = useState(false);
 
   // privremeno do sledecih prijava
-  React.useEffect(() => {
-    router.push("/");
-  }, []);
+  // React.useEffect(() => {
+  //   router.push("/");
+  // }, []);
 
   const onInputChange = (key, value) => {
     // prosek se ne validira
@@ -66,7 +69,9 @@ function PrijaviSePage() {
   const resolveParam = () => {
     switch (formData.fakultet) {
       case "FTN Novi Sad":
-        return "?sheet=FTN NS PRIVATNI";
+        return isPrivateAccomodation
+          ? "?sheet=FTN NS PRIVATNI"
+          : "?sheet=FTN NS";
       case "ETF Beograd":
         return "?sheet=ETF BG";
       case "RAF Beograd":
@@ -75,6 +80,12 @@ function PrijaviSePage() {
         return "?sheet=ETF BL";
       case "ETF Skoplje":
         return "?sheet=ETF Skoplje";
+      case "ELFAK Nis":
+        return "?sheet=ELFAK Nis";
+      case "FIN Kragujevac":
+        return "?sheet=FIN Kragujevac";
+      case "ETF IS":
+        return "?sheet=Istocno Sarajevo";
       default:
         return "?sheet=sheet1";
     }
@@ -110,7 +121,7 @@ function PrijaviSePage() {
     } else {
       setLoading(true);
       axios
-        .post(`https://sheetdb.io/api/v1/dlzlthlqjyuco${resolveParam()}`, {
+        .post(`https://sheetdb.io/api/v1/3ak8dd8b9lxha${resolveParam()}`, {
           ...formData,
           prosek: formData.prosek || "0",
         })
@@ -154,6 +165,8 @@ function PrijaviSePage() {
               <FormText
                 showSuccessMessage={showSuccessMessage}
                 showErrorMessage={showErrorMessage}
+                showInformation={!!formData.fakultet}
+                isPrivateAccomodation={isPrivateAccomodation}
               />
               <ApplicationForm
                 onInputChange={onInputChange}
