@@ -47,6 +47,11 @@ const faculties = [
   },
 ];
 
+const NO_MORE_APPLICATIONS =
+  "Prijave za codeference trenutno nisu moguće. Pratite vesti i Instagram stranicu @codeference.";
+const NO_MORE_APPLICATIONS_FTN = `Prijave za FTN na codeference trenutno nisu moguće. Pratite vesti i Instagram stranicu @codeference.`;
+const NO_MORE_APPLICATIONS_OTHER = `Prijave za ostale fakultete na codeference trenutno nisu moguće. Pratite vesti i Instagram stranicu @codeference.`;
+
 function makeTuples(arr) {
   return arr.reduce((result, value, index) => {
     // grupisi elemente po 3 u nizu
@@ -67,12 +72,43 @@ function ApplicationForm({
   onInputChange,
   isDisabled,
 }) {
-  const [disabledForm, setDisabledForm] = React.useState();
+  const [disabledForm, setDisabledForm] = React.useState({
+    disabled: false,
+    disabledForOtherFaculties: false,
+  });
+
+  const isFTN = formData?.fakultet === "FTN Novi Sad";
+  const isOther = !!formData?.fakultet && formData.fakultet !== "FTN Novi Sad";
+
+  const isDisabledForFtn = isFTN && disabledForm.disabled;
+  const isDisabledForOtherFaculties =
+    isOther && disabledForm.disabledForOtherFaculties;
+  const isDisabledOverall =
+    disabledForm.disabled && disabledForm.disabledForOtherFaculties;
+
+  // disable in case if all options are disabled by default
+  // disable in case if FTN option is selected and form should be disabled
+  // disable in case if other option is selected but  and form should be disabled
+  const _disabled =
+    isDisabledOverall || isDisabledForFtn || isDisabledForOtherFaculties;
+
+  let message;
+  if (isDisabledOverall) {
+    message = NO_MORE_APPLICATIONS;
+  } else if (isDisabledForFtn) {
+    message = NO_MORE_APPLICATIONS_FTN;
+  } else if (isDisabledForOtherFaculties) {
+    message = NO_MORE_APPLICATIONS_OTHER;
+  }
 
   React.useEffect(() => {
     const fetchSubDetails = async () => {
-      const res = await getSubcategoryDetails("codeference02");
-      setDisabledForm(res?.subcategory?.lockComponent?.disabled);
+      const res = await getSubcategoryDetails("codeference2024");
+      setDisabledForm({
+        disabled: !!res?.subcategory?.lockComponent?.disabled,
+        disabledForOtherFaculties:
+          !!res?.subcategory?.lockComponent?.disabledForOtherFaculties,
+      });
     };
     fetchSubDetails();
   }, [loading]);
@@ -414,13 +450,13 @@ function ApplicationForm({
         </div>
 
         <div className="md:col-span-5 text-right">
-          {(disabledForm || isDisabled) && <AlertMessageInfo />}
+          {(_disabled || isDisabled) && <AlertMessageInfo message={message} />}
           <div className="inline-flex items-end">
             <button
               type="button"
               onClick={onSubmitHandler}
               className="flex mt-4 bg-blue-500 bg-opacity-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-25 disabled:cursor-not-allowed"
-              disabled={loading || disabledForm || isDisabled}
+              disabled={loading || _disabled || isDisabled}
             >
               {loading && (
                 <div role="status" className="flex justify-center">

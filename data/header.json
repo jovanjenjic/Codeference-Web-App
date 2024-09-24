@@ -3,21 +3,9 @@
     "name": "2022",
     "slug": "2022",
     "subcategories": [
-      {
-        "name": "Codeference 2022",
-        "slug": "codeference02",
-        "hide": false
-      },
-      {
-        "name": "Codefair 2022",
-        "slug": "codefair01",
-        "hide": false
-      },
-      {
-        "name": "CodeDay 2022",
-        "slug": "codeday02",
-        "hide": false
-      }
+      { "name": "Codefair 2022", "slug": "codefair01", "hide": false },
+      { "name": "Codeference 2022", "slug": "codeference02", "hide": false },
+      { "name": "CodeDay 2022", "slug": "codeday02", "hide": false }
     ],
     "order": 2
   },
@@ -25,16 +13,8 @@
     "name": "2021",
     "slug": "2021",
     "subcategories": [
-      {
-        "name": "Codeference 2021",
-        "slug": "codeference01",
-        "hide": false
-      },
-      {
-        "name": "Codeday 2021",
-        "slug": "codeday01",
-        "hide": false
-      }
+      { "name": "Codeference 2021", "slug": "codeference01", "hide": false },
+      { "name": "Codeday 2021", "slug": "codeday01", "hide": false }
     ],
     "order": 1
   },
@@ -42,21 +22,9 @@
     "name": "2023",
     "slug": "2023",
     "subcategories": [
-      {
-          "name": "Codeference 2023",
-          "slug": "codeference2023",
-          "hide": false
-      },
-      {
-        "name": "Codefair 2023",
-        "slug": "codefair2023",
-        "hide": false
-      },
-      {
-        "name": "Codeday 2023",
-        "slug": "codeday2023",
-        "hide": false
-      }
+      { "name": "Codefair 2023", "slug": "codefair2023", "hide": false },
+      { "name": "Codeference 2023", "slug": "codeference2023", "hide": false },
+      { "name": "CodeDay 2023", "slug": "codeday2023", "hide": false }
     ],
     "order": 3
   },
@@ -64,11 +32,8 @@
     "name": "2024",
     "slug": "2024",
     "subcategories": [
-      {
-        "name": "Codefair 2024",
-        "slug": "codefair2024",
-        "hide": false
-      }
+      { "name": "CodeFair 2024", "slug": "codefair2024", "hide": false },
+      { "name": "Codeference 2024", "slug": "codeference2024", "hide": true }
     ],
     "order": 4
   }

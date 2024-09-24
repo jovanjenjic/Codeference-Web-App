@@ -119,6 +119,7 @@ export const getSubcategoryDetails = async (slug) => {
         lockComponent {
           name
           disabled
+          disabledForOtherFaculties
         }
         logos(first: 100) {
           name
@@ -415,4 +416,4 @@ export const getCitations = async () => {
 
   const result = await request(graphqlAPI, query);
   return result.citations;
-}
+};

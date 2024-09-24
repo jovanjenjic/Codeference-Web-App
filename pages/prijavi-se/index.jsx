@@ -43,10 +43,10 @@ const validateEmail = (emailAddress = "") => {
   );
 };
 
-function PrijaviSePage() {
-  // koristimo za Novi Sad da li je privatan smestaj
-  const isPrivateAccomodation = false;
+// koristimo za Novi Sad da li je privatan smestaj
+const isPrivateAccomodation = false;
 
+function PrijaviSePage() {
   // const router = useRouter();
 
   const [formData, setFormData] = useState(initData);
