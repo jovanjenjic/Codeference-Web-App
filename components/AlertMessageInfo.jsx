@@ -1,6 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function AlertMessageInfo() {
+const defaultMessage = `Sva mesta u odmaralištu su popunjena. Uskoro više informacija o
+        privatnom smeštaju. Pratite vesti i Instagram stranicu @codeference.`;
+function AlertMessageInfo({ message = defaultMessage }) {
   return (
     <div
       className="flex p-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg"
@@ -20,12 +23,17 @@ function AlertMessageInfo() {
         />
       </svg>
       <span className="sr-only">Info</span>
-      <div className="text-start">
-        Sva mesta u odmaralištu su popunjena. Uskoro više informacija o
-        privatnom smeštaju. Pratite vesti i Instagram stranicu @codeference.
-      </div>
+      <div className="text-start">{message}</div>
     </div>
   );
 }
+
+AlertMessageInfo.propTypes = {
+  message: PropTypes.string,
+};
+
+AlertMessageInfo.defaultProps = {
+  message: undefined,
+};
 
 export default AlertMessageInfo;

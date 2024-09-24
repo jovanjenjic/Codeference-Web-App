@@ -101,6 +101,11 @@ function Header() {
               Ostavi CV
             </span>
           </Link>
+          <Link href="/prijavi-se">
+            <span className="md:float-right  py-2 px-4 rounded inline-flex items-center ml-4 font-semibold cursor-pointer ">
+              Prijavi se
+            </span>
+          </Link>
           <Link href="/">
             <span className="md:float-right  py-2 px-4 rounded inline-flex items-center ml-4 font-semibold cursor-pointer ">
               Početna

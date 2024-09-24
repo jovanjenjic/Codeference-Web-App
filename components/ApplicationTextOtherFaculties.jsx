@@ -60,7 +60,7 @@ function ApplicationTextOtherFaculties({
         <div>
           <br />
           <br />
-          Za cenu kontaktiraj predstavnike sa svog <b>fakulteta.</b>
+          Za cenu i prevoz kontaktiraj predstavnike sa svog <b>fakulteta.</b>
           <br />
           <br />
           <ul className="space-y-4 list-disc list-inside text-gray-500">
@@ -68,7 +68,9 @@ function ApplicationTextOtherFaculties({
               Cena uključuje:
               <ol className="pl-5 mt-2 space-y-1 list-decimal list-inside">
                 <li>Smeštaj</li>
-                <li>Polupansion</li>
+                <li>
+                  Polupansion (<b>doručak i večera)</b>
+                </li>
                 <li>Kotizaciju (učešće na predavanjima i redionicama)</li>
                 <li>Poklon materijale</li>
               </ol>

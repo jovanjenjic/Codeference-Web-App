@@ -4,6 +4,66 @@ import PropTypes from "prop-types";
 import { getSubcategoryDetails } from "../services";
 import AlertMessageInfo from "./AlertMessageInfo";
 
+const faculties = [
+  {
+    label: "FTN Novi Sad",
+    value: "FTN Novi Sad",
+    id: "ftn-ns",
+  },
+  {
+    label: "ETF Beograd",
+    value: "ETF Beograd",
+    id: "etf-bg",
+  },
+  {
+    label: "RAF Beograd",
+    value: "RAF Beograd",
+    id: "raf-bg",
+  },
+  {
+    label: "ETF Banjaluka",
+    value: "ETF Banjaluka",
+    id: "etf-bl",
+  },
+  {
+    label: "ETF Skoplje",
+    value: "ETF Skoplje",
+    id: "etf-skoplje",
+  },
+  {
+    label: "ELFAK Niš",
+    value: "ELFAK Nis",
+    id: "elfak-nis",
+  },
+  {
+    label: "FIN Kragujevac",
+    value: "FIN Kragujevac",
+    id: "fin-kragujevac",
+  },
+  {
+    label: "ETF Istočno Sarajevo",
+    value: "ETF IS",
+    id: "etf-is",
+  },
+];
+
+const NO_MORE_APPLICATIONS =
+  "Prijave za codeference trenutno nisu moguće. Pratite vesti i Instagram stranicu @codeference.";
+const NO_MORE_APPLICATIONS_FTN = `Prijave za FTN na codeference trenutno nisu moguće. Pratite vesti i Instagram stranicu @codeference.`;
+const NO_MORE_APPLICATIONS_OTHER = `Prijave za ostale fakultete na codeference trenutno nisu moguće. Pratite vesti i Instagram stranicu @codeference.`;
+
+function makeTuples(arr) {
+  return arr.reduce((result, value, index) => {
+    // grupisi elemente po 3 u nizu
+    if (index % 3 === 0) {
+      result.push([value]);
+    } else {
+      result[result.length - 1].push(value);
+    }
+    return result;
+  }, []);
+}
+
 function ApplicationForm({
   formData,
   formDataError,
@@ -12,118 +72,88 @@ function ApplicationForm({
   onInputChange,
   isDisabled,
 }) {
-  const [disabledForm, setDisabledForm] = React.useState();
+  const [disabledForm, setDisabledForm] = React.useState({
+    disabled: false,
+    disabledForOtherFaculties: false,
+  });
+
+  const isFTN = formData?.fakultet === "FTN Novi Sad";
+  const isOther = !!formData?.fakultet && formData.fakultet !== "FTN Novi Sad";
+
+  const isDisabledForFtn = isFTN && disabledForm.disabled;
+  const isDisabledForOtherFaculties =
+    isOther && disabledForm.disabledForOtherFaculties;
+  const isDisabledOverall =
+    disabledForm.disabled && disabledForm.disabledForOtherFaculties;
+
+  // disable in case if all options are disabled by default
+  // disable in case if FTN option is selected and form should be disabled
+  // disable in case if other option is selected but  and form should be disabled
+  const _disabled =
+    isDisabledOverall || isDisabledForFtn || isDisabledForOtherFaculties;
+
+  let message;
+  if (isDisabledOverall) {
+    message = NO_MORE_APPLICATIONS;
+  } else if (isDisabledForFtn) {
+    message = NO_MORE_APPLICATIONS_FTN;
+  } else if (isDisabledForOtherFaculties) {
+    message = NO_MORE_APPLICATIONS_OTHER;
+  }
 
   React.useEffect(() => {
     const fetchSubDetails = async () => {
-      const res = await getSubcategoryDetails('codeference02');
-      setDisabledForm(res?.subcategory?.lockComponent?.disabled)
-    }
+      const res = await getSubcategoryDetails("codeference2024");
+      setDisabledForm({
+        disabled: !!res?.subcategory?.lockComponent?.disabled,
+        disabledForOtherFaculties:
+          !!res?.subcategory?.lockComponent?.disabledForOtherFaculties,
+      });
+    };
     fetchSubDetails();
   }, [loading]);
+
+  const facultyOptions = makeTuples(faculties).map((group, idx) => (
+    <ul
+      key={`group-${idx}`}
+      className={`${
+        formDataError?.fakultet && "border-red-500"
+      } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border sm:flex`}
+    >
+      {group.map((item) => (
+        <li
+          key={item.id}
+          className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r"
+        >
+          <div className="flex items-center pl-3">
+            <input
+              id={item.id}
+              type="radio"
+              name="radio-faculty"
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+              onChange={() => onInputChange("fakultet", item.value)}
+            />
+            <label
+              htmlFor={item.id}
+              className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
+            >
+              {item.label}
+            </label>
+          </div>
+        </li>
+      ))}
+    </ul>
+  ));
 
   return (
     <div className="lg:col-span-2">
       <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-      <div className="md:col-span-5">
-          <label htmlFor="faculty">Fakultet na kojem studiraš</label>
-          <ul
-            className={`${
-              formDataError?.fakultet && "border-red-500"
-            } bg-blue-50 bg-opacity-40 mt-1 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border sm:flex`}
-          >
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  id="ftn-ns"
-                  type="radio"
-                  name="radio-faculty"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("fakultet", "FTN Novi Sad")}
-                />
-                <label
-                  htmlFor="ftn-ns"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
-                >
-                  FTN Novi Sad
-                </label>
-              </div>
-            </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  id="etf-bg"
-                  type="radio"
-                  name="radio-faculty"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("fakultet", "ETF Beograd")}
-                />
-                <label
-                  htmlFor="etf-bg"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
-                >
-                  ETF Beograd
-                </label>
-              </div>
-            </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  id="raf-bg"
-                  type="radio"
-                  name="radio-faculty"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("fakultet", "RAF Beograd")}
-                />
-                <label
-                  htmlFor="raf-bg"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
-                >
-                  RAF Beograd
-                </label>
-              </div>
-            </li>
-          </ul>
-          <ul
-            className={`${
-              formDataError?.fakultet && "border-red-500"
-            } bg-blue-50 bg-opacity-40 border-t-0 items-center w-full text-sm font-medium text-gray-900 bg-white rounded-lg border sm:flex`}
-          >
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  id="etf-bl"
-                  type="radio"
-                  name="radio-faculty"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("fakultet", "ETF Banjaluka")}
-                />
-                <label
-                  htmlFor="etf-bl"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
-                >
-                  ETF Banjaluka
-                </label>
-              </div>
-            </li>
-            <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
-              <div className="flex items-center pl-3">
-                <input
-                  id="etf-skoplje"
-                  type="radio"
-                  name="radio-faculty"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
-                  onChange={() => onInputChange("fakultet", "ETF Skoplje")}
-                />
-                <label
-                  htmlFor="etf-skoplje"
-                  className="py-3 ml-2 w-full text-sm font-medium text-gray-900"
-                >
-                  ETF Skoplje
-                </label>
-              </div>
-            </li>
-          </ul>
+        <div className="md:col-span-5">
+          <label htmlFor="faculty">
+            Fakultet na kojem studiraš{" "}
+            <span className="text-red-500">(obavezno odabrati)*</span>
+          </label>
+          {facultyOptions}
         </div>
         <div className="md:col-span-3">
           <label htmlFor="full_name">Ime i prezime</label>
@@ -184,7 +214,13 @@ function ApplicationForm({
         </div>
 
         <div className="md:col-span-3">
-          <label htmlFor="address">Sa kim želiš u sobu</label>
+          <label htmlFor="address">
+            Sa kim želiš u sobu{" "}
+            <span>
+              &nbsp;
+              <b>(ako je moguće, opcionalno.)</b>
+            </span>
+          </label>
           <input
             type="text"
             className={`${
@@ -414,13 +450,13 @@ function ApplicationForm({
         </div>
 
         <div className="md:col-span-5 text-right">
-          {(disabledForm || isDisabled) && <AlertMessageInfo />}
+          {(_disabled || isDisabled) && <AlertMessageInfo message={message} />}
           <div className="inline-flex items-end">
             <button
               type="button"
               onClick={onSubmitHandler}
               className="flex mt-4 bg-blue-500 bg-opacity-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-25 disabled:cursor-not-allowed"
-              disabled={loading || disabledForm || isDisabled}
+              disabled={loading || _disabled || isDisabled}
             >
               {loading && (
                 <div role="status" className="flex justify-center">
@@ -457,7 +493,7 @@ ApplicationForm.propTypes = {
   onSubmitHandler: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
-  isDisabled: PropTypes.bool.isRequired
+  isDisabled: PropTypes.bool.isRequired,
 };
 
 export default ApplicationForm;
