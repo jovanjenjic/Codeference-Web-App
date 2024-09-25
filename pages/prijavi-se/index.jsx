@@ -151,7 +151,7 @@ function PrijaviSePage() {
       <Meta
         description="Konferencija studenata elektrotehnike i računarstva."
         keywords="Codeference, Codefair, 2021, 2022, 2023, Codeference 2022, Codefair 2022, Codeference 2023, Konferencija, IT, Zlatibor, Novi Sad, Codeference 2021, Codefair 2021"
-        title="Prijava za - Codeference 2023"
+        title="Prijava za - Codeference 2024"
       />
       <div className="container max-w-screen-lg mx-auto">
         <div>
