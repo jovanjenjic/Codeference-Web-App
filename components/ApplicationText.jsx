@@ -15,8 +15,8 @@ const privateAccomodation = (
     <br />
     <div>
       <br />
-      Cena koja uključuje prevoz, smeštaj (polupansion), kotizacije i poklon
-      materijale:
+      Cena koja uključuje prevoz, smeštaj, polupansion <b>(doručak i večera)</b>
+      , kotizacije i poklon materijale:
       <ul className="space-y-4 list-disc list-inside text-gray-500">
         <br />
         <li>10990 RSD</li>

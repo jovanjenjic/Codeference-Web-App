@@ -44,7 +44,7 @@ const validateEmail = (emailAddress = "") => {
 };
 
 // koristimo za Novi Sad da li je privatan smestaj
-const isPrivateAccomodation = false;
+const isPrivateAccomodation = true;
 
 function PrijaviSePage() {
   // const router = useRouter();
